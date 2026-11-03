@@ -1,5 +1,5 @@
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
-import { CraftTags } from '../components/Links.tsx';
+import { CraftTags, ItemIcon } from '../components/Links.tsx';
 import { VirtualList } from '../components/VirtualList.tsx';
 import { popularItems, search, type Db } from '../lib/db.ts';
 import { craftHref, itemHref, unusedHref } from '../lib/route.ts';
@@ -75,6 +75,7 @@ export function HomePage({ db }: { db: Db }) {
               return (
                 <div className="result-row" role="row">
                   <a className="result-name" href={itemHref(item.id)}>
+                    <ItemIcon db={db} id={item.id} size={28} />
                     {item.name}
                   </a>
                   <span className="result-meta">{uses > 0 ? `使い道 ${uses}件` : '使い道なし'}</span>
@@ -99,7 +100,10 @@ export function HomePage({ db }: { db: Db }) {
           <ul className="chips">
             {examples.map((item) => (
               <li key={item.id}>
-                <a href={itemHref(item.id)}>{item.name}</a>
+                <a href={itemHref(item.id)}>
+                  <ItemIcon db={db} id={item.id} />
+                  {item.name}
+                </a>
               </li>
             ))}
           </ul>
@@ -109,6 +113,7 @@ export function HomePage({ db }: { db: Db }) {
             {popular.map((item) => (
               <li key={item.id}>
                 <a href={itemHref(item.id)}>
+                  <ItemIcon db={db} id={item.id} />
                   {item.name}
                   <span className="mini">{db.usedCount.get(item.id)}</span>
                 </a>

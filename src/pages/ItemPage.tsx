@@ -1,4 +1,4 @@
-import { CraftTag, CraftTags, ItemLink, Materials, NotFound } from '../components/Links.tsx';
+import { CraftTag, CraftTags, ItemIcon, ItemLink, Materials, NotFound } from '../components/Links.tsx';
 import { Flow } from '../components/Flow.tsx';
 import { TotalsPanel } from '../components/TotalsPanel.tsx';
 import { craftName, usesOf, type Db } from '../lib/db.ts';
@@ -31,7 +31,10 @@ export function ItemPage({ db, id }: { db: Db; id: string }) {
       <p className="back">
         <a href="#/">← 検索に戻る</a>
       </p>
-      <h1>{item.name}</h1>
+      <h1>
+        <ItemIcon db={db} id={id} size={48} />
+        {item.name}
+      </h1>
       <p className="tags">
         <CraftTags db={db} ids={db.craftsOf.get(id) ?? []} />
       </p>

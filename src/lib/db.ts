@@ -25,6 +25,8 @@ export interface Db {
   /** アイテム → 使い道(重複を除いた成果物の数) */
   usedCount: Map<string, number>;
   searchKey: Map<string, string>;
+  /** アイテム → アイコンのファイル名(public/icons/ の中)。画像がないアイテムは含まれない */
+  icons: Map<string, string>;
 }
 
 /** 検索用: 全角半角・大文字小文字・ひらがなカタカナの違いを無視する */
@@ -48,7 +50,7 @@ function mark(m: Map<string, Set<string>>, id: string, craft: string) {
   else m.set(id, new Set([craft]));
 }
 
-export function buildDb(raw: RawData): Db {
+export function buildDb(raw: RawData, icons: Record<string, string> = {}): Db {
   const usedIn = new Map<string, Use[]>();
   const madeBy = new Map<string, Recipe[]>();
   const sourcesOf = new Map<string, Source[]>();
@@ -92,6 +94,7 @@ export function buildDb(raw: RawData): Db {
     craftsOf,
     usedCount,
     searchKey: new Map(raw.items.map((i) => [i.id, fold(i.name)])),
+    icons: new Map(Object.entries(icons)),
   };
 }
 

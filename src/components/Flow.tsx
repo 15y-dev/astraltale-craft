@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { itemName, type Db } from '../lib/db.ts';
 import { buildFlow, type FlowNode } from '../lib/graph.ts';
 import { itemHref } from '../lib/route.ts';
-import { Stamp } from './Links.tsx';
+import { ItemIcon, Stamp } from './Links.tsx';
 
 const NODE_W = 184;
 const NODE_H = 54;
@@ -24,6 +24,7 @@ function NodeBody({ db, n }: { db: Db; n: FlowNode }) {
     <>
       <span className="fn-top">
         <Stamp db={db} craft={n.craft} />
+        <ItemIcon db={db} id={n.id} />
         <span className="fn-name">{itemName(db, n.id)}</span>
       </span>
       <span className="fn-sub">{n.sub}</span>

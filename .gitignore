@@ -4,3 +4,6 @@ dist
 data/tmp-*
 tmp-*
 .vitest
+/icons
+tmp
+

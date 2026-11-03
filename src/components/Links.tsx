@@ -1,8 +1,35 @@
 import { craftName, itemName, type Db } from '../lib/db.ts';
 import { craftHref, itemHref } from '../lib/route.ts';
 
+export const iconSrc = (file: string) => `${import.meta.env.BASE_URL}icons/${file}`;
+
+/** アイテムのアイコン。画像がない、または読み込めないときは何も出さない(装飾なので alt は空) */
+export function ItemIcon({ db, id, size = 24 }: { db: Db; id: string; size?: number }) {
+  const file = db.icons.get(id);
+  if (!file) return null;
+  return (
+    <img
+      className="item-icon"
+      src={iconSrc(file)}
+      alt=""
+      width={size}
+      height={size}
+      loading="lazy"
+      decoding="async"
+      onError={(e) => {
+        e.currentTarget.style.display = 'none';
+      }}
+    />
+  );
+}
+
 export function ItemLink({ db, id }: { db: Db; id: string }) {
-  return <a href={itemHref(id)}>{itemName(db, id)}</a>;
+  return (
+    <a href={itemHref(id)}>
+      <ItemIcon db={db} id={id} />
+      {itemName(db, id)}
+    </a>
+  );
 }
 
 /** 判子風の一文字(生産系)。色は使わない */

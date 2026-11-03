@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "fetch": "node scripts/fetch.mjs",
+    "icons": "node scripts/download-icons.mjs",
     "build:data": "node scripts/build-data.mjs",
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

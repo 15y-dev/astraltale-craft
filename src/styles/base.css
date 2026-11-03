@@ -146,6 +146,19 @@ h1 {
   line-height: 1;
 }
 
+/* アイテムのアイコン(ゲーム内の画像)。文字の高さに合わせて、名前の左に並べる */
+.item-icon {
+  display: inline-block;
+  flex: none;
+  margin-right: 0.35em;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+h1 .item-icon {
+  margin-right: 0.5rem;
+}
+
 .tag {
   display: inline-flex;
   align-items: center;
