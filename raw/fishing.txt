@@ -1,0 +1,369 @@
+<code>#include(header/production,notitle)
+----
+#contents
+
+* 概要 [#y9219a80]
+- 中央大陸の釣り場で釣りができる。[[釣り道具>アイテム/釣り道具]]とミミズが必要。
+- 各釣り場の魚群をターゲットし、ターゲットアイコン右下の袋マークをクリックすると、そこで何が獲得できるか見ることができる。（モンスターのドロップ情報を見る方法と同様）
+- 入手できるアイテムは以下のとおり。
+-- &color(Green){レア度緑};は使用すると釣り経験値や星霊ポイント、星石ポイントが上昇します。
+-- &color(Blue){レア度青};は使用すると生産材料が手に入ります。
+--- 魚：料理の材料
+-- &color(Orange){レア度橙};は使用すると釣り道具のレシピやレシピの材料等が手に入ります。
+-- &color(Olive){レア度黄};は使用すると釣り道具のレシピやレシピの材料、EXP辞典等が手に入ります。
+
+
+* 釣りランク [#gafc2bcd]
+|CENTER:|LEFT:120|LEFT:120|LEFT:400|LEFT:100|c
+|~ランク|CENTER:~称号|CENTER:~スキル|CENTER:~効果|CENTER:~備考|h
+|5|アマチュア釣り人|釣りEXLv1|釣り竿の能力が少し増加||
+|10|河畔の旅人|水産鑑定Lv1|獲物のサイズが少しアップ||
+|15|ベテラン釣り人|熟練の釣り技Lv1|獲物を釣った時、獲得経験値が少し増加||
+|20|プロの釣り人|釣りEXLv2|釣り竿の能力が少し増加||
+|25|有名な釣り人|水産鑑定Lv2|獲物のサイズが少しアップ||
+|30|水際の魔術師|熟練の釣り技Lv2|獲物を釣った時、獲得経験値が少し増加||
+|35|竜宮の釣り人|釣りEXLv3|釣り竿の能力が少し増加||
+|40|大洋冒険者|水産鑑定Lv3|獲物のサイズが少しアップ||
+|45|釣りチャンピオン|熟練の釣り技Lv3|獲物を釣った時、獲得経験値が少し増加||
+|50|釣りの王|釣りEXLv4|釣り竿の能力が少し増加||
+|55|釣りマスター|水産鑑定Lv4|獲物のサイズが少しアップ||
+|60|伝説の釣り人|熟練の釣り技Lv4|獲物を釣った時、獲得経験値が少し増加||
+|65|連合軍の釣り人|釣りEXLv5|釣り竿の能力が少し増加||
+|70|女神専属の釣り人|水産鑑定Lv5|獲物のサイズが少しアップ||
+|75|聖なる釣り人|熟練の釣り技Lv5|獲物を釣った時、獲得経験値が少し増加||
+|80|幻の釣り人|釣りEXLv6|釣り竿の能力が少し増加||
+|85|奇跡の釣り人|水産鑑定Lv6|獲物のサイズが少しアップ||
+|90|神話の釣り人|熟練の釣り技Lv6|獲物を釣った時、獲得経験値が少し増加||
+|95|仏の釣り人|釣りEXLv7|釣り竿の能力が少し増加||
+|100|魅惑の釣り人|水産鑑定Lv7|獲物のサイズが少しアップ||
+|105|無敵の釣り人|熟練の釣り技Lv7|獲物を釣った時、獲得経験値が少し増加||
+|110|仙人の釣り人|釣りEXLv2|釣り竿の能力が少し増加||
+|115|規格外の釣り人|水産鑑定Lv8|獲物のサイズが少しアップ||
+|120|超越した釣り人|熟練の釣り技Lv8|獲物を釣った時、獲得経験値が少し増加||
+
+
+* 経験値テーブル [#oea6f55c]
+|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|c
+|~ランク|CENTER:~必要経験値|~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |h
+|01|  -|11|1,001|21| 5,580|31|24,600|41|53,805|51|143,655|61|593,560|71|717,560|81|       | 91|       |101|       |111|       |
+|02| 42|12|1,300|22| 7,680|32|27,090|42|57,460|52|198,710|62|605,520|72|730,320|82|       | 92|       |102|       |112|       |
+|03|119|13|1,620|23| 9,075|33|29,670|43|61,215|53|255,465|63|617,580|73|743,080|83|       | 93|       |103|       |113|       |
+|04|165|14|1,963|24|10,710|34|32,340|44|65,070|54|313,920|64|629,740|74|755,840|84|       | 94|       |104|       |114|       |
+|05|216|15|2,327|25|12,425|35|35,100|45|69,025|55|374,075|65|642,000|75|       |85|       | 95|       |105|       |115|       |
+|06|272|16|2,714|26|14,220|36|37,950|46|73,080|56|435,930|66|654,360|76|       |86|       | 96|       |106|       |116|       |
+|07|333|17|3,122|27|16,095|37|40,890|47|77,235|57|499,485|67|666,820|77|       |87|       | 97|       |107|       |117|       |
+|08|399|18|3,353|28|18,050|38|43,920|48|81,490|58|564,740|68|679,380|78|       |88|       | 98|       |108|       |118|       |
+|09|470|19|3,553|29|20,085|39|47,040|49|85,845|59|573,218|69|692,040|79|       |89|       | 99|       |109|       |119|       |
+|10|725|20|4,005|30|22,200|40|50,250|50|90,300|60|581,700|70|704,800|80|       |90|       |100|       |110|       |120|       |
+* QTE(Quick Time Event) [#db55ea04]
+- 釣りをしていると不定期に発生する。
+&attachref(./QTE_釣り.jpg,nolink,70%);
+- 出現した数字を左から時間内に正確に入力すると赤いゲージが減っていき、ゲージが空になるとQTE成功となり、アイテムを獲得できる。
+--使用するキーは「１」「２」「３」「４」のみ、QTEが苦手でも比較的に容易（猫の手マークに数字表示）
+--ゲージ　赤【魚】　緑【プレイヤー】
+- 入力に失敗、あるいは時間内に入力が完了しなかった場合は緑色のゲージが減っていき、ゲージが空になるとQTEは失敗となり、アイテムは獲得できない。
+- キャラクターの釣りレベル、装備している釣り道具の性能、釣り場のレベルによってQTEの難易度は変動する。
+- QTEが始まった瞬間にチャットウィンドウへ表示されるシステムメッセージによって、どのランクのアイテムが釣れるか予想できる。
+-- システムメッセージ「珍しい魚のようだ…」→橙ランクの魚
+-- システムメッセージ「神秘的な魚が釣れたようだ…」→黄ランクの魚
+-- システムメッセージなし→秘宝コア：彩石
+
+
+* 魚群 [#e83311d4]
+** 共通 [#uc46a311]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./秘宝コア：彩石.jpg,nolink);|秘宝コア：彩石|家具部品の材料|釣り場のQTEで獲得|
+|&attachref(./大波の主の挑戦状.jpg,nolink);|大波の主の挑戦状|地下闘技場で使う||
+|&attachref(./エレメンタラーの挑戦状.jpg,nolink);|エレメンタラーの挑戦状|地下闘技場で使う||
+
+**中央大陸 [#cb526251]
+** ランク1～8 [#e85d67b6]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫：自然.jpg,nolink);|&color(Green){海の雫：自然};|釣り経験値5||
+|&attachref(./ブルーフィッシュ.jpg,nolink);|&color(Green){ブルーフィッシュ};|星石ポイント5||
+|&attachref(./パタパタ.jpg,nolink);|&color(Green){パタパタ};|星霊ポイント5||
+|&attachref(./ハッピーフィッシュ.jpg,nolink);|&color(Blue){ハッピーフィッシュ};|&color(Blue){鮮魚の切り身};&br;&color(Blue){Lv18星石の欠片×2};|バフ有り釣り竿&br;&color(Green){遠洋の海釣り竿};|
+|&attachref(./アビスパタパタ.jpg,nolink);|&color(Blue){アビスパタパタ};|&color(Blue){パタパタの切り身};&br;&color(Blue){Lv18星石の欠片×2};|バフ有り釣り竿&br;&color(Green){リール海釣り竿};|
+|&attachref(./ダークネスフィッシュ.jpg,nolink);|&color(Orange){ダークネスフィッシュ};|&color(Orange){レシピ：スティールロッド};&br;&color(Orange){黒化した魚鱗};&br;&color(Blue){Lv18星石の欠片×2};&br;星界チケット5,1||
+|&attachref(./ガンフィッシュ.jpg,nolink);|&color(Orange){ガンフィッシュ};|&color(Orange){レシピ：スティールロッド};&br;&color(Orange){堅い魚の殻};&br;&color(Blue){Lv18星石の欠片×2};&br;星界チケット5,1||
+|&attachref(./ナイトフィッシュ.jpg,nolink);|&color(Olive){ナイトフィッシュ};|&color(Orange){レシピ：イッカクロッド};&br;&color(Olive){高級な魚鱗};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク8～16 [#oa99719d]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫：静寂.jpg,nolink);|&color(Green){海の雫：静寂};|釣り経験値5||
+|&attachref(./ザリガニ.jpg,nolink);|&color(Green){ザリガニ};|星石ポイント5||
+|&attachref(./ベアードフィッシュ.jpg,nolink);|&color(Green){ベアードフィッシュ};|星霊ポイント5||
+|&attachref(./ビックロウザリガニ.jpg,nolink);|&color(Blue){ビックロウザリガニ};|&color(Blue){パリパリなエビ肉};&br;&color(Blue){エビ殻ソース};&br;&color(Blue){Lv18星石の欠片×2};|バフ有り釣り竿&br;&color(Green){エビ釣り渓流竿};|
+|&attachref(./キャットフィッシュ.jpg,nolink);|&color(Blue){キャットフィッシュ};|&color(Blue){魚の腸};&br;&color(Blue){キャットフィッシュの背の切り身};&br;&color(Blue){Lv18星石の欠片×2};|バフ有り釣り竿&br;&color(Green){渓流竿};|
+|&attachref(./スプリングキャットフィッシュ.jpg,nolink);|&color(Orange){スプリングキャットフィッシュ};|&color(Orange){レシピ：インバイトロッド};&br;&color(Orange){コシのある髭};&br;&color(Blue){Lv18星石の欠片×2};&br;星界チケット5,1||
+|&attachref(./ホーリーフィッシュ.jpg,nolink);|&color(Orange){ホーリーフィッシュ};|&color(Orange){レシピ：インバイトロッド};&br;&color(Orange){不思議な模様の魚皮};&br;&color(Blue){Lv18星石の欠片×2};&br;星界チケット5,1||
+|&attachref(./エルフキャットフィッシュ.jpg,nolink);|&color(Olive){エルフキャットフィッシュ};|&color(Orange){レシピ：イッカクロッド};&br;&color(Olive){なめしのロープ};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク16～24 [#laf0142a]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫：温暖.jpg,nolink);|&color(Green){海の雫：温暖};|釣り経験値5||
+|&attachref(./サンドクラブ.jpg,nolink);|&color(Green){サンドクラブ};|星石ポイント5||
+|&attachref(./プラントフィッシュ.jpg,nolink);|&color(Green){プラントフィッシュ};|星霊ポイント5||
+|&attachref(./ランドクラブ.jpg,nolink);|&color(Blue){ランドクラブ};|&color(Blue){白いクラブ肉};&br;&color(Blue){岩塩};&br;&color(Blue){Lv28星石の欠片×2};||
+|&attachref(./レッドプラントフィッシュ.jpg,nolink);|&color(Blue){レッドプラントフィッシュ};|&color(Blue){プラントフィッシュの切り身};&br;&color(Blue){赤い魚のヒレ};&br;&color(Blue){Lv28星石の欠片×2};||
+|&attachref(./アシナガエビ.jpg,nolink);|&color(Orange){アシナガエビ};|&color(Orange){レシピ：ダンサーロッド};&br;&color(Orange){透明のエビの殻};&br;&color(Blue){Lv28星石の欠片×2};&br;星界チケット5,1||
+|&attachref(./オアシスフィッシュ.jpg,nolink);|&color(Orange){オアシスフィッシュ};|&color(Orange){レシピ：ダンサーロッド};&br;&color(Orange){変化する鱗};&br;&color(Blue){Lv28星石の欠片×2};&br;星界チケット5,1||
+|&attachref(./ジャンピングシュリンプ.jpg,nolink);|&color(Olive){ジャンピングシュリンプ};|&color(Orange){レシピ：シャークロッド};&br;&color(Olive){ジャンピングシュリンプの足};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク24～32 [#pc11b296]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫：神秘.jpg,nolink);|&color(Green){海の雫：神秘};|釣り経験値5||
+|&attachref(./ウォーターパーチ.jpg,nolink);|&color(Green){ウォーターパーチ};|星石ポイント5||
+|&attachref(./アユフィッシュ.jpg,nolink);|&color(Green){アユフィッシュ};|星霊ポイント5||
+|&attachref(./フレッシュウォーターパーチ.jpg,nolink);|&color(Blue){フレッシュウォーターパーチ};|&color(Blue){ウォーターパーチの背中の切り身};&br;&color(Blue){ウォーターパーチの腹の切り身};&br;&color(Blue){Lv38星石の欠片×2};||
+|&attachref(./ファングアユフィッシュ.jpg,nolink);|&color(Blue){ファングアユフィッシュ};|&color(Blue){香しい魚介ソース};&br;&color(Blue){ワイルドな鱗粉};&br;&color(Blue){Lv38星石の欠片×2};||
+|&attachref(./グランキョクラブ.jpg,nolink);|&color(Orange){グランキョクラブ};|&color(Orange){レシピ：ハーヴェストロッド};&br;&color(Orange){堅いクラブの爪};&br;&color(Blue){Lv28星石の欠片×2};&br;星界チケット5,1||
+|&attachref(./リーフロブスター.jpg,nolink);|&color(Orange){リーフロブスター};|&color(Orange){レシピ：ハーヴェストロッド};&br;&color(Orange){粗いエビの殻};&br;&color(Blue){Lv28星石の欠片×2};&br;星界チケット5,1||
+|&attachref(./ゴーストクラブ.jpg,nolink);|&color(Olive){ゴーストクラブ};|&color(Orange){レシピ：シャークロッド};&br;&color(Olive){痺れクラブの殻};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク32～40 [#z613697c]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫：情熱.jpg,nolink);|&color(Green){海の雫：情熱};|釣り経験値5||
+|&attachref(./シャーモン.jpg,nolink);|&color(Green){シャーモン};|星石ポイント5||
+|&attachref(./ホワイトフィッシュ.jpg,nolink);|&color(Green){ホワイトフィッシュ};|星霊ポイント5||
+|&attachref(./フォレストシャーモン.jpg,nolink);|&color(Blue){フォレストシャーモン};|&color(Blue){シャーモンの皮付き切り身};&br;&color(Blue){シャーモンの背骨};&br;&color(Blue){Lv48星石の欠片×2};||
+|&attachref(./ブロードホワイトフィッシュ.jpg,nolink);|&color(Blue){ブロードホワイトフィッシュ};|&color(Blue){ホワイトフィッシュの鱗粉};&br;&color(Blue){銀色の魚の切り身};&br;&color(Blue){Lv48星石の欠片×2};||
+|&attachref(./トゥシュフィッシュ.jpg,nolink);|&color(Orange){トゥシュフィッシュ};|&color(Orange){レシピ：ノーレイジロッド};&br;&color(Orange){鋭利な歯};&br;&color(Blue){Lv38星石の欠片×2};&br;星界チケット10,5,1||
+|&attachref(./セイルーンクラブ.jpg,nolink);|&color(Orange){セイルーンクラブ};|&color(Orange){レシピ：ノーレイジロッド};&br;&color(Orange){毛に覆われたクラブの殻};&br;&color(Blue){Lv38星石の欠片×2};&br;星界チケット10,5,1||
+|&attachref(./カニバトゥルシュフィッシュ.jpg,nolink);|&color(Olive){カニバトゥルシュフィッシュ};|&color(Orange){レシピ：オクトパスロッド};&br;&color(Olive){血まみれの牙};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+|&attachref(./フォッシルガンフィッシュ.jpg,nolink);|&color(Olive){フォッシルガンフィッシュ};|&color(Orange){レシピ：プレシャスロッド};&br;&color(Olive){魚の殻の化石};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+|&attachref(./ホーリームーンフィッシュ.jpg,nolink);|&color(Olive){ホーリームーンフィッシュ};|&color(Orange){レシピ：プレシャスロッド};&br;&color(Olive){光輝く魚皮};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+|&attachref(./ワイルドカウフィッシュ.jpg,nolink);|&color(Olive){ワイルドカウフィッシュ};|&color(Orange){レシピ：マーメイドロッド};&br;&color(Olive){雑魚の鱗};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク40～50 [#zbd2b590]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫：幸福.jpg,nolink);|&color(Green){海の雫：幸福};|釣り経験値5||
+|&attachref(./スネークフィッシュ.jpg,nolink);|&color(Green){スネークフィッシュ};|星石ポイント5||
+|&attachref(./ソードフィッシュ.jpg,nolink);|&color(Green){ソードフィッシュ};|星霊ポイント5||
+|&attachref(./マーブルスネークフィッシュ.jpg,nolink);|&color(Blue){マーブルスネークフィッシュ};|&color(Blue){スネークフィッシュの骨};&br;&color(Blue){スネークフィッシュの腹の切り身};&br;&color(Blue){Lv58星石の欠片×2};||
+|&attachref(./ファッティーソードフィッシュ.jpg,nolink);|&color(Blue){ファッティーソードフィッシュ};|&color(Blue){ソードフィッシュの切り身};&br;&color(Blue){魚の脂身};&br;&color(Blue){Lv58星石の欠片×2};||
+|&attachref(./マーシュフィッシュ.jpg,nolink);|&color(Orange){マーシュフィッシュ};|&color(Orange){レシピ：ウィスパーロッド};&br;&color(Orange){細長い魚の骨};&br;&color(Blue){Lv48星石の欠片×2};&br;星界チケット10,5,1||
+|&attachref(./シャトルフィッシュ.jpg,nolink);|&color(Orange){シャトルフィッシュ};|&color(Orange){レシピ：ウィスパーロッド};&br;&color(Orange){ギザギザな牙};&br;&color(Blue){Lv48星石の欠片×2};&br;星界チケット10,5,1||
+|&attachref(./キングマーシュフィッシュ.jpg,nolink);|&color(Olive){キングマーシュフィッシュ};|&color(Orange){レシピ：オクトパスロッド};&br;&color(Olive){頑丈な魚骨};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+|&attachref(./キングリーフロブスター.jpg,nolink);|&color(Olive){キングリーフロブスター};|&color(Orange){レシピ：マーメイドロッド};&br;&color(Olive){大きなエビの殻};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+|&attachref(./キングセイルーンクラブ.jpg,nolink);|&color(Olive){キングセイルーンクラブ};|&color(Orange){レシピ：ヴィーナスロッド};&br;&color(Olive){巨大な爪};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+|&attachref(./ギャングシャトルフィッシュ.jpg,nolink);|&color(Olive){ギャングシャトルフィッシュ};|&color(Orange){レシピ：ヴィーナスロッド};&br;&color(Olive){するどい牙};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク50～60 [#e93e9f8d]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫：勇気.jpg,nolink);|&color(Green){海の雫：勇気};|釣り経験値5||
+|&attachref(./ランプ鯛.jpg,nolink);|&color(Green){ランプ鯛};|星石ポイント5||
+|&attachref(./灯籠魚.jpg,nolink);|&color(Green){灯籠魚};|星霊ポイント5||
+|&attachref(./巨大ランプ鯛.jpg,nolink);|&color(Blue){巨大ランプ鯛};|&color(Blue){ランプ鯛の頬肉};&br;&color(Blue){銀魚の胸肉};&br;&color(Blue){Lv63星石の欠片×2};||
+|&attachref(./閃光灯籠魚.jpg,nolink);|&color(Blue){閃光灯籠魚};|&color(Blue){灯籠魚のヒゲ};&br;&color(Blue){灯籠魚の身};&br;&color(Blue){Lv63星石の欠片×2};||
+|&attachref(./水滴魚.jpg,nolink);|&color(Orange){水滴魚};|&color(Orange){レシピ：シーデビルロッド};&br;&color(Orange){水滴魚の粘液};&br;&color(Blue){Lv63星石の欠片×2};&br;星界チケット10,5,1||
+|&attachref(./吸血イカ.jpg,nolink);|&color(Orange){吸血イカ};|&color(Orange){レシピ：シーデビルロッド};&br;&color(Orange){イカの触手};&br;&color(Blue){Lv63星石の欠片×2};&br;星界チケット10,5,1||
+|&attachref(./巨大水滴魚.jpg,nolink);|&color(Olive){巨大水滴魚};|&color(Olive){レシピ：ネプチューンロッド};&br;&color(Olive){水滴魚の粘液エッセンス};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+|&attachref(./祖イカ.jpg,nolink);|&color(Olive){祖イカ};|&color(Olive){レシピ：ネプチューンロッド};&br;&color(Olive){祖イカの触手};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク60～70 [#z44ffe8f]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫：意志.jpg,nolink);|&color(Green){海の雫：意志};|釣り経験値5||
+|&attachref(./アオイソギンチャク.jpg,nolink);|&color(Green){アオイソギンチャク};|星石ポイント5||
+|&attachref(./ヒトデ.jpg,nolink);|&color(Green){ヒトデ};|星霊ポイント5||
+|&attachref(./猛毒のアオイソギンチャク.jpg,nolink);|&color(Blue){猛毒のアオイソギンチャク};|&color(Blue){アオイソギンチャクの粉末};&br;&color(Blue){アオイソギンチャクの凝固物};&br;&color(Blue){Lv73星石の欠片×2};||
+|&attachref(./不死のヒトデ.jpg,nolink);|&color(Blue){不死のヒトデ};|&color(Blue){干しヒトデ};&br;&color(Blue){ヒトデのジュース};&br;&color(Blue){Lv73星石の欠片×2};||
+|&attachref(./ミノカサゴ.jpg,nolink);|&color(Orange){ミノカサゴ};|&color(Orange){レシピ：サクラロッド};&br;&color(Olive){ミノカサゴの肉塊};&br;&color(Blue){Lv68星石の欠片×2};&br;星界チケット10,5,1||
+|&attachref(./サメ.jpg,nolink);|&color(Orange){サメ};|&color(Orange){レシピ：サクラロッド};&br;&color(Olive){サメの脊髄};&br;&color(Blue){Lv68星石の欠片×2};&br;星界チケット10,5,1||
+|&attachref(./巨大ミノカサゴ.jpg,nolink);|&color(Olive){巨大ミノカサゴ};|&color(Orange){レシピ：ジーニアスロッド};&br;&color(Olive){ミノカサゴのトゲ};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+|&attachref(./オオハサミイセエビ.jpg,nolink);|&color(Olive){オオハサミイセエビ};|&color(Orange){レシピ：ジーニアスロッド};&br;&color(Olive){イセエビの大はさみ};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+**西方大陸 [#u2274dd0]
+** ランク70～80 [#c74e0b00]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫：純真.jpg,nolink);|&color(Green){海の雫：純真};|釣り経験値5||
+|&attachref(./ウニ.jpg,nolink);|&color(Green){ウニ};|星石ポイント5||
+|&attachref(./カレイ.jpg,nolink);|&color(Green){カレイ};|星霊ポイント5||
+|&attachref(./レインボーウニ.jpg,nolink);|&color(Blue){レインボーウニ};|&color(Blue){ウニの生殖巣};&br;&color(Blue){ウニのクリスタル};&br;&color(Blue){Lv83星石の欠片×2};||
+|&attachref(./スターライトカレイ.jpg,nolink);|&color(Blue){スターライトカレイ};|&color(Blue){カレイ干し};&br;&color(Blue){カレイの肝};&br;&color(Blue){Lv83星石の欠片×2};||
+|&attachref(./エイ.jpg,nolink);|&color(Orange){エイ};|&color(Orange){レシピ：ディープロッド};&br;&color(Orange){エイの肉塊};&br;&color(Blue){Lv78星石の欠片×2};&br;星界チケット10,5,1||
+|&attachref(./コバンザメ.jpg,nolink);|&color(Orange){コバンザメ};|&color(Orange){レシピ：ディープロッド};&br;&color(Orange){コバンザメの背};&br;&color(Blue){Lv78星石の欠片×2};&br;星界チケット10,5,1||
+|&attachref(./巨大赤エイ.jpg,nolink);|&color(Olive){巨大赤エイ};|&color(Olive){レシピ：アンノウンロッド};&br;&color(Olive){エイの針};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+|&attachref(./皇帝ガニ.jpg,nolink);|&color(Olive){皇帝ガニ};|&color(Olive){レシピ：アンノウンロッド};&br;&color(Olive){皇帝ガニの背甲羅};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク80～90 [#paebdbb0]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海のしずく知恵.jpg,nolink);|&color(Green){海の雫：知恵};|釣り経験値5||
+|&attachref(./巻貝.jpg,nolink);|&color(Green){巻貝};|星石ポイント5||
+|&attachref(./ニベ.jpg,nolink);|&color(Green){ニベ};|星霊ポイント5||
+|&attachref(./夜光巻貝.jpg,nolink);|&color(Blue){夜光巻貝};|&color(Blue){巻貝の粉末};&br;&color(Blue){巻貝のひき肉};&br;&color(Blue){Lv88星石の欠片x2};||
+|&attachref(./クログチ.jpg,nolink);|&color(Blue){クログチ};|&color(Blue){クログチの切り身};&br;&color(Blue){クログチのひれ};&br;&color(Blue){Lv88星石の欠片x2};||
+|&attachref(./ヌタウナギ.jpg,nolink);|&color(Orange){ヌタウナギ};|&color(Orange){レシピ：シーハートロッド};&br;&color(Orange){ヌタウナギの肉};&br;&color(Blue){Lv88星石の欠片x2};&br;星界チケット10,5,1||
+|&attachref(./フグ.jpg,nolink);|&color(Orange){フグ};|&color(Orange){レシピ：シーハートロッド};&br;&color(Orange){フグの血};&br;&color(Blue){Lv88星石の欠片x2};&br;星界チケット10,5,1||
+|&attachref(./ヤツメウナギ.jpg,nolink);|&color(Olive){ヤツメウナギ};|&color(Olive){レシピ：マリンキングロッド};&br;&color(Olive){ヌタウナギの背びれ};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+|&attachref(./トラフグ.jpg,nolink);|&color(Olive){トラフグ};|&color(Olive){レシピ：マリンキングロッド};&br;&color(Olive){トラフグの肝};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+
+**ランク90～100 [#h3f4a2a9]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海のしずく狂騒.jpg,nolink);|&color(Green){海の雫：狂想};|釣り経験値5||
+|&attachref(./ヌフエスカルゴ.jpg,nolink);|&color(Green){ヌフエスカルゴ};|星石ポイント5||
+|&attachref(./桜花シュリンプ.jpg,nolink);|&color(Green){桜花シュリンプ};|星霊ポイント5||
+|&attachref(./レジェンドヌフエスカルゴ.jpg,nolink);|&color(Blue){レジェンドヌフエスカルゴ};|&color(Blue){ヌフエスカルゴの粉末};&br;&color(Blue){ヌフエスカルゴのひき肉};&br;&color(Blue){Lv93星石の欠片x2};||
+|&attachref(./サンハイドフィッシュ.jpg,nolink);|&color(Blue){サンハイドフィッシュ};|&color(Blue){サンハイドフィッシュの切り身};&br;&color(Blue){サンハイドフィッシュのうろこ};&br;&color(Blue){Lv93星石の欠片x2};||
+|&attachref(./リバーシャーク.jpg,nolink);|&color(Orange){リバーシャーク};|&color(Orange){レシピ：怒りの波};&br;&color(Orange){リバーシャークの肉};&br;&color(Blue){Lv93星石の欠片x2};&br;星界チケット10,5,1||
+|&attachref(./トリオキニア.jpg,nolink);|&color(Orange){トリオニキア};|&color(Orange){レシピ：怒りの波};&br;&color(Orange){トリオニキアの肉};&br;&color(Blue){Lv93星石の欠片x2};&br;星界チケット10,5,1||
+|&attachref(./エンシェントシャーク.jpg,nolink);|&color(Olive){エンシェントシャーク};|&color(Olive){レシピ：波浪の勇者};&br;&color(Olive){エンシェントシャークの鋭歯};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+|&attachref(./エンシェントトリオニキア.jpg,nolink);|&color(Olive){エンシェントトリオニキア};|&color(Olive){レシピ：波浪の勇者};&br;&color(Olive){エンシェントトリオニキアの頑甲};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+
+**ランク100～110 [#u8a96c4f]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫紀律.jpg,nolink);|&color(Green){海の雫：紀律};|釣り経験値5||
+|&attachref(./ラティップス.jpg,nolink);|&color(Green){ラティップス};|星石ポイント5||
+|&attachref(./ドラゴロブスター.jpg,nolink);|&color(Green){ドラゴロブスター};|星霊ポイント5||
+|&attachref(./エンペラークラブ.jpg,nolink);|&color(Blue){エンペラークラブ};|&color(Blue){エンペラークラブの粉末};&br;&color(Blue){エンペラークラブの肉};&br;&color(Blue){Lv98星石の欠片x2};||
+|&attachref(./バタフライフィッシュ.jpg,nolink);|&color(Blue){バタフライフィッシュ};|&color(Blue){バタフライフィッシュの切り身};&br;&color(Blue){バタフライフィッシュの鱗};&br;&color(Blue){Lv98星石の欠片x2};||
+|&attachref(./モーブラ.jpg,nolink);|&color(Orange){モーブラ};|&color(Orange){レシピ：海中の月};&br;&color(Orange){モーブラの切り身};&br;&color(Blue){Lv98星石の欠片x2};&br;星界チケット10,5,1||
+|&attachref(./アングリラ.jpg,nolink);|&color(Orange){アングリラ};|&color(Orange){レシピ：海中の月};&br;&color(Orange){アングリラの鋭歯};&br;&color(Blue){Lv98星石の欠片x2};&br;星界チケット10,5,1||
+|&attachref(./リコプテラ.jpg,nolink);|&color(Olive){リコプテラ};|&color(Olive){レシピ：震駭の驚濤};&br;&color(Olive){リコプテラの魚骨};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+|&attachref(./リンコードン.jpg,nolink);|&color(Olive){リンコードン};|&color(Olive){レシピ：震駭の驚濤};&br;&color(Olive){リンコードンの切り身};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+
+**ランク110～120 [#jc5ae33c]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref();|&color(Green){虹色貝殻};|釣り経験値5||
+|&attachref();|&color(Green){セツキリ白魚};|星石ポイント5||
+|&attachref();|&color(Green){茸蝸牛};|星霊ポイント5||
+|&attachref();|&color(Blue){ヒスイ蟹};|&color(Blue){ヒスイ蟹の殻};&br;&color(Blue){ヒスイ蟹の身};&br;&color(Blue){Lv103星石の欠片x2};||
+|&attachref();|&color(Blue){紅葉魚};|&color(Blue){紅葉魚の刺身};&br;&color(Blue){紅葉魚の砕骨};&br;&color(Blue){Lv103星石の欠片x2};||
+|&attachref();|&color(Orange){東方ナマズ};|&color(Orange){レシピ：海上の支配者};&br;&color(Orange){ナマズの魚肉};&br;&color(Blue){Lv103星石の欠片x2};&br;星界チケット10,5,1||
+|&attachref();|&color(Orange){剣魚};|&color(Orange){レシピ：海上の支配者};&br;&color(Orange){剣魚のひれ};&br;&color(Blue){Lv103星石の欠片x2};&br;星界チケット10,5,1||
+|&attachref();|&color(Olive){蒼白鮪};|&color(Olive){レシピ：荒波の従者};&br;&color(Olive){蒼白鮪の魚肉};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+|&attachref();|&color(Olive){銀鱗ニシン};|&color(Olive){レシピ：荒波の従者};&br;&color(Olive){銀鱗ニシンの骨};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+
+**ランク120～130 [#q327d65f]
+|CENTER:|LEFT:150|LEFT:300|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./海の雫活力.jpg);|&color(Green){海の雫：活力};|釣り経験値5||
+|&attachref(./フラワーフィッシュ.jpg);|&color(Green){フラワーフィッシュ};|星石ポイント5||
+|&attachref(./シルバーフィッシュ.jpg);|&color(Green){シルバーフィッシュ};|星霊ポイント5||
+|&attachref(./レッドテールフィッシュ.jpg);|&color(Blue){レッドテールフィッシュ};|&color(Blue){赤い尾の切り身};&br;&color(Blue){レッドテールフィッシュの骨};&br;&color(Blue){Lv108星石の欠片x2};||
+|&attachref(./スティングレイ.jpg);|&color(Blue){スティングレイ};|&color(Blue){スティングレイの歯};&br;&color(Blue){スティングレイの尻尾};&br;&color(Blue){Lv108星石の欠片x2};||
+|&attachref(./ヤナギカレイ.jpg);|&color(Orange){ヤナギカレイ};|&color(Orange){レシピ：月明かりの漁師};&br;&color(Orange){ヒラメの切り身};&br;&color(Blue){Lv108星石の欠片x2};&br;星界チケット10,5,1||
+|&attachref(./ノボリウナギ.jpg);|&color(Orange){ノボリウナギ};|&color(Orange){レシピ：月明かりの漁師};&br;&color(Orange){深海ウナギ肉};&br;&color(Blue){Lv108星石の欠片x2};&br;星界チケット10,5,1||
+|&attachref(./マダラメ.jpg);|&color(Olive){マダラメ};|&color(Olive){レシピ：荒波の渡り手};&br;&color(Olive){マダラメのヒラキ};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+|&attachref(./ヤドカリ.jpg);|&color(Olive){ヤドカリ};|&color(Olive){レシピ：荒波の渡り手};&br;&color(Olive){ヤドカリの肉};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+
+
+*大陸の主 [#x4d6a1b0]
+-概要：大陸の主を対象に生産活動を行うとQTEが発生し、成功すると&color(Blue){大海の贈り物};が手に入る。
+-大陸の主条件
+--【中央大陸】：&color(Red){釣りや採集ランクが40以上必要。};
+--【西方大陸】：&color(Red){釣りや採集ランクが80以上必要。};
+//
+//
+-特定の時間/場所に出現する。
+-出現時間
+--【中央大陸】
+|CENTER:|CENTER:|CENTER:|CENTER:|CENTER:|CENTER:|CENTER:|CENTER:|c
+|~ |~月|~火|~水|~木|~金|~土|~日|h
+|~大食いのサルム&br;&color(Blue){釣りLV40};|22:00～22:15&br;&color(Blue){釣りLV40};||14:30～14:45&br;&color(Blue){釣りLV40};|||14:30～14:45&br;&br;22:00～22:15&br;&color(Blue){釣りLV40};&br;&color(Red){採集LV40};|14:30～14:45&br;&br;22:00～22:15&br;&color(Blue){釣りLV40};&br;&color(Red){採集LV40};|
+|~のんびりカパシン&br;&color(Blue){釣りLV40};||22:00～22:15&br;&color(Blue){釣りLV40};||14:30～14:45&br;&color(Blue){釣りLV40};|22:00～22:15&br;&color(Blue){釣りLV40};|~|~|
+|~うぬぼれのジェリン&br;&color(Red){採集LV40};|14:30～14:45&br;&color(Red){採集LV40};||22:00～22:15&br;&color(Red){採集LV40};|||~|~|
+|~気高いアルター&br;&color(Red){採集LV40};||14:30～14:45&br;&color(Red){採集LV40};||22:00～22:15&br;&color(Red){採集LV40};|14:30～14:45&br;&color(Red){採集LV40};|~|~|
+|~カース・オ・ランタン&br;&color(Red){採集LV70};|14:45～15:00&br;&color(Red){採集LV70};||22:15～22:30&br;&color(Red){採集LV70};||22:15～22:30&br;&color(Red){採集LV70};|14:45～15:00&br;22:15～22:30&br;&color(Blue){釣りLV70};&br;&color(Red){採集LV70};|14:45～15:00&br;22:15～22:30&br;&color(Blue){釣りLV70};&br;&color(Red){採集LV70};|
+|~カースフィッシュ&br;&color(Blue){釣りLV70};||22:15～22:30&br;&color(Blue){釣りLV70};|22:15～22:30&br;&color(Blue){釣りLV70};||22:15～22:30&br;&color(Blue){釣りLV70};|~|~|
+|~カースヴェイス&br;&color(Red){採掘LV70};||22:15～22:30&br;&color(Red){採掘LV70};||22:15～22:30&br;&color(Red){採掘LV70};|14:45～15:00&br;&color(Red){採掘LV70};|~|~|
+#br
+--【西方大陸】
+|CENTER:|CENTER:|CENTER:|CENTER:|CENTER:|CENTER:|CENTER:|CENTER:|c
+|~ |~月|~火|~水|~木|~金|~土|~日|h
+|~怠け者ディシン&br;&color(Red){採集LV80};|14:45～15:00&br;&color(Red){採集LV80};||22:15～22:30&br;&color(Red){採集LV80};&br;&color(Blue){釣りLV80};||22:15～22:30&br;&color(Red){採集LV80};&br;&color(Blue){釣りLV80};|14:45～15:00&br;&br;22:15～22:30&br;&color(Blue){釣りLV80};&br;&color(Red){採集LV80};|14:45～15:00&br;&br;22:15～22:30&br;&color(Blue){釣りLV80};&br;&color(Red){採集LV80};|
+|~いたずらユリー&br;&color(Blue){釣りLV80};||22:15～22:30&br;&color(Blue){釣りLV80};&br;&color(Red){採集LV80};|~||~|~|~|
+|~憂鬱なルバ&br;&color(Red){採集LV80};||~||22:15～22:30&br;&color(Red){採集LV80};|14:45～15:00&br;&color(Red){採集LV80};|~|~|
+#br
+#region(全体)
+全体
+採集の主を含めた表。&color(Blue){釣りは青字};、&color(Red){採集は赤字};で表記。
+|CENTER:50|CENTER:140|CENTER:140|CENTER:140|CENTER:140|c
+|~ |~14:30～14:45|~14:45～15:00|~22:00～22:15|~22:15～22:30|h
+|~月曜日|&color(Red){うぬぼれのジェリン};|&color(Red){怠け者ディシン};&br;&color(Red){カース・オ・ランタン};|&color(Blue){大食いのサルム};||
+|~火曜日|&color(Red){気高いアルター};||&color(Blue){のんびりカパシン};|&color(Blue){いたずらユリー};&br;&color(Red){憂鬱なルバ};&br;&color(Blue){カースフィッシュ};&br;&color(Red){カースヴェイス};|
+|~水曜日|&color(Blue){大食いのサルム};|&color(Red){怠け者ディシン};&br;&color(Blue){いたずらユリー};|&color(Red){うぬぼれのジェリン};|&color(Red){カース・オ・ランタン};&br;&color(Blue){カースフィッシュ};|
+|~木曜日|&color(Blue){のんびりカパシン};||&color(Red){気高いアルター};|&color(Red){憂鬱なルバ};&br;&color(Red){カースヴェイス};|
+|~金曜日|&color(Red){気高いアルター};|&color(Red){憂鬱なルバ};&br;&color(Red){カースヴェイス};|&color(Blue){のんびりカパシン};|&color(Red){怠け者ディシン};&br;&color(Blue){いたずらユリー};&br;&color(Red){カース・オ・ランタン};&br;&color(Blue){カースフィッシュ};|
+|~土曜日|>|>|>|全て出現|
+|~日曜日|~|~|~|~|
+#endregion
+//
+//
+-出現場所
+--【中央大陸】
+---大食いのサルム：座標　X:200、Y:393(西の港近郊)
+&attachref(./大食いサルム.jpg,nolink,200x200);
+---のんびりカパシン：座標　X:294、Y:430(魚群　ランク32～40近郊)
+&attachref(./カパシン.jpg,nolink,200x200);
+---うぬぼれのジェリン：座標　X:180、Y:418(植物　ランク32～40)
+&attachref(./ジェリン.jpg,nolink,200x200);
+---気高いアルター：座標　X:361、Y:534(鉱脈　ランク24～32)
+&attachref(./気高いアルター.jpg,nolink,200x200);
+---カース・オ・ランタン：座標　X:512　Y:328(植物　ニア西方)
+&attachref(./カース・オ・ランタン.jpg,nolink,200x200);
+---カースフィッシュ：座標　X:377　Y:809(魚群　不動樹北)
+&attachref(./カースフィッシュ.jpg,nolink,200x200);
+---カースヴェイス：座標　X:581　Y:527(鉱脈　狂気の研究所北)
+&attachref(./カースヴェイス.jpg,nolink,200x200);
+#br
+--【西方大陸】
+---怠け者ディシン：座標　X:429、Y:643(植物　ランク90～100、エルハイム皇国西)
+&attachref(./怠け者ディシン.jpg,nolink,200x200);
+---いたずらユリー：座標　X:485、Y:525(魚群　ランク90～100付近、エルハイム皇国南)
+&attachref(./いたずらユリー.jpg,nolink,200x200);
+---憂鬱なルバ：座標　X:237、Y:430(鉱脈　ランク90～100、パージ砂漠近郊)
+&attachref(./ルバ.jpg,nolink,200x200);
+//
+-報酬
+--【報酬/中央大陸】
+||LEFT:150|LEFT:230|LEFT:160|LEFT:220|c
+|>|CENTER:~名称|CENTER:~内容|CENTER:~入手方法|CENTER:~備考|h
+|&attachref(./大海の贈り物.jpg,nolink,50x50);|&color(Blue){大海の贈り物};|&color(Orange){変身ジャンボカパシン};&br;&color(Blue){変身カパシン};&br;変身カパシン(3日)&br;&color(Orange){ピュアリーフグライダー};&br;&color(Blue){リーフグライダー};&br;リーフグライダー(3日)&br;&color(Orange){ヘリウムバルーン秘密基地};&br;&color(Blue){バルーン秘密基地};&br;バルーン秘密基地(3日)&br;大海のサプライズギフト&br;&color(Orange){ゴールドフィッシュ};&br;&color(Orange){ブルーメタルフィッシュ};&br;&color(Green){EXP辞典★};×15/30&br;&color(Green){熟練EXP辞典★};×15/30&br;星界チケット10/50★×1|大食いのサルム&br;又は&br;のんびりカパシンを捕獲||
+|&attachref(./バッグ青　白枠.jpg,nolink,50x50);|大海のサプライズギフト|&color(Orange){レシピ:変身ジャンボカパシン};&br;&color(Orange){レシピ:ピュアリーフグライダー};&br;&color(Orange){レシピ:ヘリウムバルーン秘密基地};&br;|&color(Blue){大海の贈り物};開封時、抽選|各種、橙アイテムレシピが入手できる。|
+|&attachref(./ゴールドフィッシュ.jpg,nolink,50x50);|&color(Orange){ゴールドフィッシュ};||&color(Blue){大海の贈り物};開封時、抽選||
+|&attachref(./ブルーメタルフィッシュ.jpg,nolink,50x50);|&color(Orange){ブルーメタルフィッシュ};||&color(Blue){大海の贈り物};開封時、抽選||
+|&attachref(./大地の贈り物.jpg,nolink,50x50);|&color(Blue){大地の贈り物};|&color(Orange){才能の芽};&br;&color(Blue){成長の芽};&br;成長の芽(3日)&br;&color(Orange){鉱山ライトヘルメット};&br;&color(Blue){鉱山ヘルメット};&br;鉱山ヘルメット(3日)&br;&color(Orange){島ラッコのサルム};&br;&color(Blue){島ラッコの子サルム};&br;島ラッコの子サルム(3日)&br;大地のサプライズギフト&br;&color(Orange){グリーンキャッツアイ};&br;&color(Orange){イエローキャッツアイ};&br;&color(Green){EXP辞典★};×15/30&br;&color(Green){熟練EXP辞典★};×15/30&br;星界チケット10/50★×1|うぬぼれのジェリン&br;又は&br;気高いアルターを捕獲||
+|&attachref(./大地サプライギフト.jpg,nolink,50x50);|大地のサプライズギフト|&color(Orange){レシピ：才能の芽};&br;&color(Orange){レシピ：鉱山ライトヘルメット};&br;&color(Orange){レシピ：島ラッコのサルム};&br;|&color(Blue){大地贈り物};開封時、抽選|各種、橙アイテムレシピ(料理/裁縫系)&br;が入手できる。|
+#br
+--【報酬/西方大陸】
+||LEFT:150|LEFT:230|LEFT:160|LEFT:220|c
+|>|CENTER:~名称|CENTER:~内容|CENTER:~入手方法|CENTER:~備考|h
+|&attachref(,nolink,50x50);|古代大海の贈り物|&color(Orange){変身ルバ};&br;&color(Blue){変身ミニルバ};&br;変身ルバ(3日)&br;&color(Orange){ピュアリーフグライダー};&br;&color(Blue){リーフグライダー};&br;リーフグライダー(3日)&br;&color(Orange){イエローぴよデラックス★};&br;&color(Blue){ぴよデラックス★};&br;ぴよデラックス★(3日)&br;古代大海のサプライズギフト&br;&color(Orange){活力烏賊};&br;&color(Orange){虹目高};&br;&color(Green){EXP辞典★};×15/30&br;&color(Green){熟練EXP辞典★};×15/30&br;星界チケット10/50★×1|いたずらユリーを捕獲||
+|&attachref(,nolink,50x50);|古代大海のサプライズギフト|&color(Orange){レシピ:変身ルバ};&br;&color(Orange){レシピ:フォールンリーフグライダー};&br;&color(Orange){レシピ:イエローぴよデラックス★};&br;|&color(Blue){古代大海の贈り物};開封時、抽選|各種、橙アイテムレシピが入手できる。|
+|&attachref(,nolink,50x50);|古代大地の贈り物|&color(Orange){フラワーリンリンリボン★};&br;&color(Blue){リンリンリボン★};&br;リンリンリボン★(3日)&br;&color(Orange){ミニハット};&br;&color(Blue){ミニハット};&br;ミニハット(3日)&br;&color(Orange){怠け者ディシン};&br;&color(Blue){ミニディシン};&br;ミニディシン(3日)&br;古代大地のサプライズギフト&br;&color(Orange){漆黒のビー玉};&br;&color(Orange){虹色のビー玉};&br;&color(Green){EXP辞典★};×15/30&br;&color(Green){熟練EXP辞典★};×15/30&br;星界チケット10/50★×1|怠け者ディシン&br;又は&br;憂鬱なルバを捕獲||
+|&attachref(,nolink,50x50);|古代大地のサプライズギフト|&color(Orange){レシピ:フラワーリンリンリボン★};&br;&color(Orange){レシピ:ミニハット};&br;&color(Orange){レシピ:怠け者ディシン};&br;|&color(Blue){古代大地の贈り物};開封時、抽選|各種、橙アイテムレシピが入手できる。|
+
+//
+//
+//
+-称号/成就
+|CENTER:20|LEFT:200|LEFT:170|RIGHT:60|RIGHT:100|LEFT:150|LEFT:150|c
+|CENTER:~番号|CENTER:~クエスト名|CENTER:~達成内容|CENTER:~達成回数|CENTER:~獲得&br;星界チケット&br;累計ポイント|CENTER:~備考|CENTER:~獲得称号|h
+|1|初めての大海原|「大食いのサルム」「のんびりカパシン」を捕獲&br;|50|5||獲得&br;（）|
+|2|海原の挑戦|~|100|5||フィッシャーマン&br;（）|
+|3|海原を征服|~|200|5||海の民&br;（）|
+||||||||
+|1|初めての大地|「うぬぼれのジェリン」「気高いアルター」を捕獲&br;|50|5||大地に立つ&br;（）|
+|2|大地の挑戦|~|100|5||岩&br;（）|
+|3|大地を征服|~|200|5||大地の民&br;（）|
+//
+//
+//
+* コメント [#bcd3ea9d]
+#pcomment(,10,reply)
+</code>

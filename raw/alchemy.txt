@@ -1,0 +1,366 @@
+<code>#include(header/production,notitle)
+----
+#contents
+
+* 概要 [#j00442ea]
+　秘密基地の作業室にある錬金台を使用して、星石やポーション、改造家具などを作ることができる。
+
+* 錬金ランク [#feb32589]
+|CENTER:|LEFT:120|LEFT:120|LEFT:400|LEFT:150|c
+|~ランク|CENTER:~称号|CENTER:~スキル|CENTER:~効果|CENTER:~備考|h
+|5|錬金見習い|薬剤輸送Lv1|移動速度が少し増加|移動速度+1%|
+|10|錬金アシスタント|レシピ交渉Lv1|合成費用が低確率で下がる||
+|15|星石量産屋|熟練錬金Lv1|合成時、獲得ランク経験値が少し増加||
+|20|専門錬金師|商人の運Lv1|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|25|錬金名人|レシピ交渉Lv2|合成費用が低確率で下がる||
+|30|歴史の証明者|熟練錬金Lv2|合成時、獲得ランク経験値が少し増加||
+|35|錬金権威|薬剤輸送Lv2|移動速度が少し増加|移動速度+1%|
+|40|秘術を知る者|レシピ交渉Lv3|合成費用が低確率で下がる||
+|45|命の創造者|熟練錬金Lv3|合成時、獲得ランク経験値が少し増加||
+|50|錬金の王|商人の運Lv2|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|55|禁断の錬金師|レシピ交渉Lv4|合成費用が低確率で下がる||
+|60|錬金術の始祖|熟練錬金Lv4|合成時、獲得ランク経験値が少し増加||
+|65|連合軍の錬金師|商人の運Lv5|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|70|女神の錬金師|レシピ交渉Lv5|合成費用が低確率で下がる||
+|75|星の錬金師|熟練錬金Lv5|合成時、獲得ランク経験値が少し増加||
+|80|幻の錬金師|商人の運Lv6|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|85|奇跡の錬金師|レシピ交渉Lv6|合成費用が低確率で下がる||
+|90|神話の錬金師|熟練錬金Lv6|合成時、獲得ランク経験値が少し増加||
+|95|仏の錬金師|商人の運Lv7|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|100|魅惑の錬金師|レシピ交渉Lv7|合成費用が低確率で下がる||
+|105|無敵の錬金師|熟練錬金Lv7|合成時、獲得ランク経験値が少し増加||
+|110|仏の錬金師|商人の運Lv8|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|115|規格外錬金師|レシピ交渉Lv8|合成費用が低確率で下がる||
+|120|超越した錬金師|熟練錬金Lv8|合成時、獲得ランク経験値が少し増加||
+* 経験値テーブル [#if8e5475]
+|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|c
+|~ランク|CENTER:~必要経験値|~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |h
+|01|  -|11|175|21|     |31|2,745|41|     |51| 9,350|61|12,045|71|14,245|81|16,445| 91|18,645|101|      |111|      |
+|02| 15|12|175|22|  805|32|     |42|     |52| 9,625|62|12,265|72|14,465|82|16,665| 92|      |102|      |112|      |
+|03| 30|13|225|23|     |33|     |43|7,150|53| 9,900|63|      |73|14,685|83|16,885| 93|      |103|      |113|      |
+|04| 30|14|225|24|     |34|     |44|7,425|54|10,175|64|12,705|74|14,905|84|17,105| 94|      |104|      |114|      |
+|05| 45|15|275|25|     |35|3,825|45|7,700|55|10,450|65|12,925|75|15,125|85|17,325| 95|      |105|      |115|      |
+|06| 45|16|325|26|1,365|36|     |46|7,975|56|10,725|66|13,145|76|15,345|86|17,545| 96|      |106|      |116|      |
+|07| 60|17|325|27|1,505|37|     |47|8,250|57|11,000|67|13,365|77|15,565|87|17,765| 97|      |107|      |117|      |
+|08| 75|18|375|28|1,645|38|     |48|8,525|58|11,275|68|13,585|78|15,785|88|17,985| 98|      |108|      |118|      |
+|09| 75|19|375|29|1,785|39|     |49|8,800|59|11,550|69|13,805|79|16,005|89|18,205| 99|      |109|      |119|      |
+|10|175|20|665|30|1,925|40|     |50|9,075|60|      |70|      |80|16,225|90|18,425|100|      |110|      |120|      |
+* 錬金 [#yb092f32]
+** 星石 [#j93df7e0]
+*** 星石の欠片 [#r06fd77d]
+|CENTER:|LEFT:160|CENTER:|LEFT:220|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./Lv28星石の欠片.jpg,nolink);|Lv28 星石の欠片|&attachref(./Lv18星石の欠片.jpg,nolink,);|Lv18 星石の欠片|5|10s|
+|&attachref(./Lv38星石の欠片.jpg,nolink);|Lv38 星石の欠片|&attachref(./Lv28星石の欠片.jpg,nolink,);|Lv28 星石の欠片|5|20s|
+|&attachref(./Lv48星石の欠片.jpg,nolink);|Lv48 星石の欠片|&attachref(./Lv38星石の欠片.jpg,nolink,);|Lv38 星石の欠片|5|40s|
+|&attachref(./Lv58星石の欠片.jpg,nolink);|Lv58 星石の欠片|&attachref(./Lv48星石の欠片.jpg,nolink,);|Lv48 星石の欠片|5|60s|
+|&attachref(./Lv63星石の欠片.jpg,nolink);|Lv63 星石の欠片|&attachref(./Lv58星石の欠片.jpg,nolink,);|Lv58 星石の欠片|5|80s|
+|&attachref(./Lv68星石の欠片.jpg,nolink);|Lv68 星石の欠片|&attachref(./Lv63星石の欠片.jpg,nolink,);|Lv63 星石の欠片|5|100s|
+|&attachref(./Lv73星石の欠片.jpg,nolink);|Lv73 星石の欠片|&attachref(./Lv68星石の欠片.jpg,nolink,);|Lv68 星石の欠片|5|120s|
+|&attachref(./Lv78星石の欠片.jpg,nolink);|Lv78 星石の欠片|&attachref(./Lv73星石の欠片.jpg,nolink,);|Lv73 星石の欠片|5|700s|
+|&attachref(./Lv83星石の欠片.jpg,nolink);|Lv83 星石の欠片|&attachref(./Lv78星石の欠片.jpg,nolink,);|Lv78 星石の欠片|5|900s|
+|&attachref(./Lv88星石の欠片.jpg,nolink);|Lv88 星石の欠片|&attachref(./Lv83星石の欠片.jpg,nolink,);|Lv83 星石の欠片|5|220s|
+|&attachref(./Lv93星石の欠片.jpg,nolink);|Lv93 星石の欠片|&attachref(./Lv88星石の欠片.jpg,nolink,);|Lv88 星石の欠片|5|1g300s|
+|&attachref(./Lv98星石の欠片.jpg,nolink);|Lv98 星石の欠片|&attachref(./Lv93星石の欠片.jpg,nolink,);|Lv93 星石の欠片|5|1g500s|
+|&attachref(./Lv103星石の欠片.jpg,nolink);|Lv103 星石の欠片|&attachref(./Lv98星石の欠片.jpg,nolink,);|Lv98 星石の欠片|5|1g700s|
+|&attachref(./Lv108星石の欠片.jpg,nolink);|Lv108 星石の欠片|&attachref(./Lv103星石の欠片.jpg,nolink,);|Lv103 星石の欠片|5|1g900s|
+*** 星石 [#xc5fc42a]
+|CENTER:|LEFT:160|CENTER:|LEFT:220|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./ひし形_未鑑定_青品質.jpg,nolink);|Lv18 未鑑定の◆赤星石&br;Lv18 未鑑定の◆青星石&br;Lv18 未鑑定の◆橙星石|&attachref(./Lv18星石の欠片.jpg,nolink,);|Lv18 星石の欠片|5|50s|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv28 未鑑定の●赤星石&br;Lv28 未鑑定の●青星石&br;Lv28 未鑑定の●橙星石|&attachref(./Lv28星石の欠片.jpg,nolink,);|Lv28 星石の欠片|5|100s|
+|&attachref(./三角_未鑑定_青品質_0.jpg,nolink);|Lv38 未鑑定の▲赤星石&br;Lv38 未鑑定の▲青星石&br;Lv38 未鑑定の▲橙星石|&attachref(./Lv38星石の欠片.jpg,nolink,);|Lv38 星石の欠片|5|200s|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv48 未鑑定の●赤星石&br;Lv48 未鑑定の●青星石&br;Lv48 未鑑定の●橙星石|&attachref(./Lv48星石の欠片.jpg,nolink,);|Lv48 星石の欠片|5|300s|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv58 未鑑定の●赤星石&br;Lv58 未鑑定の●青星石&br;Lv58 未鑑定の●橙星石|&attachref(./Lv58星石の欠片.jpg,nolink,);|Lv58 星石の欠片|5|900s|
+|&attachref(./ひし形_未鑑定_青品質.jpg,nolink);|Lv63 未鑑定の◆赤星石&br;Lv63 未鑑定の◆青星石&br;Lv63 未鑑定の◆橙星石|&attachref(./Lv63星石の欠片.jpg,nolink,);|Lv63 星石の欠片|5|1g800s|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv68 未鑑定の●赤星石&br;Lv68 未鑑定の●青星石&br;Lv68 未鑑定の●橙星石|&attachref(./Lv68星石の欠片.jpg,nolink,);|Lv68 星石の欠片|5|3g|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv73 未鑑定の●赤星石&br;Lv73 未鑑定の●青星石&br;Lv73 未鑑定の●橙星石|&attachref(./Lv73星石の欠片.jpg,nolink,);|Lv73 星石の欠片|5|4g600s|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv78 未鑑定の●赤星石&br;Lv78 未鑑定の●青星石&br;Lv78 未鑑定の●橙星石|&attachref(./Lv78星石の欠片.jpg,nolink,);|Lv78 星石の欠片|5|6g800s|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv83 未鑑定の●赤星石&br;Lv83 未鑑定の●青星石&br;Lv83 未鑑定の●橙星石|&attachref(./Lv83星石の欠片.jpg,nolink,);|Lv83 星石の欠片|5|8g|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv88 未鑑定の●赤星石&br;Lv88 未鑑定の●青星石&br;Lv88 未鑑定の●橙星石|&attachref(./Lv88星石の欠片.jpg,nolink,);|Lv88 星石の欠片|5|9g200s|
+|&attachref(./ひし形_未鑑定_青品質.jpg,nolink);|Lv93 未鑑定の◆赤星石&br;Lv93 未鑑定の◆青星石&br;Lv93 未鑑定の◆橙星石|&attachref(./Lv93星石の欠片.jpg,nolink,);|Lv93 星石の欠片|5|52g|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv98 未鑑定の●赤星石&br;Lv98 未鑑定の●青星石&br;Lv98 未鑑定の●橙星石|&attachref(./Lv98星石の欠片.jpg,nolink,);|Lv98 星石の欠片|5|58g|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv103 未鑑定の●赤星石&br;Lv103 未鑑定の●青星石&br;Lv103 未鑑定の●橙星石|&attachref(./Lv103星石の欠片.jpg,nolink,);|Lv103 星石の欠片|5|64g|
+|&attachref(./丸_未鑑定_青品質.jpg,nolink);|Lv108 未鑑定の●赤星石&br;Lv108 未鑑定の●青星石&br;Lv108 未鑑定の●橙星石|&attachref(./Lv108星石の欠片.jpg,nolink,);|Lv108 星石の欠片|5|70g|
+|&attachref(./ひし形_未鑑定_金品質.jpg,nolink);|Lv95 未鑑定の◆橙星石|&attachref(./異変石の欠片.jpg,nolink,);|異変石の欠片|5|31g200s|
+|~|~|&attachref(./真古神の残滓.jpg,nolink,);|真古神の残涬|2|~|
+|&attachref(./三角_未鑑定_金品質.jpg,nolink);|Lv100 未鑑定の▲橙星石|&attachref(./永眠の花.jpg,nolink,);|永眠の花|5|174g|
+|~|~|&attachref(./犠牲エネルギー.jpg,nolink,);|犠牲エネルギー|2|~|
+|&attachref(./三角_未鑑定_金品質.jpg,nolink);|Lv105 未鑑定の▲橙星石|&attachref(./異変のルーン.jpg,nolink,);|異変のルーン|5|192g|
+|~|~|&attachref(./滅世エネルギー.jpg,nolink,);|滅世エネルギー|2|~|
+|&attachref(./三角_未鑑定_金品質.jpg,nolink);|Lv110 未鑑定の▲橙星石|&attachref(./変異セツキリソウ.jpg,nolink,);|変異セツキリソウ|5|212g|
+|~|~|&attachref(./簒奪エネルギー.jpg,nolink,);|簒奪エネルギー|2|~|
+|&attachref(./三角_未鑑定_金品質.jpg,nolink);|Lv100 未鑑定の▲橙星石|&attachref(./戦争の残照.jpg,nolink,);|戦争の残照|5|232g|
+|~|~|&attachref(./記憶の羽根.jpg,nolink,);|記憶の羽根|2|~|
+** ポーション [#td5e390b]
+*** 溶液 [#r6024f7d]
+ポーションを作るための溶液です。これがないと何もポーションを作れません。
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./試験溶液.jpg,nolink);|試験溶液|&attachref(./蒸留水.jpg,nolink,);|蒸留水|1|32s|
+|~|~|&attachref(./夜光花.jpg,nolink,);|夜光花|1|~|
+|&attachref(./ポーション溶液.jpg,nolink);|ポーション溶液|&attachref(./アルコール液.jpg,nolink,);|アルコール液|1|48s|
+|~|~|&attachref(./ガッツフルーツ.jpg,nolink,);|ガッツフルーツ|1|~|
+|&attachref(./錬金溶液.jpg,nolink);|錬金溶液|&attachref(./錬金溶剤.jpg,nolink,);|錬金溶剤|1|64s|
+|~|~|&attachref(./賢者草.jpg,nolink,);|賢者草|1|~|
+|&attachref(./幻想溶液.jpg,nolink);|幻想溶液|&attachref(./幻想溶剤.jpg,nolink,);|幻想溶剤|1|80s|
+|~|~|&attachref(./ピックフラワー.jpg,nolink,);|ピックフラワー|1|~|
+|&attachref(./炭星溶液.jpg,nolink);|炭星溶液|&attachref(./炭星溶剤.jpg,nolink,);|炭星溶剤|1|100s|
+|~|~|&attachref(./石蓮花.jpg,nolink,);|石蓮花|1|~|
+|&attachref(./ミネラル酸溶液.jpg,nolink);|ミネラル酸溶液|&attachref(./ミネラル酸溶剤.jpg,nolink,);|ミネラル酸溶剤|1|120s|
+|~|~|&attachref(./如意草.jpg,nolink,);|如意草|1|~|
+|&attachref(./融解溶液.jpg,nolink);|融解溶液|&attachref(./融解溶剤.jpg,nolink,);|融解溶剤|1|140s|
+|~|~|&attachref(./仙鶴草.jpg,nolink,);|仙鶴草|1|~|
+|&attachref(./千錘溶液.jpg,nolink);|千錘溶液|&attachref(./千錘溶剤.jpg,nolink,);|千錘溶剤|1|800s|
+|~|~|&attachref(./セージ.jpg,nolink,);|セージ|1|~|
+|&attachref(./錬金液.jpg,nolink);|錬金液|&attachref(./錬金溶剤2.jpg,nolink,);|錬金溶剤|1|900s|
+|~|~|&attachref(./西方草.jpg,nolink,);|西方草|1|~|
+|&attachref(./桜樹溶剤.jpg,nolink);|桜樹溶剤|&attachref(./桜樹溶剤2.jpg,nolink,);|桜樹溶剤|1|1g|
+|~|~|&attachref(./翡翠の星草.jpg,nolink,);|翡翠の星草|1|~|
+|&attachref(./幻惑溶液.jpg,nolink);|幻惑溶液|&attachref(./幻惑溶剤.jpg,nolink,);|幻惑溶剤|1|1g100s|
+|~|~|&attachref(./青草.jpg,nolink,);|青草|1|~|
+***初級ポーション [#d87d451e]
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./超回復ポーション.jpg,nolink);|超回復ポーション|&attachref(./試験溶液.jpg,nolink,);|試験溶液|1|8s|
+|~|~|&attachref(./モナエシの実.jpg,nolink,);|モナエシの実|1|~|
+|&attachref(./攻撃力増幅ポーション.jpg,nolink);|攻撃力増幅ポーション|&attachref(./試験溶液.jpg,nolink,);|試験溶液|1|~|
+|~|~|&attachref(./闘争花.jpg,nolink,);|闘争花|1|~|
+|&attachref(./会心増幅ポーション.jpg,nolink);|会心増幅ポーション|&attachref(./試験溶液.jpg,nolink,);|試験溶液|1|~|
+|~|~|&attachref(./せっかちビーンズ.jpg,nolink,);|せっかちビーンズ|1|~|
+|&attachref(./攻撃速度増幅ポーション.jpg,nolink);|攻撃速度増幅ポーション|&attachref(./試験溶液.jpg,nolink,);|試験溶液|1|~|
+|~|~|&attachref(./バニーキノコ.jpg,nolink,);|バニーキノコ|1|~|
+|&attachref(./HP増幅ポーション.jpg,nolink);|HP増幅ポーション|&attachref(./試験溶液.jpg,nolink,);|試験溶液|1|~|
+|~|~|&attachref(./キラキラシロナ.jpg,nolink,);|キラキラシロナ|1|~|
+|&attachref(./防御力増幅ポーション.jpg,nolink);|防御力増幅ポーション|&attachref(./試験溶液.jpg,nolink,);|試験溶液|1|~|
+|~|~|&attachref(./タフの実.jpg,nolink,);|タフの実|1|~|
+|&attachref(./回避増幅ポーション.jpg,nolink);|回避増幅ポーション|&attachref(./試験溶液.jpg,nolink,);|試験溶液|1|~|
+|~|~|&attachref(./コロコロメロニー.jpg,nolink,);|コロコロメロニー|1|~|
+***中級ポーション [#kdb73f29]
+
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./中級超回復ポーション.jpg,nolink);|中級超回復ポーション|&attachref(./ポーション溶液.jpg,nolink,);|ポーション溶液|1|12s|
+|~|~|&attachref(./命の実.jpg,nolink,);|命の実|1|~|
+|&attachref(./中級攻撃力増幅ポーション.jpg,nolink);|中級攻撃力増幅ポーション|&attachref(./ポーション溶液.jpg,nolink,);|ポーション溶液|1|~|
+|~|~|&attachref(./巨人花.jpg,nolink,);|巨人花|1|~|
+|&attachref(./中級会心増幅ポーション.jpg,nolink);|中級会心増幅ポーション|&attachref(./ポーション溶液.jpg,nolink,);|ポーション溶液|1|~|
+|~|~|&attachref(./ボムビーンズ.jpg,nolink,);|ボムビーンズ|1|~|
+|&attachref(./中級攻撃速度増幅ポーション.jpg,nolink);|中級攻撃速度増幅ポーション|&attachref(./ポーション溶液.jpg,nolink,);|ポーション溶液|1|~|
+|~|~|&attachref(./パンサーキノコ.jpg,nolink,);|パンサーキノコ|1|~|
+|&attachref(./中級HP増幅ポーション.jpg,nolink);|中級HP増幅ポーション|&attachref(./ポーション溶液.jpg,nolink,);|ポーション溶液|1|~|
+|~|~|&attachref(./神聖シロナ.jpg,nolink,);|神聖シロナ|1|~|
+|&attachref(./中級防御力増幅ポーション.jpg,nolink);|中級防御力増幅ポーション|&attachref(./ポーション溶液.jpg,nolink,);|ポーション溶液|1|~|
+|~|~|&attachref(./スチールの実.jpg,nolink,);|スチールの実|1|~|
+|&attachref(./中級回避増幅ポーション.jpg,nolink);|中級回避増幅ポーション|&attachref(./ポーション溶液.jpg,nolink,);|ポーション溶液|1|~|
+|~|~|&attachref(./クリンネスメロニー.jpg,nolink,);|クリンネスメロニー|1|~|
+***高級ポーション [#xd817b60]
+
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./高級超回復ポーション.jpg,nolink);|高級超回復ポーション|&attachref(./錬金溶液.jpg,nolink,);|錬金溶液|1|16s|
+|~|~|&attachref(./星界の実.jpg,nolink,);|星界の実|1|~|
+|&attachref(./高級攻撃力増幅ポーション.jpg,nolink);|高級攻撃力増幅ポーション|&attachref(./錬金溶液.jpg,nolink,);|錬金溶液|1|~|
+|~|~|&attachref(./勝利の花.jpg,nolink,);|勝利の花|1|~|
+|&attachref(./高級会心増幅ポーション.jpg,nolink);|高級会心増幅ポーション|&attachref(./錬金溶液.jpg,nolink,);|錬金溶液|1|~|
+|~|~|&attachref(./ハレッドビーンズ.jpg,nolink,);|ハレッドビーンズ|1|~|
+|&attachref(./高級攻撃速度増幅ポーション.jpg,nolink);|高級攻撃速度増幅ポーション|&attachref(./錬金溶液.jpg,nolink,);|錬金溶液|1|~|
+|~|~|&attachref(./エクレアキノコ.jpg,nolink,);|エクレアキノコ|1|~|
+|&attachref(./高級HP増幅ポーション.jpg,nolink);|高級HP増幅ポーション|&attachref(./錬金溶液.jpg,nolink,);|錬金溶液|1|~|
+|~|~|&attachref(./奇跡のシロナ.jpg,nolink,);|奇跡のシロナ|1|~|
+|&attachref(./高級防御力増幅ポーション.jpg,nolink);|高級防御力増幅ポーション|&attachref(./錬金溶液.jpg,nolink,);|錬金溶液|1|~|
+|~|~|&attachref(./不敗の実.jpg,nolink,);|不敗の実|1|~|
+|&attachref(./高級回避増幅ポーション.jpg,nolink);|高級回避増幅ポーション|&attachref(./錬金溶液.jpg,nolink,);|錬金溶液|1|~|
+|~|~|&attachref(./究極メロニー.jpg,nolink,);|究極メロニー|1|~|
+***特級ポーション [#j45dc453]
+
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./特級超回復ポーション.jpg,nolink);|特級超回復ポーション|&attachref(./幻想溶剤.jpg,nolink,);|幻想溶液|1|40s|
+|~|~|&attachref(./ブラッディフルーツ.jpg,nolink,);|ブラッディフルーツ|1|~|
+|&attachref(./特級攻撃力増幅ポーション.jpg,nolink);|特級攻撃力増幅ポーション|&attachref(./幻想溶剤.jpg,nolink,);|幻想溶液|1|~|
+|~|~|&attachref(./鋼毅の花.jpg,nolink,);|鋼毅の花|1|~|
+|&attachref(./特級会心増幅ポーション.jpg,nolink);|特級会心増幅ポーション|&attachref(./幻想溶剤.jpg,nolink,);|幻想溶液|1|~|
+|~|~|&attachref(./ブルービーンズ.jpg,nolink,);|ブルービーンズ|1|~|
+|&attachref(./特級攻撃速度増幅ポーション.jpg,nolink);|特級攻撃速度増幅ポーション|&attachref(./幻想溶剤.jpg,nolink,);|幻想溶液|1|~|
+|~|~|&attachref(./ミラージュキノコ.jpg,nolink,);|ミラージュキノコ|1|~|
+|&attachref(./特級HP増幅ポーション.jpg,nolink);|特級HP増幅ポーション|&attachref(./幻想溶剤.jpg,nolink,);|幻想溶液|1|~|
+|~|~|&attachref(./ぶっとび白菜.jpg,nolink,);|ぶっとび白菜|1|~|
+|&attachref(./特級防御力増幅ポーション.jpg,nolink);|特級防御力増幅ポーション|&attachref(./幻想溶剤.jpg,nolink,);|幻想溶液|1|~|
+|~|~|&attachref(./バーンフルーツ.jpg,nolink,);|バーンフルーツ|1|~|
+|&attachref(./特級回避増幅ポーション.jpg,nolink);|特級回避増幅ポーション|&attachref(./幻想溶剤.jpg,nolink,);|幻想溶液|1|~|
+|~|~|&attachref(./ゴールデンメロン.jpg,nolink,);|ゴールデンメロン|1|~|
+***最高級ポーション [#n3a54561]
+
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./最高級回復ポーション.jpg,nolink);|最高級回復ポーション|&attachref(./炭星溶液.jpg,nolink,);|炭星溶液|1|120s|
+|~|~|&attachref(./エルフの実.jpg,nolink,);|エルフの実|1|~|
+|&attachref(./最高級攻撃力増幅ポーション.jpg,nolink);|最高級攻撃力増幅ポーション|&attachref(./炭星溶液.jpg,nolink,);|炭星溶液|1|~|
+|~|~|&attachref(./晴天の花.jpg,nolink,);|晴天の花|1|~|
+|&attachref(./最高級会心増幅ポーション.jpg,nolink);|最高級会心増幅ポーション|&attachref(./炭星溶液.jpg,nolink,);|炭星溶液|1|~|
+|~|~|&attachref(./ダナビーンズ.jpg,nolink,);|ダナビーンズ|1|~|
+|&attachref(./最高級速度増幅ポーション.jpg,nolink);|最高級速度増幅ポーション|&attachref(./炭星溶液.jpg,nolink,);|炭星溶液|1|~|
+|~|~|&attachref(./パワーキノコ.jpg,nolink,);|パワーキノコ|1|~|
+|&attachref(./最高級HP増幅ポーション.jpg,nolink);|最高級HP増幅ポーション|&attachref(./炭星溶液.jpg,nolink,);|炭星溶液|1|~|
+|~|~|&attachref(./スパークリングハクサイ.jpg,nolink,);|スパークリングハクサイ|1|~|
+|&attachref(./最高級防御力増幅ポーション.jpg,nolink);|最高級防御力増幅ポーション|&attachref(./炭星溶液.jpg,nolink,);|炭星溶液|1|~|
+|~|~|&attachref(./神子の実.jpg,nolink,);|神子の実|1|~|
+|&attachref(./最高級回避増幅ポーション.jpg,nolink);|最高級回避増幅ポーション|&attachref(./炭星溶液.jpg,nolink,);|炭星溶液|1|~|
+|~|~|&attachref(./マジックメロン.jpg,nolink,);|マジックメロン|1|~|
+***頂級ポーション [#q15cb1f1]
+
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./頂級回復ポーション.jpg,nolink);|頂級回復ポーション|&attachref(./ミネラル酸溶剤.jpg,nolink,);|ミネラル酸溶液|1|200s|
+|~|~|&attachref(./旋律の実.jpg,nolink,);|旋律の実|1|~|
+|&attachref(./頂級攻撃力増幅ポーション.jpg,nolink);|頂級攻撃力増幅ポーション|&attachref(./ミネラル酸溶剤.jpg,nolink,);|ミネラル酸溶液|1|~|
+|~|~|&attachref(./プロテア.jpg,nolink,);|プロテア|1|~|
+|&attachref(./頂級会心増幅ポーション.jpg,nolink);|頂級会心増幅ポーション|&attachref(./ミネラル酸溶剤.jpg,nolink,);|ミネラル酸溶液|1|~|
+|~|~|&attachref(./七味の実.jpg,nolink,);|七味の実|1|~|
+|&attachref(./頂級速度増幅ポーション.jpg,nolink);|頂級速度増幅ポーション|&attachref(./ミネラル酸溶剤.jpg,nolink,);|ミネラル酸溶液|1|~|
+|~|~|&attachref(./幽暗マツタケ.jpg,nolink,);|幽暗マツタケ|1|~|
+|&attachref(./頂級HP増幅ポーション.jpg,nolink);|頂級HP増幅ポーション|&attachref(./ミネラル酸溶剤.jpg,nolink,);|ミネラル酸溶液|1|~|
+|~|~|&attachref(./月桃.jpg,nolink,);|月桃|1|~|
+|&attachref(./頂級防御力増幅ポーション.jpg,nolink);|頂級防御力増幅ポーション|&attachref(./ミネラル酸溶剤.jpg,nolink,);|ミネラル酸溶液|1|~|
+|~|~|&attachref(./龍樹の実.jpg,nolink,);|龍樹の実|1|~|
+|&attachref(./頂級回避増幅ポーション.jpg,nolink);|頂級回避増幅ポーション|&attachref(./ミネラル酸溶剤.jpg,nolink,);|ミネラル酸溶液|1|~|
+|~|~|&attachref(./マジックイチゴ.jpg,nolink,);|マジックイチゴ|1|~|
+***伝説級ポーション [#dd42e30d]
+
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./伝説級回復ポーション.jpg,nolink);|伝説級回復ポーション|&attachref(./融解溶液.jpg,nolink,);|融解溶液|1|280s|
+|~|~|&attachref(./ヒヨス.jpg,nolink,);|ヒヨス|1|~|
+|&attachref(./伝説級攻撃力増幅ポーション.jpg,nolink);|伝説級攻撃力増幅ポーション|&attachref(./融解溶液.jpg,nolink,);|融解溶液|1|~|
+|~|~|&attachref(./オニフジ.jpg,nolink,);|オニフジ|1|~|
+|&attachref(./伝説級会心増幅ポーション.jpg,nolink);|伝説級会心増幅ポーション|&attachref(./融解溶液.jpg,nolink,);|融解溶液|1|~|
+|~|~|&attachref(./クリ.jpg,nolink,);|クリ|1|~|
+|&attachref(./伝説級速度増幅ポーション.jpg,nolink);|伝説級速度増幅ポーション|&attachref(./融解溶液.jpg,nolink,);|融解溶液|1|~|
+|~|~|&attachref(./オニキノコ.jpg,nolink,);|オニキノコ|1|~|
+|&attachref(./伝説級HP増幅ポーション.jpg,nolink);|伝説級HP増幅ポーション|&attachref(./融解溶液.jpg,nolink,);|融解溶液|1|~|
+|~|~|&attachref(./カシーベリー.jpg,nolink,);|カシーベリー|1|~|
+|&attachref(./伝説級防御力増幅ポーション.jpg,nolink);|伝説級防御力増幅ポーション|&attachref(./融解溶液.jpg,nolink,);|融解溶液|1|~|
+|~|~|&attachref(./アーチメロン.jpg,nolink,);|アーチメロン|1|~|
+|&attachref(./伝説級回避増幅ポーション.jpg,nolink);|伝説級回避増幅ポーション|&attachref(./融解溶液.jpg,nolink,);|融解溶液|1|~|
+|~|~|&attachref(./パイナップル.jpg,nolink,);|パイナップル|1|~|
+
+***変異ポーション [#fc919aaf]
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./変異回復ポーション.jpg,nolink);|変異回復ポーション|&attachref(./千錘溶液.jpg,nolink,);|千錘溶液|1|1g800s|
+|~|~|&attachref(./レプトクロアの葉.jpg,nolink,);|レプトクロアの葉|1|~|
+|&attachref(./変異攻撃力増幅ポーション.jpg,nolink);|変異攻撃力増幅ポーション|&attachref(./千錘溶液.jpg,nolink,);|千錘溶液|1|~|
+|~|~|&attachref(./アンバルン.jpg,nolink,);|アンバルン|1|~|
+|&attachref(./変異会心増幅ポーション.jpg,nolink);|変異会心増幅ポーション|&attachref(./千錘溶液.jpg,nolink,);|千錘溶液|1|~|
+|~|~|&attachref(./西方ピーナッツ.jpg,nolink,);|西方ピーナッツ|1|~|
+|&attachref(./変異速度増幅ポーション.jpg,nolink);|変異速度増幅ポーション|&attachref(./千錘溶液.jpg,nolink,);|千錘溶液|1|~|
+|~|~|&attachref(./クリットキノコ.jpg,nolink,);|クリットキノコ|1|~|
+|&attachref(./変異HP増幅ポーション.jpg,nolink);|変異HP増幅ポーション|&attachref(./千錘溶液.jpg,nolink,);|千錘溶液|1|~|
+|~|~|&attachref(./ラブラズベリー.jpg,nolink,);|ラブラズベリー|1|~|
+|&attachref(./変異防御力増幅ポーション.jpg,nolink);|変異防御力増幅ポーション|&attachref(./千錘溶液.jpg,nolink,);|千錘溶液|1|~|
+|~|~|&attachref(./スモールニュートウリ.jpg,nolink,);|スモールニュートウリ|1|~|
+|&attachref(./変異回避増幅ポーション.jpg,nolink);|変異回避増幅ポーション|&attachref(./千錘溶液.jpg,nolink,);|千錘溶液|1|~|
+|~|~|&attachref(./フィーカス.jpg,nolink,);|フィーカス|1|~|
+
+***狂暴ポーション [#y9ddf397]
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./狂暴回復ポーション.jpg,nolink);|狂暴回復ポーション|&attachref(./錬金液.jpg,nolink,);|錬金液|1|2g200s|
+|~|~|&attachref(./西方トマト.jpg,nolink,);|西方トマト|1|~|
+|&attachref(./狂暴攻撃力増幅ポーション.jpg,nolink);|狂暴攻撃力増幅ポーション|&attachref(./錬金液.jpg,nolink,);|錬金液|1|~|
+|~|~|&attachref(./ルッファ.jpg,nolink,);|ルッファ|1|~|
+|&attachref(./狂暴会心増幅ポーション.jpg,nolink);|狂暴会心増幅ポーション|&attachref(./錬金液.jpg,nolink,);|錬金液|1|~|
+|~|~|&attachref(./ペーラ.jpg,nolink,);|ペーラ|1|~|
+|&attachref(./狂暴速度増幅ポーション.jpg,nolink);|狂暴速度増幅ポーション|&attachref(./錬金液.jpg,nolink,);|錬金液|1|~|
+|~|~|&attachref(./スリーズ.jpg,nolink,);|スリーズ|1|~|
+|&attachref(./狂暴HP増幅ポーション.jpg,nolink);|狂暴HP増幅ポーション|&attachref(./錬金液.jpg,nolink,);|錬金液|1|~|
+|~|~|&attachref(./ミルティーリ.jpg,nolink,);|ミルティーリ|1|~|
+|&attachref(./狂暴防御力増幅ポーション.jpg,nolink);|狂暴防御力増幅ポーション|&attachref(./錬金液.jpg,nolink,);|錬金液|1|~|
+|~|~|&attachref(./クリザンテモ.jpg,nolink,);|クリザンテモ|1|~|
+|&attachref(./狂暴回避増幅ポーション.jpg,nolink);|狂暴回避増幅ポーション|&attachref(./錬金液.jpg,nolink,);|錬金液|1|~|
+|~|~|&attachref(./ククミス.jpg,nolink,);|ククミス|1|~|
+
+***奇怪なポーション [#t93abd0d]
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./奇怪な回復ポーション.jpg,nolink);|奇怪な回復ポーション|&attachref(./桜樹溶剤.jpg,nolink,);|桜樹溶剤|1|2g600s|
+|~|~|&attachref(./セツキリ瓜.jpg,nolink,);|セツキリ瓜|1|~|
+|&attachref(./奇怪な攻撃力増幅ポーション.jpg,nolink);|奇怪な攻撃力増幅ポーション|&attachref(./桜樹溶剤.jpg,nolink,);|桜樹溶剤|1|~|
+|~|~|&attachref(./刃豆.jpg,nolink,);|刃豆|1|~|
+|&attachref(./奇怪な会心増幅ポーション.jpg,nolink);|奇怪な会心増幅ポーション|&attachref(./桜樹溶剤.jpg,nolink,);|桜樹溶剤|1|~|
+|~|~|&attachref(./スターミント.jpg,nolink,);|スターミント|1|~|
+|&attachref(./奇怪な速度増幅ポーション.jpg,nolink);|奇怪な速度増幅ポーション|&attachref(./桜樹溶剤.jpg,nolink,);|桜樹溶剤|1|~|
+|~|~|&attachref(./ラクオウの根.jpg,nolink,);|ラクオウの根|1|~|
+|&attachref(./奇怪なHP増幅ポーション.jpg,nolink);|奇怪なHP増幅ポーション|&attachref(./桜樹溶剤.jpg,nolink,);|桜樹溶剤|1|~|
+|~|~|&attachref(./冬蟲春草.jpg,nolink,);|冬蟲春草|1|~|
+|&attachref(./奇怪な防御力増幅ポーション.jpg,nolink);|奇怪な防御力増幅ポーション|&attachref(./桜樹溶剤.jpg,nolink,);|桜樹溶剤|1|~|
+|~|~|&attachref(./睡蓮.jpg,nolink,);|睡蓮|1|~|
+|&attachref(./奇怪な回避増幅ポーション.jpg,nolink);|奇怪な回避増幅ポーション|&attachref(./桜樹溶剤.jpg,nolink,);|桜樹溶剤|1|~|
+|~|~|&attachref(./パッション果実.jpg,nolink,);|パッション果実|1|~|
+
+***幻惑のポーション [#n8d3dd44]
+|CENTER:|LEFT:180|CENTER:|LEFT:200|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./幻惑の回復ポーション.jpg,nolink);|幻惑の回復ポーション|&attachref(./幻惑溶液.jpg,nolink,);|幻惑溶液|1|3g|
+|~|~|&attachref(./フグア.jpg,nolink,);|フグア|1|~|
+|&attachref(./幻惑の攻撃力増幅ポーション.jpg,nolink);|幻惑の攻撃力増幅ポーション|&attachref(./幻惑溶液.jpg,nolink,);|幻惑溶液|1|~|
+|~|~|&attachref(./インゲン豆.jpg,nolink,);|インゲン豆|1|~|
+|&attachref(./幻惑の会心増幅ポーション.jpg,nolink);|幻惑の会心増幅ポーション|&attachref(./幻惑溶液.jpg,nolink,);|幻惑溶液|1|~|
+|~|~|&attachref(./トングア.jpg,nolink,);|トングア|1|~|
+|&attachref(./幻惑の速度増幅ポーション.jpg,nolink);|幻惑の速度増幅ポーション|&attachref(./幻惑溶液.jpg,nolink,);|幻惑溶液|1|~|
+|~|~|&attachref(./クランベリー.jpg,nolink,);|クランベリー|1|~|
+|&attachref(./幻惑のHP増幅ポーション.jpg,nolink);|幻惑のHP増幅ポーション|&attachref(./幻惑溶液.jpg,nolink,);|幻惑溶液|1|~|
+|~|~|&attachref(./スターアニス.jpg,nolink,);|スターアニス|1|~|
+|&attachref(./幻惑の防御力増幅ポーション.jpg,nolink);|幻惑の防御力増幅ポーション|&attachref(./幻惑溶液.jpg,nolink,);|幻惑溶液|1|~|
+|~|~|&attachref(./さやえんどう.jpg,nolink,);|さやえんどう|1|~|
+|&attachref(./幻惑の回避増幅ポーション.jpg,nolink);|幻惑の回避増幅ポーション|&attachref(./幻惑溶液.jpg,nolink,);|幻惑溶液|1|~|
+|~|~|&attachref(./ビューティフルーツ.jpg,nolink,);|ビューティフルーツ|1|~|
+
+
+** 改造家具 [#ybd36b82]
+|CENTER:|LEFT:160|CENTER:|LEFT:220|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(./未鑑定のクリプタデスク.jpg,nolink);|未鑑定のクリプタデスク|&attachref(./クリプタデスク.jpg,nolink,);|クリプタデスク|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|3|~|
+|&attachref(,nolink);|未鑑定のクリプタベンチ|&attachref(,nolink,);|クリプタベンチ|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|1|~|
+|&attachref(,nolink);|未鑑定のクリプタシェルフ|&attachref(,nolink,);|クリプタシェルフ|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|5|~|
+|&attachref(,nolink);|未鑑定のクリプタダブルベッド|&attachref(,nolink,);|クリプタダブルベッド|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|8|~|
+|&attachref(,nolink);|未鑑定のオーシャンチェアー|&attachref(,nolink,);|オーシャンチェアー|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|3|~|
+|&attachref(,nolink);|未鑑定のオーシャンソファー|&attachref(,nolink,);|オーシャンソファー|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|8|~|
+|&attachref(,nolink);|未鑑定のオーシャンダブルベッド|&attachref(,nolink,);|オーシャンダブルベッド|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|8|~|
+|&attachref(,nolink);|未鑑定のメルヘンソファー|&attachref(,nolink,);|メルヘンソファー|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|3|~|
+|&attachref(,nolink);|未鑑定のメルヘンダブルベッド|&attachref(,nolink,);|メルヘンダブルベッド|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|8|~|
+|&attachref(,nolink);|未鑑定のハロウィン顔出しパネル|&attachref(,nolink,);|ハロウィン顔出しパネル|1|5g440s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|5|~|
+|&attachref(,nolink);|未鑑定のパンプキン顔出しパネル|&attachref(,nolink,);|パンプキン顔出しパネル|1|5g440s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|5|~|
+|&attachref(,nolink);|未鑑定のカエルベンチ|&attachref(,nolink,);|カエルベンチ|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|1|~|
+|&attachref(,nolink);|未鑑定のクジラ浴槽|&attachref(,nolink,);|クジラ浴槽|1|1g88s|
+|~|~|&attachref(./改装説明書.jpg,nolink,);|改装説明書|1|~|
+|~|~|&attachref(./魔力に満ちた材料.jpg,nolink,);|魔力に満ちた材料|10|~|
+
+*コメント [#hb659ce5]
+#pcomment(,10,reply)
+</code>

@@ -1,0 +1,232 @@
+/* 詳細ページ・一覧ページ */
+.block {
+  margin: 2rem 0;
+}
+
+.block > h2,
+.block > summary {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--ink);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+summary {
+  cursor: pointer;
+}
+
+summary small,
+h2 small {
+  margin-left: 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--sub);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+caption {
+  padding: 1rem 0 0.3rem;
+  text-align: left;
+  font-weight: 700;
+}
+
+th,
+td {
+  padding: 0.45rem 0.6rem 0.45rem 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--hair);
+}
+
+th {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--sub);
+  white-space: nowrap;
+}
+
+.num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.sub {
+  font-size: 0.85rem;
+  color: var(--sub);
+}
+
+.recipe + .recipe {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--hair);
+}
+
+.recipe-head {
+  margin: 0 0 0.25rem;
+}
+
+.cost,
+.mini {
+  font-size: 0.8rem;
+  color: var(--sub);
+}
+
+.cost {
+  margin-left: 0.6rem;
+}
+
+.mini {
+  margin-left: 0.3rem;
+}
+
+.qty {
+  margin-left: 0.4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1.2rem;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  margin: 1rem 0 0;
+}
+
+.toolbar input[type='search'] {
+  flex: 1 1 14rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  appearance: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.check {
+  font-size: 0.9rem;
+}
+
+/* 仮想スクロールの一覧: 行は div。画面に見える行だけを絶対配置する */
+.vl-body {
+  position: relative;
+  width: 100%;
+}
+
+.vl-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.vrow {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1.1fr) minmax(8rem, 1.6fr) minmax(8rem, 2fr);
+  gap: 0.2rem 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--hair);
+  font-size: 0.95rem;
+}
+
+.vrow.two {
+  grid-template-columns: minmax(8rem, 1fr) minmax(8rem, 2fr);
+}
+
+.vrow.head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--paper);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--sub);
+}
+
+.vrow.title {
+  display: block;
+  padding: 1.6rem 0 0.3rem;
+  border-bottom: 2px solid var(--ink);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.vcell {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.vlabel {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .vrow,
+  .vrow.two {
+    grid-template-columns: 1fr;
+  }
+
+  .vrow.head {
+    display: none;
+  }
+
+  .vlabel {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--sub);
+  }
+}
+
+/* 生産系ページの区分の目次 */
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 1px 0 0;
+}
+
+.group:first-of-type .section-title {
+  margin-top: 1rem;
+}
+
+/* 素材の合計 */
+.count-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+}
+
+.count-input input {
+  width: 6rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}

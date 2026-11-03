@@ -1,0 +1,24 @@
+{
+  "_readme": "wikiの表にはなく、説明文にだけ書かれているレシピの手入力。craft=生産系ID、out=成果物、in=材料(item, qty)、cost=費用、note=備考。npm run build:data で取り込まれる。出典は raw/farming.txt の『作物 / 共通』の説明欄(レッドローズ)。",
+  "recipes": [
+    {
+      "craft": "cooking",
+      "out": "ピュアリーフグライダー",
+      "in": [{ "item": "レッドローズ", "qty": 100 }],
+      "cost": "600s",
+      "note": "特殊料理のレシピ習得に必要",
+      "group": "特殊料理"
+    },
+    {
+      "craft": "sewing",
+      "out": "鉱山ライトヘルメット",
+      "in": [
+        { "item": "レッドローズ", "qty": 90 },
+        { "item": "ブルーメタルフィッシュ", "qty": 10 }
+      ],
+      "cost": "600s",
+      "note": "頭・装備アバターのレシピ習得に必要",
+      "group": "特殊"
+    }
+  ]
+}

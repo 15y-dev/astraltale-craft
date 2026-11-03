@@ -1,0 +1,443 @@
+<code>#include(header/production,notitle)
+----
+#contents
+
+* 概要 [#n9a98045]
+- 中央大陸の植物/鉱脈で採集ができる。[[採集道具>アイテム/採集道具]]が必要。
+- 釣りの様に餌は必要なく、代わりに採集道具の耐久値が減る。
+回復方法は装備同様、修理で回復が出来る。
+- 各採集/採掘場の植物/鉱脈をターゲットし、ターゲットアイコン右下の袋マークをクリックすると、そこで何が獲得できるか見ることができる。
+（モンスターのドロップ情報を見る方法と同様）
+- 入手できるアイテムは以下のとおり。
+-- &color(Green){レア度緑};は使用すると採集経験値や星霊ポイント、星石ポイントが上昇します。
+-- &color(Blue){レア度青};は使用すると生産材料が手に入ります。
+--- 植物：料理やポーションの材料
+--- 鉱物：アバターやエンチャントカード、星石の材料
+-- &color(Orange){レア度橙};は使用すると採集道具のレシピやレシピの材料等が手に入ります。
+-- &color(Olive){レア度黄};は使用すると採集道具のレシピやレシピの材料、EXP辞典等が手に入ります。
+
+
+* 採集ランク [#n01bb391]
+|CENTER:|LEFT:120|LEFT:120|LEFT:400|LEFT:100|c
+|~ランク|CENTER:~称号|CENTER:~スキル|CENTER:~効果|CENTER:~備考|h
+|5|アマチュア採集人|採集EXLv1|採集セットの能力が少し増加||
+|10|採集常連|品質鑑定Lv1|採集物のサイズが少しアップ||
+|15|採集の大卸売業者|熟練採集Lv1|アイテムの採集時、獲得経験値が少し増加||
+|20|プロの採集者|採集EXLv2|採集セットの能力が少し増加||
+|25|採集名人|品質鑑定Lv2|採集物のサイズが少しアップ||
+|30|大地の調査員|熟練採集Lv2|アイテムの採集時、獲得経験値が少し増加||
+|35|山脈通行人|採集EXLv3|採集セットの能力が少し増加||
+|40|大地の採集者|品質鑑定Lv3|採集物のサイズが少しアップ||
+|45|採集学教授|熟練採集Lv3|アイテムの採集時、獲得経験値が少し増加||
+|50|採集の王|採集EXLv4|採集セットの能力が少し増加||
+|55|採集兵器|品質鑑定Lv4|採集物のサイズが少しアップ||
+|60|伝説の採集者|熟練採集Lv4|アイテムの採集時、獲得経験値が少し増加||
+|65|連合軍の採集師|採集EXLv5|採集セットの能力が少し増加||
+|70|女神お抱えの採集師|品質鑑定Lv5|採集物のサイズが少しアップ||
+|75|時空の採集者|熟練採集Lv5|アイテムの採集時、獲得経験値が少し増加||
+|80|幻の採集師|採集EXLv6|採集セットの能力が少し増加||
+|85|奇跡の採集師|品質鑑定Lv6|採集物のサイズが少しアップ||
+|90|神話の採集者|熟練採集Lv6|アイテムの採集時、獲得経験値が少し増加||
+|95|仏の採集師|採集EXLv7|採集セットの能力が少し増加||
+|100|魅惑の採集師|品質鑑定Lv7|採集物のサイズが少しアップ||
+|105|無敵の採集師|熟練採集Lv7|アイテムの採集時、獲得経験値が少し増加||
+|110|仙人の採集師|採集EXLv8|採集セットの能力が少し増加||
+|115|規格外の採集師|品質鑑定Lv8|採集物のサイズが少しアップ||
+|120|超越した採集師|熟練採集Lv8|アイテムの採集時、獲得経験値が少し増加||
+
+
+* 経験値テーブル [#fba1c1f0]
+|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|c
+|~ランク|CENTER:~必要経験値|~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |h
+|01|  -|11|1,001|21| 5,580|31|24,600|41|53,805|51|143,655|61|593,560|71|717,560|81|       | 91|       |101|       |111|       |
+|02| 42|12|1,300|22| 7,680|32|27,090|42|57,460|52|198,710|62|605,520|72|730,320|82|       | 92|       |102|       |112|       |
+|03|119|13|1,620|23| 9,075|33|29,670|43|61,215|53|255,465|63|617,580|73|743,080|83|       | 93|       |103|       |113|       |
+|04|165|14|1,963|24|10,710|34|32,340|44|65,070|54|313,920|64|629,740|74|755,840|84|       | 94|       |104|       |114|       |
+|05|216|15|2,327|25|12,425|35|35,100|45|69,025|55|374,075|65|642,000|75|       |85|       | 95|       |105|       |115|       |
+|06|272|16|2,714|26|14,220|36|37,950|46|73,080|56|435,930|66|654,360|76|       |86|       | 96|       |106|       |116|       |
+|07|333|17|3,112|27|16,095|37|40,890|47|77,235|57|499,485|67|666,820|77|       |87|       | 97|       |107|       |117|       |
+|08|399|18|3,353|28|18,050|38|43,920|48|81,490|58|564,740|68|679,380|78|       |88|       | 98|       |108|       |118|       |
+|09|470|19|3,553|29|20,085|39|47,040|49|85,845|59|573,218|69|692,040|79|       |89|       | 99|       |109|       |119|       |
+|10|725|20|4,005|30|22,200|40|50,250|50|90,300|60|581,700|70|704,800|80|       |90|       |100|       |110|       |120|       |
+* QTE(Quick Time Event) [#y682dddf]
+- 採集/採掘をしていると不定期に発生する。
+&attachref(./QTE_採集.jpg,nolink,70%);
+&attachref(./QTE_採掘.jpg,nolink,71%);
+- 出現した数字を左から時間内に正確に入力すると赤いゲージが減っていき、ゲージが空になるとQTE成功となり、アイテムを獲得できる。
+- 入力に失敗、あるいは時間内に入力が完了しなかった場合は緑色のゲージが減っていき、ゲージが空になるとQTEは失敗となり、アイテムは獲得できない。
+- キャラクターの採集レベル、装備している採集道具の性能、採集/採掘場のレベルによってQTEの難易度は変動する。
+- QTEが始まった瞬間にチャットウィンドウへ表示されるシステムメッセージによって、どのランクのアイテムが採れるか予想できる。
+-- システムメッセージ「珍しい植物のようだ…」/「珍しい鉱石のようだ…」→橙ランクの植物/鉱石
+-- システムメッセージ「とても貴重な作物のようだ…」/「とても貴重な鉱石のようだ…」→黄ランクの植物/鉱石
+-- システムメッセージなし→秘宝コア：彩石
+
+
+* 植物 [#a6cd2df7]
+** 共通 [#od5de548]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./秘宝コア：彩石.jpg,nolink);|秘宝コア：彩石|家具部品の材料||
+|&attachref(./大波の主の挑戦状.jpg,nolink);|大波の主の挑戦状|地下闘技場で使う||
+|&attachref(./エレメンタラーの挑戦状.jpg,nolink);|エレメンタラーの挑戦状|地下闘技場で使う||
+
+**中央大陸 [#t830054a]
+** ランク1～8 [#i66604e9]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：自然.jpg,nolink);|&color(Green){大地の芽：自然};|採集経験値5||
+|&attachref(./野生のパンプキン.jpg,nolink);|&color(Green){野生のパンプキン};|星霊ポイント5||
+|&attachref(./野生のウィート.jpg,nolink);|&color(Green){野生のウィート};|星石ポイント5||
+|&attachref(./泥つきパンプキン.jpg,nolink);|&color(Blue){泥つきパンプキン};|&color(Blue){パンプキン};&br;&color(Blue){夜光花×2};||
+|&attachref(./黄金ウィート.jpg,nolink);|&color(Blue){黄金ウィート};|&color(Blue){新鮮なウィート};&br;&color(Blue){夜光花×2};||
+|&attachref(./夜光花.jpg,nolink);|&color(Blue){夜光花};|錬金材料|ランク24～32 植物にも出現|
+|&attachref(./発光草.jpg,nolink);|&color(Orange){発光草};|&color(Orange){レシピ：グリーンセット};&br;&color(Orange){トビウオ草};&br;&color(Blue){夜光花×2};&br;星界チケット5,1||
+|&attachref(./星光草.jpg,nolink);|&color(Olive){星光草};|&color(Orange){レシピ：フーフセット};&br;&color(Olive){ブリーズ草};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50|ランク8～16 植物にも出現|
+
+** ランク8～16 [#x8b49897]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：静寂.jpg,nolink);|&color(Green){大地の芽：静寂};|採集経験値5||
+|&attachref(./湿った原木.jpg,nolink);|&color(Green){湿った原木};|星霊ポイント5||
+|&attachref(./アッシュの原木.jpg,nolink);|&color(Green){アッシュの原木};|星石ポイント5||
+|&attachref(./斑点卵.jpg,nolink);|&color(Blue){斑点卵};|&color(Blue){小さな鳥の卵};&br;&color(Blue){ガッツフルーツ×2};||
+|&attachref(./神樹の根.jpg,nolink);|&color(Blue){神樹の根};|&color(Blue){神樹の蕾};&br;&color(Blue){ガッツフルーツ×2};||
+|&attachref(./ガッツフルーツ.jpg,nolink);|&color(Blue){ガッツフルーツ};|錬金材料|ランク32～40 植物にも出現|
+|&attachref(./スリーパーの原木.jpg,nolink);|&color(Orange){スリーパーの原木};|&color(Orange){レシピ：リーパーセット};&br;&color(Orange){マナの原木};&br;&color(Blue){ガッツフルーツ×2};&br;星界チケット5,1||
+
+** ランク16～24 [#wda9b2d1]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：温暖.jpg,nolink);|&color(Green){大地の芽：温暖};|採集経験値5||
+|&attachref(./カクタスの実.jpg,nolink);|&color(Green){カクタスの実};|星霊ポイント5||
+|&attachref(./カクタスのつぼみ.jpg,nolink);|&color(Green){カクタスのつぼみ};|星石ポイント5||
+|&attachref(./奇妙なつぼみ.jpg,nolink);|&color(Blue){奇妙なつぼみ};|&color(Blue){カウボーイフラワー};&br;&color(Blue){賢者草×2};||
+|&attachref(./熟れたベリーの実.jpg,nolink);|&color(Blue){熟れたベリーの実};|&color(Blue){パーガトリーフルーツ};&br;&color(Blue){賢者草×2};||
+|&attachref(./賢者草.jpg,nolink);|&color(Blue){賢者草};|錬金材料|ランク40～50 植物にも出現|
+|&attachref(./プロフェシーの果実.jpg,nolink);|&color(Orange){プロフェシーの果実};|&color(Orange){レシピ：トラベラーセット};&br;&color(Orange){タンクフルーツ};&br;&color(Blue){夜光花×2};&br;星界チケット5,1||
+|&attachref(./天地樹の枝幹.jpg,nolink);|&color(Olive){天地樹の枝幹};|&color(Orange){レシピ：ウルフセット};&br;&color(Olive){ムーンライトの原木};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50|ランク24～32 植物にも出現|
+
+** ランク24～32 [#fa1b8da4]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：神秘.jpg,nolink);|&color(Green){大地の芽：神秘};|採集経験値5||
+|&attachref(./ベリーの実.jpg,nolink);|&color(Green){ベリーの実};|星霊ポイント5||
+|&attachref(./野生のシロナ.jpg,nolink);|&color(Green){野生のシロナ};|星石ポイント5||
+|&attachref(./泥いっぱいのシロナ.jpg,nolink);|&color(Blue){泥いっぱいのシロナ};|&color(Blue){タイサイ};&br;&color(Blue){シロサイ};&br;&color(Blue){夜光草×2};||
+|&attachref(./レッドベリーの実.jpg,nolink);|&color(Blue){レッドベリーの実};|&color(Blue){野イチゴ};&br;&color(Blue){クランボン};&br;&color(Blue){夜光草×2};||
+|&attachref(./熱帯グラス.jpg,nolink);|&color(Blue){熱帯グラス};|&color(Blue){フェーン草};&br;&color(Blue){サンライト草};&br;&color(Blue){夜光草×2};||
+|&attachref(./チャームフラワー.jpg,nolink);|&color(Orange){チャームフラワー};|&color(Orange){レシピ：サウンドセット};&br;&color(Orange){虫よけフラワー};&br;&color(Blue){夜光花×2};&br;星界チケット5,1||
+
+** ランク32～40 [#udb7b661]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：情熱.jpg,nolink);|&color(Green){大地の芽：情熱};|採集経験値5||
+|&attachref(./ミニキノコ.jpg,nolink);|&color(Green){ミニキノコ};|星霊ポイント5||
+|&attachref(./ヨウゾメの実.jpg,nolink);|&color(Green){ヨウゾメの実};|星石ポイント5||
+|&attachref(./アーレインキノコ.jpg,nolink);|&color(Blue){アーレインキノコ};|&color(Blue){ナイトグロウマッシュ};&br;&color(Blue){フラワーマッシュ};&br;&color(Blue){ガッツフルーツ×2};||
+|&attachref(./グリーンパンプキン.jpg,nolink);|&color(Blue){グリーンパンプキン};|&color(Blue){紫美人};&br;&color(Blue){フレッシュメロニー};&br;&color(Blue){ガッツフルーツ×2};||
+|&attachref(./強靭まつぼっくり.jpg,nolink);|&color(Blue){強靭まつぼっくり};|&color(Blue){甘いまつぼっくり};&br;&color(Blue){カリカリナッツ};&br;&color(Blue){ガッツフルーツ×2};||
+|&attachref(./パッションの原木.jpg,nolink);|&color(Orange){パッションの原木};|&color(Orange){レシピ：ウィズダムセット};&br;&color(Orange){毒紅の原木};&br;&color(Blue){ガッツフルーツ×2};&br;星界チケット10,5,1||
+|&attachref(./ライフの果実.jpg,nolink);|&color(Olive){ライフの果実};|&color(Orange){レシピ：シルバーバックセット};&br;&color(Olive){オアシスハート};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50|ランク40～50 植物にも出現|
+|&attachref(./マルカフラワー.jpg,nolink);|&color(Olive){マルカフラワー};|&color(Orange){レシピ：ガイアセット};&br;&color(Olive){結界フラワー};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク40～50 [#a7a340d6]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：幸福.jpg,nolink);|&color(Green){大地の芽：幸福};|採集経験値5||
+|&attachref(./ドライの実.jpg,nolink);|&color(Green){ドライの実};|星霊ポイント5||
+|&attachref(./センチュリープラント.jpg,nolink);|&color(Green){センチュリープラント};|星石ポイント5||
+|&attachref(./ストロベリーフラワー.jpg,nolink);|&color(Blue){ストロベリーフラワー};|&color(Blue){ブルースカイフラワー};&br;&color(Blue){フレイムフラワー};&br;&color(Blue){賢者草×2};||
+|&attachref(./泥つきミニシロナ.jpg,nolink);|&color(Blue){泥つきミニシロナ};|&color(Blue){ホウサイ};&br;&color(Blue){キュウサイ};&br;&color(Blue){賢者草×2};||
+|&attachref(./イエロープルーン.jpg,nolink);|&color(Blue){イエロープルーン};|&color(Blue){ドリームフルーツ};&br;&color(Blue){キャラメルカカオ};&br;&color(Blue){賢者草×2};||
+|&attachref(./バタフラワー.jpg,nolink);|&color(Blue){バタフラワー};|&color(Blue){アールハーブ};&br;&color(Blue){キャロット草};&br;&color(Blue){賢者草×2};||
+|&attachref(./毛虫草.jpg,nolink);|&color(Orange){毛虫草};|&color(Orange){レシピ：ヤマビコセット};&br;&color(Orange){コアコア草};&br;&color(Blue){夜光草×2};&br;星界チケット10,5,1||
+|&attachref(./時光樹の枝幹.jpg,nolink);|&color(Olive){時光樹の枝幹};|&color(Orange){レシピ：クィーンビーセット};&br;&color(Olive){ワープの原木};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+|&attachref(./歩行草.jpg,nolink);|&color(Olive){歩行草};|&color(Orange){レシピ：クレイドルセット};&br;&color(Olive){リバース草};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク50～60 [#pb080dac]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：勇気.jpg,nolink);|&color(Green){大地の芽：勇気};|採集経験値5||
+|&attachref(./テツホシダ.jpg,nolink);|&color(Green){テツホシダ};|星霊ポイント5||
+|&attachref(./孔雀竹.jpg,nolink);|&color(Green){孔雀竹};|星霊ポイント5||
+|&attachref(./赤皺葉.jpg,nolink);|&color(Blue){赤皺葉};|&color(Blue){アカシワリーフ};&br;&color(Blue){アカ草};&br;&color(Blue){ピックフラワー×2};||
+|&attachref(./直脈草.jpg,nolink);|&color(Blue){直脈草};|&color(Blue){白脈草};&br;&color(Blue){赤四葉};&br;&color(Blue){ピックフラワー×2};||
+|&attachref(./ピックフラワー.jpg,nolink);|&color(Blue){ピックフラワー};|錬金材料||
+|&attachref(./フシギウリ.jpg,nolink);|&color(Orange){フシギウリ};|&color(Orange){レシピ：エフォートセット};&br;&color(Orange){熟したパパイヤ};&br;&color(Blue){ピックフラワー×2};&br;星界チケット10,5,1||
+|&attachref(./ラッパ花.jpg,nolink);|&color(Olive){ラッパ花};|&color(Olive){レシピ：エービスセット};&br;&color(Olive){大ラッパ花};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+''ランク50～60採集ポイントへの行き方''
+&attachref(./50-60地図.png);
+中央大陸にいるNPCハムナ（X:283,Y:801　ランク50～60魚群付近にいる）に話しかけ、選択肢「採集ポイントへ」を選択する。
+&attachref(./50-60採集.png);
+
+** ランク60～70 [#wd0db5f1]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：意志.jpg,nolink);|&color(Green){大地の芽：意志};|採集経験値5||
+|&attachref(./ガジュマル.jpg,nolink);|&color(Green){ガジュマル};|星霊ポイント5||
+|&attachref(./アロエ.jpg,nolink);|&color(Green){アロエ};|星霊ポイント5||
+|&attachref(./サボテン.jpg,nolink);|&color(Blue){サボテン};|&color(Blue){サボテンジュース};&br;&color(Blue){サボテンのかけら};&br;&color(Blue){石蓮華×2};||
+|&attachref(./ドラセナ.jpg,nolink);|&color(Blue){ドラセナ};|&color(Blue){ドラセナの実};&br;&color(Blue){ドラセナジャム};&br;&color(Blue){石蓮華×2};||
+|&attachref(./石蓮花.jpg);|&color(Blue){石蓮華};|錬金材料||
+|&attachref(./アボカド.jpg,nolink);|&color(Orange){アボカド};|&color(Orange){レシピ：パワフルセット};&br;&color(Orange){アボカド};&br;&color(Blue){石蓮華×2};&br;星界チケット10,5,1||
+|&attachref(./マンゴスチン.jpg,nolink);|&color(Olive){マンゴスチン};|&color(Orange){レシピ：ブレッシングセット};&br;&color(Olive){マンゴスチン};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+**西方大陸 [#u0a67979]
+** ランク70～80 [#b9fd27d3]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：純真.jpg,nolink);|&color(Green){大地の芽：純真};|採集経験値5||
+|&attachref(./虎耳草.jpg,nolink);|&color(Green){虎耳草};|星霊ポイント5||
+|&attachref(./クワズイモ.jpg,nolink);|&color(Green){クワズイモ};|星霊ポイント5||
+|&attachref(./ローゼル.jpg,nolink);|&color(Blue){ローゼル};|&color(Blue){ローゼルジュース};&br;&color(Blue){ローゼルのカケラ};&br;&color(Blue){如意草×2};||
+|&attachref(./キク.jpg,nolink);|&color(Blue){キク};|&color(Blue){キクの花びら};&br;&color(Blue){キクのエッセンス};&br;&color(Blue){如意草×2};||
+|&attachref(./如意草.jpg);|&color(Blue){如意草};|錬金材料||
+|&attachref(./マンゴー.jpg,nolink);|&color(Orange){マンゴー};|&color(Orange){レシピ：インフィニセット};&br;&color(Orange){マンゴーの果肉};&br;&color(Blue){如意草×2};&br;星界チケット10,5,1||
+|&attachref(./野生ニンジン.jpg,nolink);|&color(Olive){野生ニンジン};|&color(Olive){レシピ：ミラクルセット};&br;&color(Olive){野生ニンジンの根};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク80～90 [#s9d28e1a]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./知恵.jpg,nolink);|&color(Green){大地の芽：知恵};|採集経験値5||
+|&attachref(./ソバ.jpg,nolink);|&color(Green){ソバ};|星霊ポイント5||
+|&attachref(./マンダラ.jpg,nolink);|&color(Green){マンダラ};|星霊ポイント5||
+|&attachref(./キョウチクトウ.jpg,nolink);|&color(Blue){キョウチクトウ};|&color(Blue){キョウチクトウの液汁};&br;&color(Blue){キョウチクトウの葉};&br;&color(Blue){仙鶴草x2};||
+|&attachref(./ウコン.jpg,nolink);|&color(Blue){ウコン};|&color(Blue){ウコン};&br;&color(Blue){ウコンパウダー};&br;&color(Blue){仙鶴草x2};||
+|&attachref(./仙鶴草.jpg);|&color(Blue){仙鶴草};|錬金材料||
+|&attachref(./トウキ.jpg,nolink);|&color(Orange){トウキ};|&color(Orange){レシピ：プロデュースセット};&br;&color(Orange){トウキ};&br;&color(Blue){仙鶴草x2};&br;星界チケット10,5,1||
+|&attachref(./クロッカス.jpg,nolink);|&color(Olive){クロッカス};|&color(Olive){レシピ：リバースセット};&br;&color(Olive){クロッカスの花柱};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+**ランク90～100 [#xa4d3cfb]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽狂騒.jpg,nolink);|&color(Green){大地の芽：狂想};|採集経験値5||
+|&attachref(./ミレー.jpg,nolink);|&color(Green){ミレー};|星霊ポイント5||
+|&attachref(./アンティクム.jpg,nolink);|&color(Green){アンティクム};|星霊ポイント5||
+|&attachref(./ジンギバーリリー.jpg,nolink);|&color(Blue){ジンギバーリリー};|&color(Blue){ジンギバーリリーの蜜};&br;&color(Blue){ジンギバーリリーの花びら};&br;&color(Blue){セージx2};||
+|&attachref(./ライシウム.jpg,nolink);|&color(Blue){ライシウム};|&color(Blue){乾燥ライシウム};&br;&color(Blue){ライシウムの粉末};&br;&color(Blue){セージx2};||
+|&attachref(./セージ.jpg);|&color(Blue){セージ};|錬金材料||
+|&attachref(./バジリカムの青葉.jpg,nolink);|&color(Orange){バジリカムの青葉};|&color(Orange){レシピ：効率製造者};&br;&color(Orange){バジリカムの青葉};&br;&color(Blue){セージx2};&br;星界チケット10,5,1||
+|&attachref(./アイアリスの花.jpg,nolink);|&color(Olive){アイアリスの花};|&color(Olive){レシピ：花咲く楽園};&br;&color(Olive){アイアリスの花粉};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+**ランク100～110 [#wb7d4adc]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽紀律.jpg,nolink);|&color(Green){大地の芽：紀律};|採集経験値5||
+|&attachref(./カルド.jpg,nolink);|&color(Green){カルド};|星霊ポイント5||
+|&attachref(./アリズマ.jpg,nolink);|&color(Green){アリズマ};|星霊ポイント5||
+|&attachref(./エルバ.jpg,nolink);|&color(Blue){エルバ};|&color(Blue){エルバの葉液};&br;&color(Blue){エルバの細葉};&br;&color(Blue){西方草x2};||
+|&attachref(./アスパラジー.jpg,nolink);|&color(Blue){アスパラジー};|&color(Blue){アスパラジーの根};&br;&color(Blue){アスパラジーの粉末};&br;&color(Blue){西方草x2};||
+|&attachref(./西方草.jpg,nolink);|&color(Blue){西方草};|錬金材料||
+|&attachref(./ミゼリア.jpg,nolink);|&color(Orange){ミゼリア};|&color(Orange){レシピ：極限の工作者};&br;&color(Orange){ミゼリア};&br;&color(Blue){西方草x2};&br;星界チケット10,5,1||
+|&attachref(./フエルチェ.jpg,nolink);|&color(Olive){フェルチェ};|&color(Olive){レシピ：豊穣の大地};&br;&color(Olive){フェルチェの葉};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+**ランク110～120 [#p3cd15ad]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref();|&color(Green){虹色双葉};|採集経験値5||
+|&attachref();|&color(Green){赤茎の葉};|星霊ポイント5||
+|&attachref();|&color(Green){鉤の実};|星霊ポイント5||
+|&attachref();|&color(Blue){セツキリ茨草};|&color(Blue){セツキリ茨草の実};&br;&color(Blue){セツキリ茨草の煎};&br;&color(Blue){翡翠の星草x2};||
+|&attachref();|&color(Blue){濃緑の草};|&color(Blue){濃緑の草根};&br;&color(Blue){濃緑の草葉};&br;&color(Blue){翡翠の星草x2};||
+|&attachref();|&color(Orange){龍髭草};|&color(Orange){レシピ：大地の支配者};&br;&color(Orange){龍髭草};&br;&color(Blue){翡翠の星草x2};&br;星界チケット10,5,1||
+|&attachref();|&color(Olive){木端};|&color(Olive){レシピ：山岳の探究者};&br;&color(Olive){木端の葉};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+
+**ランク120～130 [#n0ebfc77]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref();|&color(Green){大地の芽：活力};|採集経験値5||
+|&attachref();|&color(Green){ホウレンソウ};|星霊ポイント5||
+|&attachref();|&color(Green){菜種};|星霊ポイント5||
+|&attachref();|&color(Blue){ガーベラ};|&color(Blue){ガーベラの枝};&br;&color(Blue){ガーベラの葉};&br;&color(Blue){青草x2};||
+|&attachref();|&color(Blue){グリーンリーフ};|&color(Blue){ミモザの苗};&br;&color(Blue){ミモザの種};&br;&color(Blue){青草x2};||
+|&attachref();|&color(Blue){青草};|錬金材料||
+|&attachref();|&color(Orange){コマツナ};|&color(Orange){レシピ：レアコレクターセット};&br;&color(Orange){コマツナ};&br;&color(Blue){青草x2};&br;星界チケット10,5,1||
+|&attachref();|&color(Olive){ノザワナ};|&color(Olive){レシピ：リッチコモディセット};&br;&color(Olive){ノザワナ};&br;&color(Green){EXP辞典x5,10,15,30};&br;&color(Green){熟練EXP辞典x5,10,15,30};&br;星界チケット10,50||
+
+* 鉱脈 [#db3f2b5e]
+** 共通 [#j8f8f939]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./秘宝コア：彩石.jpg,nolink);|秘宝コア：彩石|家具部品の材料||
+|&attachref(./大波の主の挑戦状.jpg,nolink);|大波の主の挑戦状|地下闘技場で使う||
+|&attachref(./エレメンタラーの挑戦状.jpg,nolink);|エレメンタラーの挑戦状|地下闘技場で使う||
+
+**中央大陸 [#n332c83f]
+** ランク1～8 [#y007f5e9]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：自然.jpg,nolink);|&color(Green){大地の芽：自然};|採集経験値5|発掘ランク1で獲得可能|
+|&attachref(./メレート鉱石.jpg,nolink);|&color(Green){メレート鉱石};|星霊ポイント5|発掘ランク1で獲得可能|
+|&attachref(./メレート砕石.jpg,nolink);|&color(Green){メレート砕石};|星石ポイント5|発掘ランク1で獲得可能|
+|&attachref(./スティール板.jpg,nolink);|&color(Blue){スティール板};|&color(Blue){スティールの欠片};&br;&color(Blue){Lv18星石の欠片×2};|発掘ランク1で獲得可能&br;ランク8～16 鉱脈にも出現|
+|&attachref(./アンバーストーンの原石.jpg,nolink);|&color(Blue){アンバーストーンの原石};|&color(Blue){アンバーストーン};&br;&color(Blue){Lv18星石の欠片×2};|発掘ランク1で獲得可能&br;ランク8～16 鉱脈にも出現|
+|&attachref(./ポタリー鉱石.jpg,nolink);|&color(Orange){ポタリー鉱石};|&color(Orange){レシピ：グリーンセット};&br;&color(Orange){ハードシェルストーン};&br;&color(Blue){Lv18星石の欠片×3};&br;星界チケット5,1|&color(Navy){QTE(1桁）入力成功時に獲得};&br;&br;発掘ランク1で獲得可能|
+|&attachref(./ハイド原石.jpg,nolink);|&color(Olive){ハイド原石};|&color(Orange){レシピ：フーフセット};&br;&color(Olive){防振石};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50|&color(Navy){QTE(3桁）入力成功時に獲得};&br;&br;発掘ランク&color(Red){8};で獲得可能&br;ランク8～16 鉱脈にも出現|
+
+** ランク8～16 [#w8648c95]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：静寂.jpg,nolink);|&color(Green){大地の芽：静寂};|採集経験値5|発掘ランク8で獲得可能|
+|&attachref(./ステンシー鉱石.jpg,nolink);|&color(Green){ステンシー鉱石};|星霊ポイント5|発掘ランク8で獲得可能|
+|&attachref(./ステンシー砕石.jpg,nolink);|&color(Green){ステンシー砕石};|星石ポイント5|発掘ランク8で獲得可能|
+|&attachref(./魔力結晶.jpg,nolink);|&color(Orange){魔力結晶};|&color(Orange){レシピ：リーパーセット};&br;&color(Orange){放射クリスタル};&br;&color(Blue){Lv18星石の欠片×3};&br;星界チケット5,1|&color(Navy){QTE(1桁）入力成功時に獲得};&br;&br;発掘ランク1で獲得可能|
+
+** ランク16～24 [#z93dc809]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：温暖.jpg,nolink);|&color(Green){大地の芽：温暖};|採集経験値5|発掘ランク16で獲得可能|
+|&attachref(./クリーパー鉱石.jpg,nolink);|&color(Green){クリーパー鉱石};|星霊ポイント5|発掘ランク16で獲得可能|
+|&attachref(./クリーパー砕石.jpg,nolink);|&color(Green){クリーパー砕石};|星石ポイント5|発掘ランク16で獲得可能|
+|&attachref(./スズ板.jpg,nolink);|&color(Blue){スズ板};|&color(Blue){スズの欠片};&br;&color(Blue){Lv28星石の欠片×2};|発掘ランク16で獲得可能&br;ランク24～32 鉱脈にも出現|
+|&attachref(./ラルド鉱石の原石.jpg,nolink);|&color(Blue){ラルド鉱石の原石};|&color(Blue){ラルド鉱石};&br;&color(Blue){Lv28星石の欠片×2};|発掘ランク16で獲得可能|
+|&attachref(./マラカストーンの原石.jpg,nolink);|&color(Blue){マラカストーンの原石};|&color(Blue){マラカストーン};&br;&color(Blue){Lv28星石の欠片×2};|発掘ランク16で獲得可能|
+|&attachref(./スチーム鉱石.jpg,nolink);|&color(Orange){スチーム鉱石};|&color(Orange){レシピ：トラベラーセット};&br;&color(Orange){アブソーブストーン};&br;&color(Blue){Lv28星石の欠片×3};&br;星界チケット5,1|&color(Navy){QTE(1桁）入力成功時に獲得};&br;&br;発掘ランク16で獲得可能|
+|&attachref(./エネルギークリスタル.jpg,nolink);|&color(Olive){エネルギークリスタル};|&color(Orange){レシピ：ウルフセット};&br;&color(Olive){エルフクリスタル};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50|&color(Navy){QTE(3桁）入力成功時に獲得};&br;&br;発掘ランク&color(Red){24};で獲得可能&br;ランク24～32 鉱脈にも出現|
+
+** ランク24～32 [#w13f77e0]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：神秘.jpg,nolink);|&color(Green){大地の芽：神秘};|採集経験値5|発掘ランク24で獲得可能|
+|&attachref(./シルト鉱石.jpg,nolink);|&color(Green){シルト鉱石};|星霊ポイント5|発掘ランク24で獲得可能|
+|&attachref(./シルト砕石.jpg,nolink);|&color(Green){シルト砕石};|星石ポイント5|発掘ランク24で獲得可能&br;※ゲーム内の説明には採集ランク36以上で採集経験値獲得不可と書いてあるが、41の表記ミスと思われる。実際には36以降も採集経験値が入る。|
+|&attachref(./オブシウス鉱石の原石.jpg,nolink);|&color(Blue){オブシウス鉱石の原石};|&color(Blue){オブシウス鉱石};&br;&color(Blue){Lv38星石の欠片×2};|発掘ランク&color(Red){32};で獲得可能|
+|&attachref(./レインジスト鉱石の原石.jpg,nolink);|&color(Blue){レインジスト鉱石の原石};|&color(Blue){レインジスト鉱石};&br;&color(Blue){Lv38星石の欠片×2};|発掘ランク&color(Red){32};で獲得可能|
+|&attachref(./トパゾス鉱石の原石.jpg,nolink);|&color(Blue){トパゾス鉱石の原石};|&color(Blue){トパゾス鉱石};&br;&color(Blue){Lv38星石の欠片×2};|発掘ランク&color(Red){32};で獲得可能|
+|&attachref(./メモトラ鉱石.jpg,nolink);|&color(Orange){メモトラ鉱石};|&color(Orange){レシピ：サウンドセット};&br;&color(Orange){リバースメタル};&br;&color(Blue){Lv28星石の欠片×3};&br;星界チケット5,1|&color(Navy){QTE(1桁）入力成功時に獲得};&br;&br;発掘ランク16で獲得可能|
+
+** ランク32～40 [#bd4e2243]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：情熱.jpg,nolink);|&color(Green){大地の芽：情熱};|採集経験値5|発掘ランク32で獲得可能|
+|&attachref(./ジウム鉱石.jpg,nolink);|&color(Green){ジウム鉱石};|星霊ポイント5|発掘ランク32で獲得可能|
+|&attachref(./ジウム砕石.jpg,nolink);|&color(Green){ジウム砕石};|星石ポイント5|発掘ランク32で獲得可能|
+|&attachref(./未加工のクリッター合金.jpg,nolink);|&color(Blue){未加工のクリッター合金};|&color(Blue){クリッター合金};&br;&color(Blue){Lv38星石の欠片×2};|発掘ランク32で獲得可能&br;ランク40～50 鉱脈にも出現|
+|&attachref(./アルマニウム板.jpg,nolink);|&color(Blue){アルマニウム板};|&color(Blue){アルマニウム合金};&br;&color(Blue){Lv38星石の欠片×2};|発掘ランク32で獲得可能&br;ランク40～50 鉱脈にも出現|
+|&attachref(./未加工のエビルストーン.jpg,nolink);|&color(Blue){未加工のエビルストーン};|&color(Blue){エビルストーン};&br;&color(Blue){Lv38星石の欠片×2};|発掘ランク32で獲得可能&br;ランク40～50 鉱脈にも出現|
+|&attachref(./未加工のダマスカス鉱石.jpg,nolink);|&color(Blue){未加工のダマスカス鉱石};|&color(Blue){ダマスカス鉱石};&br;&color(Blue){Lv48星石の欠片×2};|発掘ランク&color(Red){40};で獲得可能|
+|&attachref(./未加工のブラスト金属.jpg,nolink);|&color(Blue){未加工のブラスト金属};|&color(Blue){ブラスト金属};&br;&color(Blue){Lv48星石の欠片×2};|発掘ランク&color(Red){40};で獲得可能|
+|&attachref(./未加工のミスリル鉱石.jpg,nolink);|&color(Blue){未加工のミスリル鉱石};|&color(Blue){ミスリル鉱石};&br;&color(Blue){Lv48星石の欠片×2};|発掘ランク&color(Red){40};で獲得可能|
+|&attachref(./サーライトストーンの原石.jpg,nolink);|&color(Blue){サーライトストーンの原石};|&color(Blue){サーライトストーン};&br;&color(Blue){Lv48星石の欠片×2};|発掘ランク&color(Red){40};で獲得可能&br;ランク40～50 鉱脈にも出現|
+|&attachref(./ルベウストーンの原石.jpg,nolink);|&color(Blue){ルベウストーンの原石};|&color(Blue){ルベウストーン};&br;&color(Blue){Lv48星石の欠片×2};|発掘ランク&color(Red){40};で獲得可能&br;ランク40～50 鉱脈にも出現|
+|&attachref(./スートストーンの原石.jpg,nolink);|&color(Blue){スート鉱石の原石};|&color(Blue){スート鉱石};&br;&color(Blue){Lv48星石の欠片×2};|発掘ランク&color(Red){40};で獲得&br;可能ランク40～50 鉱脈にも出現|
+|&attachref(./フロート鉱石.jpg,nolink);|&color(Orange){フロート鉱石};|&color(Orange){レシピ：ウィズダムセット};&br;&color(Orange){ナチュラルクリスタル};&br;&color(Blue){Lv38星石の欠片×3};&br;星界チケット10,5,1|&color(Navy){QTE(1桁）入力成功時に獲得};&br;&br;発掘ランク32で獲得可能|
+|&attachref(./ナンビュス鉱石.jpg,nolink);|&color(Olive){ナンビュス鉱石};|&color(Orange){レシピ：シルバーバックセット};&br;&color(Olive){雨乞い石};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50|&color(Navy){QTE(3桁）入力成功時に獲得};&br;&br;発掘ランク&color(Red){40};で獲得可能&br;ランク40～50 鉱脈にも出現|
+|&attachref(./隕石のかけら.jpg,nolink);|&color(Olive){隕石のかけら};|&color(Orange){レシピ：ガイアセット};&br;&color(Olive){ライフメタル};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50|&color(Navy){QTE(3桁）入力成功時に獲得};|
+
+** ランク40～50 [#oa39f2d4]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：幸福.jpg,nolink);|&color(Green){大地の芽：幸福};|採集経験値5|発掘ランク40で獲得可能|
+|&attachref(./カルデラ鉱石.jpg,nolink);|&color(Green){カルデラ鉱石};|星霊ポイント5|発掘ランク40で獲得可能|
+|&attachref(./カルデラ砕石.jpg,nolink);|&color(Green){カルデラ砕石};|星石ポイント5|発掘ランク40で獲得可能|
+|&attachref(./未加工のオリハルゲン鉱石.jpg,nolink);|&color(Blue){未加工のオリハルゲン鉱石};|&color(Blue){オリハルゲン鉱石};&br;&color(Blue){Lv48星石の欠片×2};|発掘ランク40で獲得可能|
+|&attachref(./未加工のスティール鉱石.jpg,nolink);|&color(Blue){未加工のスティール鉱石};|&color(Blue){スティール鉱石};&br;&color(Blue){Lv48星石の欠片×2};|発掘ランク40で獲得可能|
+|&attachref(./未加工のアダマン金属.jpg,nolink);|&color(Blue){未加工のアダマン金属};|&color(Blue){アダマン金属};&br;&color(Blue){Lv48星石の欠片×2};|発掘ランク40で獲得可能|
+|&attachref(./ホスポ鉱石.jpg,nolink);|&color(Orange){ホスポ鉱石};|&color(Orange){レシピ：ヤマビコセット};&br;&color(Orange){ウォームストーン};&br;&color(Blue){Lv48星石の欠片×3};&br;星界チケット10,5,1|&color(Navy){QTE(1桁）入力成功時に獲得};&br;&br;発掘ランク32で獲得可能|
+|&attachref(./ヴィーナス鉱石.jpg,nolink);|&color(Olive){ヴィーナス鉱石};|&color(Orange){レシピ：クィーンビーセット};&br;&color(Olive){ハーベストクリスタル};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50|&color(Navy){QTE(4桁）入力成功時に獲得};&br;&br;発掘ランク40で獲得可能|
+|&attachref(./太陽の秘石.jpg,nolink);|&color(Olive){太陽の秘石};|&color(Orange){レシピ：クレイドルセット};&br;&color(Olive){サーモストーン};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50|&color(Navy){QTE(4桁）入力成功時に獲得};&br;&br;発掘ランク40で獲得可能|
+
+** ランク50～60 [#z844e5c4]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：勇気.jpg,nolink);|&color(Green){大地の芽：勇気};|採集経験値5|発掘ランク50で獲得可能|
+|&attachref(./浮石.jpg,nolink);|&color(Green){浮石};|星霊ポイント5|発掘ランク50で獲得可能|
+|&attachref(./浮石のかけら.jpg,nolink);|&color(Green){浮石のかけら};|星霊ポイント5|発掘ランク50で獲得可能|
+|&attachref(./エメラルドの原石.jpg,nolink);|&color(Blue){エメラルドの原石};|&color(Blue){マリンエメラルド};&br;&color(Blue){Lv63星石の欠片×2};|発掘ランク50で獲得可能|
+|&attachref(./夜光石の原石.jpg,nolink);|&color(Blue){夜光石の原石};|&color(Blue){明夜光石};&br;&color(Blue){Lv63星石の欠片×2};|発掘ランク50で獲得可能|
+|&attachref(./蛍石の原石.jpg,nolink);|&color(Blue){蛍石の原石};|&color(Blue){きらめく蛍石};&br;&color(Blue){Lv63星石の欠片×2};|発掘ランク50で獲得可能|
+|&attachref(./輝浮石のかけら.jpg,nolink);|&color(Orange){輝浮石のかけら};|&color(Orange){レシピ：エフォートセット};&br;&color(Orange){風化した浮石のかけら};&br;&color(Blue){Lv48星石の欠片×3};&br;星界チケット10,5,1|&color(Navy){QTE(4桁）入力成功時に獲得};&br;&br;発掘ランク50で獲得可能|
+|&attachref(./金塊.jpg,nolink);|&color(Olive){金塊};|&color(Olive){レシピ：エービスセット};&br;&color(Olive){輝く黄金};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50|&color(Navy){QTE(4桁）入力成功時に獲得};&br;&br;発掘ランク50で獲得可能|
+
+''ランク50～60採掘ポイントへの行き方''&br;
+&attachref(./50-60地図.png);
+中央大陸にいるNPCハムナ（X:283,Y:801　ランク50～60魚群付近にいる）に話しかけ、選択肢「採掘ポイントへ」を選択する。
+&attachref(./50-60採掘_0.png);
+
+** ランク60～70 [#j762b011]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：意志.jpg,nolink);|&color(Green){大地の芽：意志};|採集経験値5||
+|&attachref(./紫真珠.jpg,nolink);|&color(Green){紫真珠};|星霊ポイント5||
+|&attachref(./ヒスイの玉石.jpg,nolink);|&color(Green){ヒスイの玉石};|星霊ポイント5||
+|&attachref(./ターコイズ.jpg,nolink);|&color(Blue){ターコイズ};|&color(Blue){ターコイズ};&br;&color(Blue){Lv73星石の欠片×2};||
+|&attachref(./黒真珠.jpg,nolink);|&color(Blue){黒真珠};|&color(Blue){黒真珠};&br;&color(Blue){Lv73星石の欠片×2};||
+|&attachref(./ブルーマーブル.jpg,nolink);|&color(Blue){ブルーマーブル};|&color(Blue){ブルーマーブル};&br;&color(Blue){Lv73星石の欠片×2};||
+|&attachref(./カンラン石.jpg,nolink);|&color(Orange){カンラン石};|&color(Orange){レシピ：パワフルセット};&br;&color(Orange){カンラン石};&br;&color(Blue){Lv68星石の欠片×3};&br;星界チケット10,5,1||
+|&attachref(./隕石.jpg,nolink);|&color(Olive){隕石};|&color(Orange){レシピ：ブレッシングセット};&br;&color(Orange){隕石};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+**西方大陸 [#j2ffff09]
+** ランク70～80 [#tc138453]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽：純真.jpg,nolink);|&color(Green){大地の芽：純真};|採集経験値5||
+|&attachref(./瑪瑙.jpg,nolink);|&color(Green){瑪瑙};|星霊ポイント5||
+|&attachref(./エメラルド.jpg,nolink);|&color(Green){エメラルド};|星霊ポイント5||
+|&attachref(./タイガーアイ.jpg,nolink);|&color(Blue){タイガーアイ};|&color(Blue){タイガーアイ};&br;&color(Blue){Lv83星石の欠片×2};||
+|&attachref(./スピネル.jpg,nolink);|&color(Blue){スピネル};|&color(Blue){スピネルの結晶};&br;&color(Blue){Lv83星石の欠片×2};||
+|&attachref(./カマサイト.jpg,nolink);|&color(Blue){カマサイト};|&color(Blue){カマサイト};&br;&color(Blue){Lv83星石の欠片×2};||
+|&attachref(./バラ輝石.jpg,nolink);|&color(Orange){バラ輝石};|&color(Orange){レシピ：インフィニセット};&br;&color(Orange){バラ輝石の結晶};&br;&color(Blue){Lv78星石の欠片×3};&br;星界チケット10,5,1||
+|&attachref(./鉄隕石.jpg,nolink);|&color(Olive){鉄隕石};|&color(Olive){レシピ：ミラクルセット};&br;&color(Olive){鉄隕石};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+** ランク80～90 [#q47a7a39]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽知恵.jpg,nolink);|&color(Green){大地の芽：知恵};|採集経験値5||
+|&attachref(./スターパウダー.jpg,nolink);|&color(Green){スターパウダー};|星霊ポイント5||
+|&attachref(./タンザナイト.jpg,nolink);|&color(Green){タンザナイト};|星霊ポイント5||
+|&attachref(./アベンチュリン.jpg,nolink);|&color(Blue){アベンチュリン};|&color(Blue){アベンチュリン};&br;&color(Blue){Lv88星石の欠片×2};||
+|&attachref(./木変石.jpg,nolink);|&color(Blue){木変石};|&color(Blue){木変石};&br;&color(Blue){Lv88星石の欠片×2};||
+|&attachref(./寿山石.jpg,nolink);|&color(Blue){寿山石};|&color(Blue){寿山石};&br;&color(Blue){Lv88星石の欠片×2};||
+|&attachref(./オパール.jpg,nolink);|&color(Orange){オパール};|&color(Orange){レシピ：プロデュースセット};&br;&color(Orange){オパール};&br;&color(Blue){Lv83星石の欠片×3};&br;星界チケット10,5,1||
+|&attachref(./アルゴンクリスタル.jpg,nolink);|&color(Olive){アルゴンクリスタル};|&color(Olive){レシピ：リバースセット};&br;&color(Olive){アルゴンクリスタル};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+**ランク90～100 [#y607f77e]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽狂騒2.jpg,nolink);|&color(Green){大地の芽：狂想};|採集経験値5||
+|&attachref(./サンライズダイヤ.jpg,nolink);|&color(Green){サンライズダイヤ};|星霊ポイント5||
+|&attachref(./ネフライト.jpg,nolink);|&color(Green){ネフライト};|星霊ポイント5||
+|&attachref(./ローザストーン.jpg,nolink);|&color(Blue){ローザストーン};|&color(Blue){ローザストーン};&br;&color(Blue){Lv93星石の欠片×2};||
+|&attachref(./翠閃石.jpg,nolink);|&color(Blue){翠閃石};|&color(Blue){翠閃石};&br;&color(Blue){Lv93星石の欠片×2};||
+|&attachref(./重晶石.jpg,nolink);|&color(Blue){重晶石};|&color(Blue){重晶石};&br;&color(Blue){Lv93星石の欠片×2};||
+|&attachref(./猫晴石.jpg,nolink);|&color(Orange){猫晴石};|&color(Orange){レシピ：効率製造者};&br;&color(Orange){猫晴石};&br;&color(Blue){Lv93星石の欠片×3};&br;星界チケット10,5,1||
+|&attachref(./液体ガリウム.jpg,nolink);|&color(Olive){液体ガリウム};|&color(Olive){レシピ：花咲く楽園};&br;&color(Olive){液体ガリウム};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+**ランク100～110 [#cc0f3d57]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref(./大地の芽紀律2.jpg,nolink);|&color(Green){大地の芽：紀律};|採集経験値5||
+|&attachref(./クウォーツ.jpg,nolink);|&color(Green){クウォーツスモーク};|星霊ポイント5||
+|&attachref(./ゾルフォ.jpg,nolink);|&color(Green){ゾルフォ};|星霊ポイント5||
+|&attachref(./レッドカッパ.jpg,nolink);|&color(Blue){レッドカッパ};|&color(Blue){レッドカッパ};&br;&color(Blue){Lv98星石の欠片×2};||
+|&attachref(./セレスタイト.jpg,nolink);|&color(Blue){セレスタイト};|&color(Blue){セレスタイト};&br;&color(Blue){Lv98星石の欠片×2};||
+|&attachref(./グラファイト.jpg,nolink);|&color(Blue){グラファイト};|&color(Blue){グラファイト};&br;&color(Blue){Lv98星石の欠片×2};||
+|&attachref(./メルクリオ.jpg,nolink);|&color(Orange){メルクリオ};|&color(Orange){レシピ：極限の工作者};&br;&color(Orange){メルクリオ};&br;&color(Blue){Lv98星石の欠片×3};&br;星界チケット10,5,1||
+|&attachref(./ドロマイト.jpg,nolink);|&color(Olive){ドロマイト};|&color(Olive){レシピ：豊穣の大地};&br;&color(Olive){ドロマイト};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+**ランク110～120 [#s136e9f2]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref();|&color(Green){ラクオウ砂塊};|星石ポイント5||
+|&attachref();|&color(Green){蒼結晶の欠片};|星霊ポイント5||
+|&attachref();|&color(Blue){蒼天鉱石};|&color(Blue){蒼天鉱石};&br;&color(Blue){Lv103星石の欠片×2};||
+|&attachref();|&color(Blue){銀灰の石};|&color(Blue){銀灰の石};&br;&color(Blue){Lv103星石の欠片×2};||
+|&attachref();|&color(Blue){天蓋石};|&color(Blue){天蓋石};&br;&color(Blue){Lv103星石の欠片×2};||
+|&attachref();|&color(Orange){炎獄石};|&color(Orange){レシピ：大地の支配者};&br;&color(Orange){炎獄石};&br;&color(Blue){Lv103星石の欠片×3};&br;星界チケット10,5,1||
+|&attachref();|&color(Olive){月星石};|&color(Olive){レシピ：山岳の探究者};&br;&color(Olive){月星石};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+**ランク120～130 [#k4a011d1]
+|CENTER:|LEFT:150|LEFT:260|LEFT:200|c
+|~ |CENTER:~名称|CENTER:~説明|CENTER:~備考|h
+|&attachref();|&color(Green){大地の芽：活力};|採集経験値5||
+|&attachref();|&color(Green){シードストーン};|星霊ポイント5||
+|&attachref();|&color(Green){シアニン};|星霊ポイント5||
+|&attachref();|&color(Blue){ヘブンリーストーン};|&color(Blue){ヘブンリーストーン};&br;&color(Blue){Lv108星石の欠片×2};||
+|&attachref();|&color(Blue){レッドストーン};|&color(Blue){レッドストーン};&br;&color(Blue){Lv108星石の欠片×2};||
+|&attachref();|&color(Blue){ソウルストーン};|&color(Blue){ソウルストーン};&br;&color(Blue){Lv108星石の欠片×2};||
+|&attachref();|&color(Orange){バード鉛鉱石};|&color(Orange){レシピ：レアコレクターセット};&br;&color(Orange){バード鉛鉱石};&br;&color(Blue){Lv108星石の欠片×3};&br;星界チケット10,5,1||
+|&attachref();|&color(Olive){ネザーストーン};|&color(Olive){レシピ：リッチコモディセット};&br;&color(Olive){ネザーストーン};&br;&color(Green){EXP辞典×5,10,15,30};&br;&color(Green){熟練EXP辞典×5,10,15,30};&br;星界チケット10,50||
+
+*大陸の主 [#x4d6a1b0]
+-大陸の主は[[釣り>生産/釣り#x4d6a1b0]]の項にまとめて記載しています。
+//
+//
+//
+* コメント [#d6514e1f]
+#pcomment(,10,reply)
+</code>

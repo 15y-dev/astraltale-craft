@@ -1,0 +1,812 @@
+<code>#include(header/production,notitle)
+----
+#contents
+
+* 概要 [#u3813469]
+　秘密基地の作業室にある裁縫台を使用して、衣装アバターやエンチャントカードを作ることができる。
+　また、武器や防具の製造もこの裁縫台で行う。
+
+* 裁縫ランク [#m755707a]
+|CENTER:|LEFT:120|LEFT:120|LEFT:400|LEFT:100|c
+|~ランク|CENTER:~称号|CENTER:~スキル|CENTER:~効果|CENTER:~備考|h
+|5|裁縫弟子|ドレス宅配Lv1|移動速度が少し増加|移動速度+1%|
+|10|ファッション追及者|効率裁縫Lv1|合成費用が低確率で下がる||
+|15|服装専門店|熟練裁縫Lv1|合成時、獲得ランク経験値が少し増加||
+|20|プロの裁縫職人|商人の運Lv1|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|25|裁縫名人|効率裁縫Lv2|合成費用が低確率で下がる||
+|30|天才デザイナー|熟練裁縫Lv2|合成時、獲得ランク経験値が少し増加||
+|35|造型専門家|ドレス宅配Lv2|移動速度が少し増加|移動速度+1%|
+|40|トレンドマスター|効率裁縫Lv3|合成費用が低確率で下がる||
+|45|ファッションリーダー|熟練裁縫Lv3|合成時、獲得ランク経験値が少し増加||
+|50|裁縫の王|商人の運Lv2|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|55|裁縫モンスター|効率裁縫Lv4|合成費用が低確率で下がる||
+|60|裁縫の魔王|熟練裁縫Lv4|合成時、獲得ランク経験値が少し増加||
+|65|連合軍の裁縫師|商人の運Lv5|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|70|女神専属の裁縫師|効率裁縫Lv5|合成費用が低確率で下がる||
+|75|永遠の裁縫師|熟練裁縫Lv5|合成時、獲得ランク経験値が少し増加||
+|80|幻の裁縫師|商人の運Lv6|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|85|奇跡の裁縫師|効率裁縫Lv6|合成費用が低確率で下がる||
+|90|神話の裁縫師|熟練裁縫Lv6|合成時、獲得ランク経験値が少し増加||
+|95|仏の裁縫師|商人の運Lv7|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|100|魅惑の裁縫師|効率裁縫Lv7|合成費用が低確率で下がる||
+|105|椋木の裁縫師|熟練裁縫Lv7|合成時、獲得ランク経験値が少し増加||
+|110|仙人の裁縫師|商人の運Lv8|モンスターの討伐時、ドロップアイテム率が少し増加|アイテムドロップ率+1%|
+|115|規格外の裁縫師|効率裁縫Lv8|合成費用が低確率で下がる||
+|120|超越した裁縫師|熟練裁縫Lv8|合成時、獲得ランク経験値が少し増加||
+|125|神の如き裁縫師|効率裁縫Lv9|合成費用が低確率で下がる||
+|130|真理を知りし裁縫師|熟練裁縫Lv9|合成時、獲得ランク経験値が少し増加||
+* 経験値テーブル [#je46a30c]
+|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|CENTER:|RIGHT:70|c
+|~ランク|CENTER:~必要経験値|~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |~ |h
+|01|  -|11|175|21|  665|31|2,745|41|     |51| 9,350|61|12,650|71|18,150|81|23,650|91|      |101|      |111|      |
+|02| 15|12|   |22|  805|32|3,015|42|     |52| 9,625|62|13,200|72|18,700|82|      |92|      |102|      |112|      |
+|03| 30|13|   |23|     |33|3,285|43|     |53| 9,900|63|13,750|73|19,250|83|      |93|      |103|      |113|      |
+|04| 45|14|   |24|1,085|34|3,555|44|7,425|54|      |64|14,300|74|19,800|84|      |94|      |104|      |114|      |
+|05| 45|15|   |25|1,225|35|3,825|45|7,700|55|      |65|14,850|75|20,350|85|      |95|      |105|      |115|      |
+|06| 60|16|275|26|1,365|36|     |46|7,975|56|10,725|66|15,400|76|20,900|86|      |96|      |106|      |116|      |
+|07| 60|17|   |27|1,505|37|     |47|8,250|57|      |67|15,950|77|21,450|87|      |97|      |107|      |117|      |
+|08| 75|18|   |28|1,645|38|     |48|8,525|58|11,275|68|16,500|78|      |88|      |98|      |108|      |118|      |
+|09| 75|19|   |29|1,785|39|     |49|8,800|59|11,550|69|17,050|79|22,550|89|      |99|      |109|      |119|      |
+|10|175|20|   |30|1,925|40|     |50|9,075|60|      |70|17,600|80|23,100|90|      |100|      |110|      |120|      |
+* 裁縫 [#gc3ca043]
+** 装備 [#yf077b83]
+*** 武器 [#n320d5fe]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(装備/武器/ビーストキングの力.jpg,nolink);|ビーストキングの力|500s|&attachref(装備/武器/荒ぶる獣の力.jpg,nolink);|荒ぶる獣の力|1|蒼月の聖殿|
+|&attachref(装備/武器/炎神の力.jpg,nolink);|炎神の力|1g500s|&attachref(装備/武器/ルーンの力.jpg,nolink);|ルーンの力|1|失われた遺跡|
+|&attachref(装備/武器/零度の力.jpg,nolink);|零度の力|1g500s|&attachref(装備/武器/ルーンの力.jpg,nolink);|ルーンの力|1|失われた遺跡|
+|&attachref(装備/武器/神話の力.jpg,nolink);|神話の力|12g800s|&attachref(装備/武器/創造の力.jpg,nolink);|創造の力|1|シャルール祭壇|
+|&attachref(装備/武器/星屑の力.jpg,nolink);|星屑の力|12g800s|&attachref(装備/武器/創造の力.jpg,nolink);|創造の力|1|シャルール祭壇|
+|&attachref(装備/武器/黒陽の力.jpg,nolink);|黒陽の力|30g|&attachref(装備/武器/啓示の力.jpg,nolink);|啓示の力|1|シリウス城|
+|~|~|~|&attachref(./生命のエネルギー.jpg,nolink);|生命のエネルギー|3|シリウス城|
+|&attachref(装備/武器/陰陽の力.jpg,nolink);|陰陽の力|30g|&attachref(装備/武器/啓示の力.jpg,nolink);|啓示の力|1|シリウス城|
+|~|~|~|&attachref(./生命のエネルギー.jpg,nolink);|生命のエネルギー|3|シリウス城|
+|&attachref(装備/武器/太陽の力.jpg,nolink);|太陽の力|160g|&attachref(./不道樹のエネルギー.jpg,nolink);|不道樹のエネルギー|7|不道樹の聖殿|
+|&attachref(装備/武器/聖域の力.jpg,nolink);|聖域の力|160g|&attachref(./不道樹のエネルギー.jpg,nolink);|不道樹のエネルギー|7|不道樹の聖殿|
+|&attachref(装備/武器/星雲の力.jpg,nolink);|星雲の力|60g|&attachref(装備/武器/龍滅の力.jpg,nolink);|龍滅の力|1|異界・シャルール祭壇|
+|~|~|~|&attachref(./極星のエネルギー.jpg,nolink);|極星のエネルギー|3|異界・シャルール祭壇|
+|&attachref(装備/武器/極月の力.jpg,nolink);|極月の力|60g|&attachref(装備/武器/龍滅の力.jpg,nolink);|龍滅の力|1|異界・シャルール祭壇|
+|~|~|~|&attachref(./極星のエネルギー.jpg,nolink);|極星のエネルギー|3|異界・シャルール祭壇|
+|&attachref(装備/武器/燦陽の力.jpg,nolink);|燦陽の力|100g|&attachref(装備/武器/霊験の力.jpg,nolink);|霊験の力|1|ノヴァタワー|
+|~|~|~|&attachref(./聖光のエネルギー.jpg,nolink);|聖光のエネルギー|3|ノヴァタワー|
+|&attachref(装備/武器/暴風の力.jpg,nolink);|暴風の力|100g|&attachref(装備/武器/霊験の力.jpg,nolink);|霊験の力|1|ノヴァタワー|
+|~|~|~|&attachref(./聖光のエネルギー.jpg,nolink);|聖光のエネルギー|3|ノヴァタワー|
+|&attachref(装備/武器/次元の力.jpg,nolink);|次元の力|240g|&attachref(./次元のエネルギー.jpg,nolink);|次元のエネルギー|9|次元の狭間|
+|&attachref(装備/武器/天空の力.jpg,nolink);|天空の力|240g|&attachref(./次元のエネルギー.jpg,nolink);|次元のエネルギー|9|次元の狭間|
+|&attachref(装備/武器/天稟の力.jpg,nolink);|天稟の力|160g|&attachref(装備/武器/荒土の力.jpg,nolink);|荒土の力|1|アイスベルク城|
+|~|~|~|&attachref(./永久凍土の氷塊.jpg,nolink);|永久凍土の氷塊|3|アイスベルク城|
+|&attachref(装備/武器/告死の力.jpg,nolink);|告死の力|160g|&attachref(装備/武器/荒土の力.jpg,nolink);|荒土の力|1|アイスベルク城|
+|~|~|~|&attachref(./永久凍土の氷塊.jpg,nolink);|永久凍土の氷塊|3|アイスベルク城|
+|&attachref(装備/武器/原罪の力.jpg,nolink);|原罪の力|200g|&attachref(装備/武器/猛火の力.jpg,nolink);|猛火の力|1|マグス魔法研究院|
+|~|~|~|&attachref(./災禍の石.jpg,nolink);|災禍の石|3|マグス魔法研究院|
+|&attachref(装備/武器/絶滅の力.jpg,nolink);|絶滅の力|200g|&attachref(装備/武器/猛火の力.jpg,nolink);|猛火の力|1|マグス魔法研究院|
+|~|~|~|&attachref(./災禍の石.jpg,nolink);|災禍の石|3|マグス魔法研究院|
+|&attachref(装備/武器/演算の力.jpg,nolink);|演算の力|280g|&attachref(./アンノウンストーン.jpg,nolink);|アンノウンストーン|9|亜空間の庭|
+|&attachref(装備/武器/侵蝕の力.jpg,nolink);|侵蝕の力|280g|&attachref(./アンノウンストーン.jpg,nolink);|アンノウンストーン|9|亜空間の庭|
+|&attachref(装備/武器/闇夜の力.jpg,nolink);|闇夜の力|240g|&attachref(装備/武器/心眼の力.jpg,nolink);|心眼の力|1|深淵の穴|
+|&attachref(装備/武器/覇道の力.jpg,nolink);|覇道の力|240g|&attachref(装備/武器/心眼の力.jpg,nolink);|心眼の力|1|深淵の穴|
+|&attachref(装備/武器/深淵の力.jpg,nolink);|深淵の力|471g500s|&attachref(./真古神の残滓.jpg,nolink);|真古神の残滓|9|異変・深淵の穴|
+|~|~|~|&attachref(./海息の欠片.jpg,nolink);|海息の欠片|10|異変・深淵の穴|
+|&attachref(装備/武器/明鏡の力.jpg,nolink);|明鏡の力|471g500s|&attachref(./真古神の残滓.jpg,nolink);|真古神の残滓|9|異変・深淵の穴|
+|~|~|~|&attachref(./海息の欠片.jpg,nolink);|海息の欠片|10|異変・深淵の穴|
+|&attachref(,nolink);|吸血の力|2357g500s|&attachref(,nolink);|審判の力|1|輪廻の祭壇|
+|&attachref(,nolink);|闇魂の力|2357g500s|&attachref(,nolink);|審判の力|1|輪廻の祭壇|
+|&attachref(装備/武器/輪廻ちから.jpg,nolink);|輪廻の力|2868g300s|&attachref(./犠牲エネルギー.jpg,nolink);|犠牲エネルギー|9|異変・輪廻の祭壇|
+|~|~|~|&attachref(./睡神の欠片.jpg,nolink);|睡神の欠片|10|異変・輪廻の祭壇|
+|&attachref(装備/武器/煉獄ちから.jpg,nolink);|煉獄の力|2868g300s|&attachref(./犠牲エネルギー.jpg,nolink);|犠牲エネルギー|9|異変・輪廻の祭壇|
+|~|~|~|&attachref(./睡神の欠片.jpg,nolink);|睡神の欠片|10|異変・輪廻の祭壇|
+|&attachref(,nolink);|閃光の力|2868g300s|&attachref(,nolink);|卓越の力|1|ソールネロ神殿|
+|&attachref(,nolink);|水晶の力|2868g300s|&attachref(,nolink);|卓越の力|1|ソールネロ神殿|
+|&attachref(装備/武器/神威ちから.jpg,nolink);|神威の力|3325g|&attachref(./滅世エネルギー.jpg,nolink);|滅世エネルギー|9|異変・ソールネロ神殿|
+|~|~|~|&attachref(./従者の破片.jpg,nolink);|従者の破片|10|異変・ソールネロ神殿|
+|&attachref(装備/武器/神降ちから.jpg,nolink);|神降の力|3325g|&attachref(./滅世エネルギー.jpg,nolink);|滅世エネルギー|9|異変・ソールネロ神殿|
+|~|~|~|&attachref(./従者の破片.jpg,nolink);|従者の破片|10|異変・ソールネロ神殿|
+|&attachref(装備/武器/龍炎ちから.jpg,nolink);|龍炎の力|4469g|&attachref(./龍炎のエネルギー.jpg,nolink);|龍炎のエネルギー|9|龍炎の監獄|
+|&attachref(装備/武器/龍獄ちから.jpg,nolink);|龍獄の力|4469g|&attachref(./龍炎のエネルギー.jpg,nolink);|龍炎のエネルギー|9|龍炎の監獄|
+|&attachref(,nolink);|光耀の力|3854g700s|&attachref(,nolink);|篝火の力|1|テンキョウ神古道|
+|&attachref(,nolink);|煌星の力|3854g700s|&attachref(,nolink);|篝火の力|1|テンキョウ神古道|
+|&attachref(,nolink);|罪悪の力|4841g100s|&attachref(,nolink);|毒晶の力|1|アマノハクオウ神宮|
+|&attachref(,nolink);|統制の力|4841g100s|&attachref(,nolink);|毒晶の力|1|アマノハクオウ神宮|
+|&attachref(,nolink);|雲外蒼天|6006g|&attachref(./崩天の石.jpg,nolink);|崩天の石|9|異変・アマノハクオウ神宮|
+|~|~|~|&attachref(./記憶の羽根.jpg,nolink);|記憶の羽根|12|異変・アマノハクオウ神宮|
+|&attachref(,nolink);|罪悪滔天|6006g|&attachref(./崩天の石.jpg,nolink);|崩天の石|9|異変・アマノハクオウ神宮|
+|~|~|~|&attachref(./記憶の羽根.jpg,nolink);|記憶の羽根|12|異変・アマノハクオウ神宮|
+|&attachref(,nolink);|夜空の力|5180g500s|&attachref(,nolink);|星雲の力|1|タソガレ城塞|
+|&attachref(,nolink);|引力の力|5180g500s|&attachref(,nolink);|星雲の力|1|タソガレ城塞|
+|&attachref(,nolink);|暁の力|7686g700s|&attachref(./古びた毛玉.jpg,nolink);|古びた毛玉|12|異変・タソガレ城塞|
+|~|~|~|&attachref(./古代生物の牙.jpg,nolink);|古代生物の牙|9|異変・タソガレ城塞|
+|&attachref(,nolink);|凝集の力|7686g700s|&attachref(./古びた毛玉.jpg,nolink);|古びた毛玉|12|異変・タソガレ城塞|
+|~|~|~|&attachref(./古代生物の牙.jpg,nolink);|古代生物の牙|9|異変・タソガレ城塞|
+|&attachref(,nolink);|侵食の力|7686g700s|&attachref(./古びた毛玉.jpg,nolink);|古びた毛玉|12|異変・タソガレ城塞|
+|~|~|~|&attachref(./古代生物の牙.jpg,nolink);|古代生物の牙|9|異変・タソガレ城塞|
+|&attachref(,nolink);|終末の力|7686g700s|&attachref(./古びた毛玉.jpg,nolink);|古びた毛玉|12|異変・タソガレ城塞|
+|~|~|~|&attachref(./古代生物の牙.jpg,nolink);|古代生物の牙|9|異変・タソガレ城塞|
+|&attachref(,nolink);|銀河の力|8686g800s|&attachref(./裁きの力.jpg,nolink);|裁きの力|9|審判の神殿|
+|&attachref(,nolink);|大地の力|8686g800s|&attachref(./裁きの力.jpg,nolink);|裁きの力|9|審判の神殿|
+*** 防具 [#a2b125d6]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(装備/頭/ペックヘルム.jpg,nolink);|ペックヘルム|260s|&attachref(装備/頭/スカーヘルム.jpg,nolink);|スカーヘルム|1|蒼月の聖殿|
+|&attachref(装備/体/ペックアーマー.jpg,nolink);|ペックアーマー|300s|&attachref(装備/体/スカーメイル.jpg,nolink);|スカーメイル|1|蒼月の聖殿|
+|&attachref(装備/腕/ペックアームガード.jpg,nolink);|ペックアームガード|160s|&attachref(装備/腕/スカーガントレット.jpg,nolink);|スカーガントレット|1|蒼月の聖殿|
+|&attachref(装備/脚/ペックブーツ.jpg,nolink);|ペックブーツ|160s|&attachref(装備/脚/スカーブーツ.jpg,nolink);|スカーブーツ|1|蒼月の聖殿|
+|&attachref(装備/腰/ペックベルト.jpg,nolink);|ペックベルト|160s|&attachref(装備/腰/スカーベルト.jpg,nolink);|スカーベルト|1|蒼月の聖殿|
+|>|>|>|>|>|>| |
+|&attachref(装備/頭/プレインヘルム.jpg,nolink);|プレインヘルム|600s|&attachref(装備/頭/リメインヘルム.jpg,nolink);|リメインヘルム|1|失われた遺跡|
+|&attachref(装備/体/プレインメイル.jpg,nolink);|プレインメイル|900s|&attachref(装備/体/リメインアーマー.jpg,nolink);|リメインアーマー|1|失われた遺跡|
+|&attachref(装備/腕/プレインアームガード.jpg,nolink);|プレインアームガード|480s|&attachref(装備/腕/リメインアームガード.jpg,nolink);|リメインアームガード|1|失われた遺跡|
+|&attachref(装備/脚/プレインブーツ.jpg,nolink);|プレインブーツ|480s|&attachref(装備/脚/リメインブーツ.jpg,nolink);|リメインブーツ|1|失われた遺跡|
+|&attachref(装備/腰/プレインベルト.jpg,nolink);|プレインベルト|480s|&attachref(装備/腰/リメインベルト.jpg,nolink);|リメインベルト|1|失われた遺跡|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|セイヴァーヘルム|5g120s|&attachref(,nolink);|リバイブヘルム|1|シャルール祭壇|
+|&attachref(,nolink);|セイヴァーメイル|7g700s|&attachref(,nolink);|リバイブアーマー|1|シャルール祭壇|
+|&attachref(,nolink);|セイヴァーアームガード|4g100s|&attachref(,nolink);|リバイブグローブ|1|シャルール祭壇|
+|&attachref(,nolink);|セイヴァーブーツ|4g100s|&attachref(,nolink);|リバイブブーツ|1|シャルール祭壇|
+|&attachref(,nolink);|セイヴァーベルト|4g100s|&attachref(,nolink);|リバイブベルト|1|シャルール祭壇|
+|&attachref(,nolink);|ルーラーヘルム|5g120s|&attachref(,nolink);|リバイブヘルム|1|シャルール祭壇|
+|&attachref(,nolink);|ルーラーメイル|7g700s|&attachref(,nolink);|リバイブアーマー|1|シャルール祭壇|
+|&attachref(,nolink);|ルーラーアームガード|4g100s|&attachref(,nolink);|リバイブグローブ|1|シャルール祭壇|
+|&attachref(,nolink);|ルーラーブーツ|4g100s|&attachref(,nolink);|リバイブブーツ|1|シャルール祭壇|
+|&attachref(,nolink);|ルーラーベルト|4g100s|&attachref(,nolink);|リバイブベルト|1|シャルール祭壇|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|スカイヘルム|12g|&attachref(,nolink);|オラクルヘルム|1|シリウス城|
+|&attachref(,nolink);|スカイメイル|18g|&attachref(,nolink);|オラクルメイル|1|シリウス城|
+|&attachref(,nolink);|スカイガントレット|9g600s|&attachref(,nolink);|オラクルガントレット|1|シリウス城|
+|&attachref(,nolink);|スカイブーツ|9g600s|&attachref(,nolink);|オラクルブーツ|1|シリウス城|
+|&attachref(,nolink);|スカイベルト|9g600s|&attachref(,nolink);|オラクルベルト|1|シリウス城|
+|&attachref(,nolink);|アングヘルム|12g|&attachref(,nolink);|オラクルヘルム|1|シリウス城|
+|&attachref(,nolink);|アングメイル|18g|&attachref(,nolink);|オラクルメイル|1|シリウス城|
+|&attachref(,nolink);|アングガントレット|9g600s|&attachref(,nolink);|オラクルガントレット|1|シリウス城|
+|&attachref(,nolink);|アングブーツ|9g600s|&attachref(,nolink);|オラクルブーツ|1|シリウス城|
+|&attachref(,nolink);|アングベルト|9g600s|&attachref(,nolink);|オラクルベルト|1|シリウス城|
+|>|>|>|>|>|>| |
+|&attachref(装備/頭/トルルヘルム.jpg,nolink);|トルルヘルム|40g|&attachref(./狂乱のエネルギー.jpg,nolink);|狂乱のエネルギー|3|狂気の研究所|
+|&attachref(装備/体/クラールメイル.jpg,nolink);|クラールメイル|60g|&attachref(./狂乱のエネルギー.jpg,nolink);|狂乱のエネルギー|5|狂気の研究所|
+|&attachref(装備/頭/アレスヘルム.jpg,nolink);|アレスヘルム|40g|&attachref(./狂乱のエネルギー.jpg,nolink);|狂乱のエネルギー|3|狂気の研究所|
+|&attachref(装備/体/アレスメイル.jpg,nolink);|アレスメイル|60g|&attachref(./狂乱のエネルギー.jpg,nolink);|狂乱のエネルギー|5|狂気の研究所|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|クリエイヘルム|24g|&attachref(,nolink);|ライフヘルム|1|異界・シャルール祭壇|
+|&attachref(,nolink);|クリエイメイル|36g|&attachref(,nolink);|ライフアーマー|1|異界・シャルール祭壇|
+|&attachref(,nolink);|クリエイガントレット|19g200s|&attachref(,nolink);|ライフガントレット|1|異界・シャルール祭壇|
+|&attachref(,nolink);|クリエイブーツ|19g200s|&attachref(,nolink);|ライフブーツ|1|異界・シャルール祭壇|
+|&attachref(,nolink);|クリエイベルト|19g200s|&attachref(,nolink);|ライフベルト|1|異界・シャルール祭壇|
+|&attachref(,nolink);|ジャッジヘルム|24g|&attachref(,nolink);|ライフヘルム|1|異界・シャルール祭壇|
+|&attachref(,nolink);|ジャッジアーマー|36g|&attachref(,nolink);|ライフアーマー|1|異界・シャルール祭壇|
+|&attachref(,nolink);|ジャッジガントレット|19g200s|&attachref(,nolink);|ライフガントレット|1|異界・シャルール祭壇|
+|&attachref(,nolink);|ジャッジブーツ|19g200s|&attachref(,nolink);|ライフブーツ|1|異界・シャルール祭壇|
+|&attachref(,nolink);|ジャッジベルト|19g200s|&attachref(,nolink);|ライフベルト|1|異界・シャルール祭壇|
+|>|>|>|>|>|>| |
+|&attachref(装備/腕/バウンドアームガード.jpg,nolink);|バウンドアームガード|80g|&attachref(./次元のエネルギー.jpg,nolink);|次元のエネルギー|5|次元の狭間|
+|&attachref(装備/腰/バウンドベルト.jpg,nolink);|バウンドベルト|80g|&attachref(./次元のエネルギー.jpg,nolink);|次元のエネルギー|4|次元の狭間|
+|&attachref(装備/脚/バウンドブーツ.jpg,nolink);|バウンドブーツ|80g|&attachref(./次元のエネルギー.jpg,nolink);|次元のエネルギー|4|次元の狭間|
+|&attachref(装備/腕/サリルアームガード.jpg,nolink);|サリルアームガード|80g|&attachref(./次元のエネルギー.jpg,nolink);|次元のエネルギー|5|次元の狭間|
+|&attachref(装備/腰/サリルベルト.jpg,nolink);|サリルベルト|80g|&attachref(./次元のエネルギー.jpg,nolink);|次元のエネルギー|4|次元の狭間|
+|&attachref(装備/脚/サリルブーツ.jpg,nolink);|サリルブーツ|80g|&attachref(./次元のエネルギー.jpg,nolink);|次元のエネルギー|4|次元の狭間|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|エクリプスヘルム|40g|&attachref(,nolink);|アルマヘルム|1|ノヴァタワー|
+|&attachref(,nolink);|エクリプスアーマー|54g|&attachref(,nolink);|アルマアーマー|1|ノヴァタワー|
+|&attachref(,nolink);|エクリプスアームガード|32g|&attachref(,nolink);|アルマアームガード|1|ノヴァタワー|
+|&attachref(,nolink);|エクリプスブーツ|32g|&attachref(,nolink);|アルマブーツ|1|ノヴァタワー|
+|&attachref(,nolink);|エクリプスベルト|32g|&attachref(,nolink);|アルマベルト|1|ノヴァタワー|
+|&attachref(,nolink);|ストームヘルム|40g|&attachref(,nolink);|アルマヘルム|1|ノヴァタワー|
+|&attachref(,nolink);|ストームアーマー|54g|&attachref(,nolink);|アルマアーマー|1|ノヴァタワー|
+|&attachref(,nolink);|ストームアームガード|32g|&attachref(,nolink);|アルマアームガード|1|ノヴァタワー|
+|&attachref(,nolink);|ストームブーツ|32g|&attachref(,nolink);|アルマブーツ|1|ノヴァタワー|
+|&attachref(,nolink);|ストームベルト|32g|&attachref(,nolink);|アルマベルト|1|ノヴァタワー|
+|>|>|>|>|>|>| |
+|&attachref(装備/頭/ジリアヘルム.jpg,nolink);|ジリアヘルム|32g|&attachref(./亡国の遺灰.jpg,nolink);|亡国の遺灰|3|砂漠の亡国|
+|&attachref(装備/体/アブダラメイル.jpg,nolink);|アブダラメイル|48g|&attachref(./亡国の遺灰.jpg,nolink);|亡国の遺灰|5|砂漠の亡国|
+|&attachref(装備/頭/ハルージャヘルム.jpg,nolink);|ハルージャヘルム|32g|&attachref(./亡国の遺灰.jpg,nolink);|亡国の遺灰|3|砂漠の亡国|
+|&attachref(装備/体/ハルージャメイル.jpg,nolink);|ハルージャメイル|48g|&attachref(./亡国の遺灰.jpg,nolink);|亡国の遺灰|5|砂漠の亡国|
+|>|>|>|>|>|>| |
+|&attachref(装備/腕/ラージュガントレット.jpg,nolink);|ラージュガントレット|100g|&attachref(./灼熱の燐石.jpg,nolink);|灼熱の燐石|5|道化師の娯楽場|
+|&attachref(装備/腰/ラージュベルト.jpg,nolink);|ラージュベルト|100g|&attachref(./灼熱の燐石.jpg,nolink);|灼熱の燐石|4|道化師の娯楽場|
+|&attachref(装備/脚/ラージュブーツ.jpg,nolink);|ラージュブーツ|100g|&attachref(./灼熱の燐石.jpg,nolink);|灼熱の燐石|4|道化師の娯楽場|
+|&attachref(装備/腕/ディザイアガントレット.jpg,nolink);|ディザイアガントレット|100g|&attachref(./灼熱の燐石.jpg,nolink);|灼熱の燐石|5|道化師の娯楽場|
+|&attachref(装備/腰/ディザイアベルト.jpg,nolink);|ディザイアベルト|100g|&attachref(./灼熱の燐石.jpg,nolink);|灼熱の燐石|4|道化師の娯楽場|
+|&attachref(装備/脚/ディザイアブーツ.jpg,nolink);|ディザイアブーツ|100g|&attachref(./灼熱の燐石.jpg,nolink);|灼熱の燐石|4|道化師の娯楽場|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|クライムヘルム|64g|&attachref(,nolink);|グリットヘルム|1|アイスベルク城|
+|&attachref(,nolink);|クライムアーマー|90g|&attachref(,nolink);|グリットアーマー|1|アイスベルク城|
+|&attachref(,nolink);|クライムベルト|52g|&attachref(,nolink);|グリットベルト|1|アイスベルク城|
+|&attachref(,nolink);|クライムガントレット|52g|&attachref(,nolink);|グリットガントレット|1|アイスベルク城|
+|&attachref(,nolink);|クライムブーツ|52g|&attachref(,nolink);|グリットブーツ|1|アイスベルク城|
+|&attachref(,nolink);|アビスヘルム|64g|&attachref(,nolink);|グリットヘルム|1|アイスベルク城|
+|&attachref(,nolink);|アビスアーマー|90g|&attachref(,nolink);|グリットアーマー|1|アイスベルク城|
+|&attachref(,nolink);|アビスベルト|52g|&attachref(,nolink);|グリットベルト|1|アイスベルク城|
+|&attachref(,nolink);|アビスガントレット|52g|&attachref(,nolink);|グリットガントレット|1|アイスベルク城|
+|&attachref(,nolink);|アビスブーツ|52g|&attachref(,nolink);|グリットブーツ|1|アイスベルク城|
+|>|>|>|>|>|>| |
+|&attachref(装備/頭/アベンジヘルム.jpg,nolink);|アベンジヘルム|80g|&attachref(装備/頭/レイジヘルム.jpg,nolink);|レイジヘルム|1|マグス魔法学院|
+|&attachref(装備/体/アベンジメイル.jpg,nolink);|アベンジメイル|112g500s|&attachref(装備/体/レイジメイル.jpg,nolink);|レイジメイル|1|マグス魔法学院|
+|&attachref(装備/腕/アベンジアームガード.jpg,nolink);|アベンジアームガード|65g|&attachref(装備/腕/レイジガントレット.jpg,nolink);|レイジガントレット|1|マグス魔法学院|
+|&attachref(装備/脚/アベンジブーツ.jpg,nolink);|アベンジブーツ|65g|&attachref(装備/脚/レイジブーツ.jpg,nolink);|レイジブーツ|1|マグス魔法学院|
+|&attachref(装備/腰/アベンジベルト.jpg,nolink);|アベンジベルト|65g|&attachref(装備/腰/レイジベルト.jpg,nolink);|レイジベルト|1|マグス魔法学院|
+|&attachref(装備/頭/スレイヤーヘルム.jpg,nolink);|スレイヤーヘルム|80g|&attachref(装備/頭/レイジヘルム.jpg,nolink);|レイジヘルム|1|マグス魔法学院|
+|&attachref(装備/体/スレイヤーメイル.jpg,nolink);|スレイヤーメイル|112g500s|&attachref(装備/体/レイジメイル.jpg,nolink);|レイジメイル|1|マグス魔法学院|
+|&attachref(装備/腕/スレイヤーアームガード.jpg,nolink);|スレイヤーアームガード|65g|&attachref(装備/腕/レイジガントレット.jpg,nolink);|レイジガントレット|1|マグス魔法学院|
+|&attachref(装備/脚/スレイヤーブーツ.jpg,nolink);|スレイヤーブーツ|65g|&attachref(装備/脚/レイジブーツ.jpg,nolink);|レイジブーツ|1|マグス魔法学院|
+|&attachref(装備/腰/スレイヤーベルト.jpg,nolink);|スレイヤーベルト|65g|&attachref(装備/腰/レイジベルト.jpg,nolink);|レイジベルト|1|マグス魔法学院|
+|>|>|>|>|>|>| |
+|&attachref(装備/頭/ゲルツヘルム.jpg,nolink);|ゲルツヘルム|77g|&attachref(./マグマの核石.jpg,nolink);|マグマの核石|3|道化師の対局場|
+|&attachref(装備/体/ゲルツアーマー.jpg,nolink);|ゲルツアーマー|115g|&attachref(./マグマの核石.jpg,nolink);|マグマの核石|5|道化師の対局場|
+|&attachref(装備/頭/ドレッドヘルム.jpg,nolink);|ドレッドヘルム|77g|&attachref(./マグマの核石.jpg,nolink);|マグマの核石|3|道化師の対局場|
+|&attachref(装備/体/ドレッドアーマー.jpg,nolink);|ドレッドアーマー|115g|&attachref(./マグマの核石.jpg,nolink);|マグマの核石|5|道化師の対局場|
+|>|>|>|>|>|>| |
+|&attachref(装備/腕/ファーナーガントレット.jpg,nolink);|ファーナーガントレット|120g|&attachref(./庭園の宝石.jpg,nolink);|庭園の宝石|5|秘宝庭園|
+|&attachref(装備/脚/ファーナーブーツ.jpg,nolink);|ファーナーブーツ|120g|&attachref(./庭園の宝石.jpg,nolink);|庭園の宝石|4|秘宝庭園|
+|&attachref(装備/腰/ファーナーベルト.jpg,nolink);|ファーナーベルト|120g|&attachref(./庭園の宝石.jpg,nolink);|庭園の宝石|4|秘宝庭園|
+|&attachref(装備/腕/ファルメスアームガード.jpg,nolink);|ファルメスアームガード|120g|&attachref(./庭園の宝石.jpg,nolink);|庭園の宝石|5|秘宝庭園|
+|&attachref(装備/脚/ファルメスブーツ.jpg,nolink);|ファルメスブーツ|120g|&attachref(./庭園の宝石.jpg,nolink);|庭園の宝石|4|秘宝庭園|
+|&attachref(装備/腰/ファルメスベルト.jpg,nolink);|ファルメスベルト|120g|&attachref(./庭園の宝石.jpg,nolink);|庭園の宝石|4|秘宝庭園|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|ヴァルキュリアヘルム|96g|&attachref(,nolink);|ドロップムーンヘルム|1|深淵の穴|
+|&attachref(,nolink);|ヴァルキュリアアーマー|135g|&attachref(,nolink);|ドロップムーンアーマー|1|深淵の穴|
+|&attachref(,nolink);|ヴァルキュリアアームガード|78g|&attachref(,nolink);|ドロップムーンアームガード|1|深淵の穴|
+|&attachref(,nolink);|ヴァルキュリアブーツ|78g|&attachref(,nolink);|ドロップムーンブーツ|1|深淵の穴|
+|&attachref(,nolink);|ヴァルキュリアベルト|78g|&attachref(,nolink);|ドロップムーンベルト|1|深淵の穴|
+|&attachref(,nolink);|ドラゴンキラーヘルム|96g|&attachref(,nolink);|ドロップムーンヘルム|1|深淵の穴|
+|&attachref(,nolink);|ドラゴンキラーアーマー|135g|&attachref(,nolink);|ドロップムーンアーマー|1|深淵の穴|
+|&attachref(,nolink);|ドラゴンキラーアームガード|78g|&attachref(,nolink);|ドロップムーンアームガード|1|深淵の穴|
+|&attachref(,nolink);|ドラゴンキラーブーツ|78g|&attachref(,nolink);|ドロップムーンブーツ|1|深淵の穴|
+|&attachref(,nolink);|ドラゴンキラーベルト|78g|&attachref(,nolink);|ドロップムーンベルト|1|深淵の穴|
+|>|>|>|>|>|>| |
+|&attachref(装備/腕/ニルイドの深海ガントレット.jpg,nolink);|ニルイドの深海ガントレット|188g60s|&attachref(./幻璃の欠片.jpg,nolink);|幻璃の欠片|10|異変・深淵の穴|
+|~|~|~|&attachref(./真古神の残滓.jpg,nolink);|真古神の残滓|5|異変・深淵の穴|
+|&attachref(装備/脚/ニルイドの深海ブーツ.jpg,nolink);|ニルイドの深海ブーツ|188g60s|&attachref(./幻璃の欠片.jpg,nolink);|幻璃の欠片|10|異変・深淵の穴|
+|~|~|~|&attachref(./真古神の残滓.jpg,nolink);|真古神の残滓|4|異変・深淵の穴|
+|&attachref(装備/腰/ニルイドの深海ベルト.jpg,nolink);|ニルイドの深海ベルト|188g60s|&attachref(./幻璃の欠片.jpg,nolink);|幻璃の欠片|10|異変・深淵の穴|
+|~|~|~|&attachref(./真古神の残滓.jpg,nolink);|真古神の残滓|4|異変・深淵の穴|
+|&attachref(装備/腕/ルミアのミラーガントレット.jpg,nolink);|ルミアのミラーガントレット|188g60s|&attachref(./幻璃の欠片.jpg,nolink);|幻璃の欠片|10|異変・深淵の穴|
+|~|~|~|&attachref(./真古神の残滓.jpg,nolink);|真古神の残滓|5|異変・深淵の穴|
+|&attachref(装備/脚/ルミアのミラーブーツ.jpg,nolink);|ルミアのミラーブーツ|188g60s|&attachref(./幻璃の欠片.jpg,nolink);|幻璃の欠片|10|異変・深淵の穴|
+|~|~|~|&attachref(./真古神の残滓.jpg,nolink);|真古神の残滓|4|異変・深淵の穴|
+|&attachref(装備/腰/ルミアのミラーベルト.jpg,nolink);|ルミアのミラーベルト|188g60s|&attachref(./幻璃の欠片.jpg,nolink);|幻璃の欠片|10|異変・深淵の穴|
+|~|~|~|&attachref(./真古神の残滓.jpg,nolink);|真古神の残滓|4|異変・深淵の穴|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|スランジヘルム|943g|&attachref(,nolink);|チャースヘルム|1|輪廻の祭壇|
+|&attachref(,nolink);|スランジアーマー|1414g500s|&attachref(,nolink);|チャースアーマー|1|輪廻の祭壇|
+|&attachref(,nolink);|スランジアームガード|707g300s|&attachref(,nolink);|チャースアームガード|1|輪廻の祭壇|
+|&attachref(,nolink);|スランジブーツ|707g300s|&attachref(,nolink);|チャースブーツ|1|輪廻の祭壇|
+|&attachref(,nolink);|スランジベルト|707g300s|&attachref(,nolink);|チャースベルト|1|輪廻の祭壇|
+|&attachref(,nolink);|アンメイデンヘルム|943g|&attachref(,nolink);|チャースヘルム|1|輪廻の祭壇|
+|&attachref(,nolink);|アンメイデンアーマー|1414g500s|&attachref(,nolink);|チャースアーマー|1|輪廻の祭壇|
+|&attachref(,nolink);|アンメイデンアームガード|707g300s|&attachref(,nolink);|チャースアームガード|1|輪廻の祭壇|
+|&attachref(,nolink);|アンメイデンブーツ|707g300s|&attachref(,nolink);|チャースブーツ|1|輪廻の祭壇|
+|&attachref(,nolink);|アンメイデンベルト|707g300s|&attachref(,nolink);|チャースベルト|1|輪廻の祭壇|
+|>|>|>|>|>|>| |
+|&attachref(装備/腕/アクムラシア憤怒、腕.jpg,nolink);|アクムラシアの憤怒|1090g|&attachref(./炎獄の欠片.jpg,nolink);|炎獄の欠片|10|異変・輪廻の祭壇|
+|~|~|~|&attachref(./犠牲エネルギー.jpg,nolink);|犠牲エネルギー|5|異変・輪廻の祭壇|
+|&attachref(装備/脚/アクムラシア哀嘆、脚.jpg,nolink);|アクムラシアの哀嘆|1090g|&attachref(./炎獄の欠片.jpg,nolink);|炎獄の欠片|10|異変・輪廻の祭壇|
+|~|~|~|&attachref(./犠牲エネルギー.jpg,nolink);|犠牲エネルギー|4|異変・輪廻の祭壇|
+|&attachref(装備/腰/アクムラシア消散、腰.jpg,nolink);|アクムラシアの消散|1090g|&attachref(./炎獄の欠片.jpg,nolink);|炎獄の欠片|10|異変・輪廻の祭壇|
+|~|~|~|&attachref(./犠牲エネルギー.jpg,nolink);|犠牲エネルギー|4|異変・輪廻の祭壇|
+|&attachref(装備/腕/クノヤード、腕.jpg,nolink);|クノヤードの敬慕|1090g|&attachref(./炎獄の欠片.jpg,nolink);|炎獄の欠片|10|異変・輪廻の祭壇|
+|~|~|~|&attachref(./犠牲エネルギー.jpg,nolink);|犠牲エネルギー|5|異変・輪廻の祭壇|
+|&attachref(装備/脚/クノヤード、脚.jpg,nolink);|クノヤードの盲信|1090g|&attachref(./炎獄の欠片.jpg,nolink);|炎獄の欠片|10|異変・輪廻の祭壇|
+|~|~|~|&attachref(./犠牲エネルギー.jpg,nolink);|犠牲エネルギー|4|異変・輪廻の祭壇|
+|&attachref(装備/腰/クノヤード、腰.jpg,nolink);|クノヤードの枷鎖|1090g|&attachref(./炎獄の欠片.jpg,nolink);|炎獄の欠片|10|異変・輪廻の祭壇|
+|~|~|~|&attachref(./犠牲エネルギー.jpg,nolink);|犠牲エネルギー|4|異変・輪廻の祭壇|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|フラッシュヘルム|1147g300s|&attachref(,nolink);|ジョルノヘルム|1|ソールネロ神殿|
+|&attachref(,nolink);|フラッシュアーマー|1721g|&attachref(,nolink);|ジョルノアーマー|1|ソールネロ神殿|
+|&attachref(,nolink);|フラッシュアームガード|860g500s|&attachref(,nolink);|ジョルノアームガード|1|ソールネロ神殿|
+|&attachref(,nolink);|フラッシュブーツ|860g500s|&attachref(,nolink);|ジョルノブーツ|1|ソールネロ神殿|
+|&attachref(,nolink);|フラッシュベルト|860g500s|&attachref(,nolink);|ジョルノベルト|1|ソールネロ神殿|
+|&attachref(,nolink);|クリスタルヘルム|1147g300s|&attachref(,nolink);|ジョルノヘルム|1|ソールネロ神殿|
+|&attachref(,nolink);|クリスタルアーマー|1721g|&attachref(,nolink);|ジョルノアーマー|1|ソールネロ神殿|
+|&attachref(,nolink);|クリスタルアームガード|860g500s|&attachref(,nolink);|ジョルノアームガード|1|ソールネロ神殿|
+|&attachref(,nolink);|クリスタルブーツ|860g500s|&attachref(,nolink);|ジョルノブーツ|1|ソールネロ神殿|
+|&attachref(,nolink);|クリスタルベルト|860g500s|&attachref(,nolink);|ジョルノベルト|1|ソールネロ神殿|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|暴威ライオガントレット|1264g|&attachref(./真古神の欠片.jpg,nolink);|真古神の欠片|10|異変・ソールネロ神殿|
+|~|~|~|&attachref(./滅世エネルギー.jpg,nolink);|滅世エネルギー|5|異変・ソールネロ神殿|
+|&attachref(,nolink);|魔幻鏡ミラージュシューズ|1264g|&attachref(./真古神の欠片.jpg,nolink);|真古神の欠片|10|異変・ソールネロ神殿|
+|~|~|~|&attachref(./滅世エネルギー.jpg,nolink);|滅世エネルギー|4|異変・ソールネロ神殿|
+|&attachref(,nolink);|煉獄パーガトリベルト|1264g|&attachref(./真古神の欠片.jpg,nolink);|真古神の欠片|10|異変・ソールネロ神殿|
+|~|~|~|&attachref(./滅世エネルギー.jpg,nolink);|滅世エネルギー|4|異変・ソールネロ神殿|
+|&attachref(,nolink);|黒陽ビジョンガントレット|1264g|&attachref(./真古神の欠片.jpg,nolink);|真古神の欠片|10|異変・ソールネロ神殿|
+|~|~|~|&attachref(./滅世エネルギー.jpg,nolink);|滅世エネルギー|5|異変・ソールネロ神殿|
+|&attachref(,nolink);|黒陽カオスシューズ|1264g|&attachref(./真古神の欠片.jpg,nolink);|真古神の欠片|10|異変・ソールネロ神殿|
+|~|~|~|&attachref(./滅世エネルギー.jpg,nolink);|滅世エネルギー|4|異変・ソールネロ神殿|
+|&attachref(,nolink);|黒陽フェイスベルト|1264g|&attachref(./真古神の欠片.jpg,nolink);|真古神の欠片|10|異変・ソールネロ神殿|
+|~|~|~|&attachref(./滅世エネルギー.jpg,nolink);|滅世エネルギー|4|異変・ソールネロ神殿|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|ラーヴァヘルム|1685g|&attachref(./龍炎のエネルギー.jpg,nolink);|龍炎のエネルギー|3|龍炎の監獄|
+|&attachref(,nolink);|ラーヴァメイル|2527g|&attachref(./龍炎のエネルギー.jpg,nolink);|龍炎のエネルギー|5|龍炎の監獄|
+|&attachref(,nolink);|クラウディヘルム|1685g|&attachref(./龍炎のエネルギー.jpg,nolink);|龍炎のエネルギー|3|龍炎の監獄|
+|&attachref(,nolink);|クラウディメイル|2527g|&attachref(./龍炎のエネルギー.jpg,nolink);|龍炎のエネルギー|5|龍炎の監獄|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|コーリンヘルム|1541g900s|&attachref(,nolink);|ラグファイアヘルム|1|テンキョウ神古道|
+|&attachref(,nolink);|コーリンアーマー|2312g800s|&attachref(,nolink);|ラグファイアアーマー|1|テンキョウ神古道|
+|&attachref(,nolink);|コーリンアームガード|1156g400s|&attachref(,nolink);|ラグファイアアームガード|1|テンキョウ神古道|
+|&attachref(,nolink);|コーリンブーツ|1156g400s|&attachref(,nolink);|ラグファイアブーツ|1|テンキョウ神古道|
+|&attachref(,nolink);|コーリンベルト|1156g400s|&attachref(,nolink);|ラグファイアベルト|1|テンキョウ神古道|
+|&attachref(,nolink);|スターヘルム|1541g900s|&attachref(,nolink);|ラグファイアヘルム|1|テンキョウ神古道|
+|&attachref(,nolink);|スターアーマー|2312g800s|&attachref(,nolink);|ラグファイアアーマー|1|テンキョウ神古道|
+|&attachref(,nolink);|スターアームガード|1156g400s|&attachref(,nolink);|ラグファイアアームガード|1|テンキョウ神古道|
+|&attachref(,nolink);|スターブーツ|1156g400s|&attachref(,nolink);|ラグファイアブーツ|1|テンキョウ神古道|
+|&attachref(,nolink);|スターベルト|1156g400s|&attachref(,nolink);|ラグファイアベルト|1|テンキョウ神古道|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|スズランの私怨|1465g|&attachref(./闇龍の鱗.jpg,nolink);|闇龍の鱗|10|異変・テンキョウ神古道|
+|~|~|~|&attachref(./簒奪エネルギー.jpg,nolink);|簒奪エネルギー|5|異変・テンキョウ神古道|
+|&attachref(,nolink);|スズランの慟哭|1465g|&attachref(./闇龍の鱗.jpg,nolink);|闇龍の鱗|10|異変・テンキョウ神古道|
+|~|~|~|&attachref(./簒奪エネルギー.jpg,nolink);|簒奪エネルギー|4|異変・テンキョウ神古道|
+|&attachref(,nolink);|スズランの理想|1465g|&attachref(./闇龍の鱗.jpg,nolink);|闇龍の鱗|10|異変・テンキョウ神古道|
+|~|~|~|&attachref(./簒奪エネルギー.jpg,nolink);|簒奪エネルギー|4|異変・テンキョウ神古道|
+|&attachref(,nolink);|アマツキの神罰|1465g|&attachref(./闇龍の鱗.jpg,nolink);|闇龍の鱗|10|異変・テンキョウ神古道|
+|~|~|~|&attachref(./簒奪エネルギー.jpg,nolink);|簒奪エネルギー|5|異変・テンキョウ神古道|
+|&attachref(,nolink);|アマツキの神意|1465g|&attachref(./闇龍の鱗.jpg,nolink);|闇龍の鱗|10|異変・テンキョウ神古道|
+|~|~|~|&attachref(./簒奪エネルギー.jpg,nolink);|簒奪エネルギー|4|異変・テンキョウ神古道|
+|&attachref(,nolink);|アマツキの覚悟|1465g|&attachref(./闇龍の鱗.jpg,nolink);|闇龍の鱗|10|異変・テンキョウ神古道|
+|~|~|~|&attachref(./簒奪エネルギー.jpg,nolink);|簒奪エネルギー|4|異変・テンキョウ神古道|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|イヴィルヘルム|1936g500s|&attachref(,nolink);|ポイズンヘルム|1|アマノハクオウ神宮|
+|&attachref(,nolink);|イヴィルメイル|2904g600s|&attachref(,nolink);|ポイズンメイル|1|アマノハクオウ神宮|
+|&attachref(,nolink);|イヴィルアームガード|1452g300s|&attachref(,nolink);|ポイズンアームガード|1|アマノハクオウ神宮|
+|&attachref(,nolink);|イヴィルブーツ|1452g300s|&attachref(,nolink);|ポイズンブーツ|1|アマノハクオウ神宮|
+|&attachref(,nolink);|イヴィルベルト|1452g300s|&attachref(,nolink);|ポイズンベルト|1|アマノハクオウ神宮|
+|&attachref(,nolink);|ロードヘルム|1936g500s|&attachref(,nolink);|ポイズンヘルム|1|アマノハクオウ神宮|
+|&attachref(,nolink);|ロードメイル|2904g600s|&attachref(,nolink);|ポイズンメイル|1|アマノハクオウ神宮|
+|&attachref(,nolink);|ロードアームガード|1452g300s|&attachref(,nolink);|ポイズンアームガード|1|アマノハクオウ神宮|
+|&attachref(,nolink);|ロードブーツ|1452g300s|&attachref(,nolink);|ポイズンブーツ|1|アマノハクオウ神宮|
+|&attachref(,nolink);|ロードベルト|1452g300s|&attachref(,nolink);|ポイズンベルト|1|アマノハクオウ神宮|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|ユェトゥヘルム|2265g|&attachref(./記憶の毛皮.jpg,nolink);|記憶の毛皮|12|異変・アマノハクオウ神宮|
+|~|~|~|&attachref(./記憶の羽根.jpg,nolink);|記憶の羽根|6|異変・アマノハクオウ神宮|
+|&attachref(,nolink);|ユェトゥアーマー|3397g|&attachref(./記憶の毛皮.jpg,nolink);|記憶の毛皮|12|異変・アマノハクオウ神宮|
+|~|~|~|&attachref(./記憶の羽根.jpg,nolink);|記憶の羽根|6|異変・アマノハクオウ神宮|
+|&attachref(,nolink);|クリムヘルム|2265g|&attachref(./記憶の毛皮.jpg,nolink);|記憶の毛皮|12|異変・アマノハクオウ神宮|
+|~|~|~|&attachref(./記憶の羽根.jpg,nolink);|記憶の羽根|6|異変・アマノハクオウ神宮|
+|&attachref(,nolink);|クリムアーマー|3397g|&attachref(./記憶の毛皮.jpg,nolink);|記憶の毛皮|12|異変・アマノハクオウ神宮|
+|~|~|~|&attachref(./記憶の羽根.jpg,nolink);|記憶の羽根|6|異変・アマノハクオウ神宮|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|炎舞の憤怒|1698g|&attachref(./古代湖のエネルギー.jpg,nolink);|古代湖のエネルギー|5|古代湖の影|
+|&attachref(,nolink);|オリジンの破滅|1698g|&attachref(./古代湖のエネルギー.jpg,nolink);|古代湖のエネルギー|5|古代湖の影|
+|&attachref(,nolink);|炎舞の傲慢|1698g|&attachref(./古代湖のエネルギー.jpg,nolink);|古代湖のエネルギー|4|古代湖の影|
+|&attachref(,nolink);|オリジンの審判|1698g|&attachref(./古代湖のエネルギー.jpg,nolink);|古代湖のエネルギー|4|古代湖の影|
+|&attachref(,nolink);|炎舞の怠惰|1698g|&attachref(./古代湖のエネルギー.jpg,nolink);|古代湖のエネルギー|4|古代湖の影|
+|&attachref(,nolink);|オリジンの虚無|1698g|&attachref(./古代湖のエネルギー.jpg,nolink);|古代湖のエネルギー|4|古代湖の影|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|ミッドナイヘルム|2072g200s|&attachref(,nolink);|ネビュラヘルム|1|タソガレ城塞|
+|&attachref(,nolink);|ミッドナイメイル|3108g300s|&attachref(,nolink);|ネビュラメイル|1|タソガレ城塞|
+|&attachref(,nolink);|ミッドナイアームガード|1554g100s|&attachref(,nolink);|ネビュラアームガード|1|タソガレ城塞|
+|&attachref(,nolink);|ミッドナイブーツ|1554g100s|&attachref(,nolink);|ネビュラブーツ|1|タソガレ城塞|
+|&attachref(,nolink);|ミッドナイベルト|1554g100s|&attachref(,nolink);|ネビュラベルト|1|タソガレ城塞|
+|&attachref(,nolink);|グラビティヘルム|2072g200s|&attachref(,nolink);|ネビュラヘルム|1|タソガレ城塞|
+|&attachref(,nolink);|グラビティメイル|3108g300s|&attachref(,nolink);|ネビュラメイル|1|タソガレ城塞|
+|&attachref(,nolink);|グラビティアームガード|1554g100s|&attachref(,nolink);|ネビュラアームガード|1|タソガレ城塞|
+|&attachref(,nolink);|グラビティブーツ|1554g100s|&attachref(,nolink);|ネビュラブーツ|1|タソガレ城塞|
+|&attachref(,nolink);|グラビティベルト|1554g100s|&attachref(,nolink);|ネビュラベルト|1|タソガレ城塞|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|リュウグウアームガード|2216g500s|&attachref(./氷の涙.jpg,nolink);|氷の涙|5|隠された竜宮城|
+|&attachref(,nolink);|リュウグウブーツ|2216g500s|&attachref(./氷の涙.jpg,nolink);|氷の涙|4|隠された竜宮城|
+|&attachref(,nolink);|リュウグウベルト|2216g500s|&attachref(./氷の涙.jpg,nolink);|氷の涙|4|隠された竜宮城|
+|&attachref(,nolink);|ヒガクカイアームガード|2216g500s|&attachref(./氷の涙.jpg,nolink);|氷の涙|5|隠された竜宮城|
+|&attachref(,nolink);|ヒガクカイブーツ|2216g500s|&attachref(./氷の涙.jpg,nolink);|氷の涙|4|隠された竜宮城|
+|&attachref(,nolink);|ヒガクカイベルト|2216g500s|&attachref(./氷の涙.jpg,nolink);|氷の涙|4|隠された竜宮城|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|セイクリッドフェザーヘルム|2955g300s|&attachref(./古びた毛玉.jpg,nolink);|古びた毛玉|6|異変・タソガレ城塞|
+|~|~|~|&attachref(./変化する羽根.jpg,nolink);|変化する羽根|12|異変・タソガレ城塞|
+|&attachref(,nolink);|セイクリッドフェザーメイル|4432g900s|&attachref(./古びた毛玉.jpg,nolink);|古びた毛玉|6|異変・タソガレ城塞|
+|~|~|~|&attachref(./変化する羽根.jpg,nolink);|変化する羽根|12|異変・タソガレ城塞|
+|&attachref(,nolink);|シャックルソーンヘルム|2955g300s|&attachref(./古びた毛玉.jpg,nolink);|古びた毛玉|6|異変・タソガレ城塞|
+|~|~|~|&attachref(./変化する羽根.jpg,nolink);|変化する羽根|12|異変・タソガレ城塞|
+|&attachref(,nolink);|シャックルソーンメイル|4432g900s|&attachref(./古びた毛玉.jpg,nolink);|古びた毛玉|6|異変・タソガレ城塞|
+|~|~|~|&attachref(./変化する羽根.jpg,nolink);|変化する羽根|12|異変・タソガレ城塞|
+|>|>|>|>|>|>| |
+|&attachref(,nolink);|ディストリーヘルム|3262g900s|&attachref(./裁きの力.jpg,nolink);|裁きの力|3|審判の神殿|
+|&attachref(,nolink);|ディストリーメイル|4894g300s|&attachref(./裁きの力.jpg,nolink);|裁きの力|5|審判の神殿|
+|&attachref(,nolink);|ウロボロスヘルム|3262g900s|&attachref(./裁きの力.jpg,nolink);|裁きの力|3|審判の神殿|
+|&attachref(,nolink);|ウロボロスメイル|4894g300s|&attachref(./裁きの力.jpg,nolink);|裁きの力|5|審判の神殿|
+*** 勲章 [#mb4cc525]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(装備/勲章/タラフの残忍紋章.jpg,nolink);|タラフの残忍紋章|6g|&attachref(装備/勲章/タラフの勲章.jpg,nolink);|タラフの勲章|1|ロウェル坑道|
+|&attachref(装備/勲章/S-03のコア.jpg,nolink);|S-03のコア|6g|&attachref(装備/勲章/S-03の邪エネルギー電槽.jpg,nolink);|S-03の邪エネルギー電槽|1|ロウェル坑道|
+|&attachref(装備/勲章/サクレイダの魂.jpg,nolink);|サクレイダの魂|6g|&attachref(装備/勲章/サクレイダの炎.jpg,nolink);|サクレイダの炎|1|ロウェル坑道|
+|&attachref(装備/勲章/邪魔尾.jpg,nolink);|邪魔尾|36g|&attachref(装備/勲章/邪骨.jpg,nolink);|邪骨|1|ヴィクトリアの魔宮|
+|&attachref(装備/勲章/ゴナボの予言石.jpg,nolink);|ゴナボの予言石|36g|&attachref(装備/勲章/異境石.jpg,nolink);|異境石|1|ヴィクトリアの魔宮|
+|&attachref(装備/勲章/絶望の書.jpg,nolink);|絶望の書|36g|&attachref(装備/勲章/悪夢の一部.jpg,nolink);|悪夢の一部|1|ヴィクトリアの魔宮|
+|&attachref(装備/勲章/邪龍王の勾玉.jpg,nolink);|邪龍王の勾玉|90g|&attachref(装備/勲章/漆黒の龍爪.jpg,nolink);|漆黒の龍爪|1|ウラノスの砦|
+|&attachref(装備/勲章/キャサのアーマーの欠片.jpg,nolink);|キャサのアーマーの欠片|90g|&attachref(装備/勲章/ドラゴンメイルの破片.jpg,nolink);|ドラゴンメイルの破片|1|ウラノスの砦|
+|&attachref(装備/勲章/暴君のリング.jpg,nolink);|暴君のリング|90g|&attachref(装備/勲章/古代の天空エネルギー.jpg,nolink);|古代の天空エネルギー|1|ウラノスの砦|
+|&attachref(装備/勲章/世界樹の枝.jpg,nolink);|世界樹の枝|150g|&attachref(装備/勲章/神木の枝.jpg,nolink);|神木の枝|1|惑いの滝|
+|&attachref(装備/勲章/発狂の血眼.jpg,nolink);|発狂の血眼|150g|&attachref(装備/勲章/アビスの結晶.jpg,nolink);|アビスの結晶|1|惑いの滝|
+|&attachref(装備/勲章/禁術の書.jpg,nolink);|禁術の書|150g|&attachref(装備/勲章/呪術書のページ.jpg,nolink);|呪術書のページ|1|惑いの滝|
+*** アクセサリー [#qa7c7077]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(装備/マント/セイヴァーマント.jpg,nolink);|セイヴァーマント|10g|&attachref(装備/マント/リバイブマント.jpg,nolink);|リバイブマント|1|シャルール祭壇|
+|~|~|~|&attachref(./大地のエネルギー.jpg,nolink);|大地のエネルギー|3|シリウス城|
+|&attachref(装備/ネックレス/セイヴァーネックレス.jpg,nolink);|セイヴァーネックレス|10g|&attachref(装備/ネックレス/リバイブネックレス.jpg,nolink);|リバイブネックレス|1|シャルール祭壇|
+|~|~|~|&attachref(./大地のエネルギー.jpg,nolink);|大地のエネルギー|3|シリウス城|
+|&attachref(装備/リング/セイヴァーリング.jpg,nolink);|セイヴァーリング|10g|&attachref(装備/リング/リバイブリング.jpg,nolink);|リバイブリング|1|シャルール祭壇|
+|~|~|~|&attachref(./大地のエネルギー.jpg,nolink);|大地のエネルギー|3|シリウス城|
+|&attachref(装備/マント/ルーラーマント.jpg,nolink);|ルーラーマント|10g|&attachref(装備/マント/リバイブマント.jpg,nolink);|リバイブマント|1|シャルール祭壇|
+|~|~|~|&attachref(./大地のエネルギー.jpg,nolink);|大地のエネルギー|3|シリウス城|
+|&attachref(装備/ネックレス/ルーラーネックレス.jpg,nolink);|ルーラーネックレス|10g|&attachref(装備/ネックレス/リバイブネックレス.jpg,nolink);|リバイブネックレス|1|シャルール祭壇|
+|~|~|~|&attachref(./大地のエネルギー.jpg,nolink);|大地のエネルギー|3|シリウス城|
+|&attachref(装備/リング/ルーラーリング.jpg,nolink);|ルーラーリング|10g|&attachref(装備/リング/リバイブリング.jpg,nolink);|リバイブリング|1|シャルール祭壇|
+|~|~|~|&attachref(./大地のエネルギー.jpg,nolink);|大地のエネルギー|3|シリウス城|
+|&attachref(装備/リング/クリエイリング.jpg,nolink);|クリエイリング|20g|&attachref(装備/リング/ライフリング.jpg,nolink);|ライフリング|1|異界・シャルール祭壇|
+|~|~|~|&attachref(./聖炎のエネルギー.jpg,nolink);|聖炎のエネルギー|3|異界・シャルール祭壇|
+|&attachref(装備/マント/クリエイマント.jpg,nolink);|クリエイマント|20g|&attachref(装備/マント/ライフマント.jpg,nolink);|ライフマント|1|異界・シャルール祭壇|
+|~|~|~|&attachref(./聖炎のエネルギー.jpg,nolink);|聖炎のエネルギー|3|異界・シャルール祭壇|
+|&attachref(装備/ネックレス/クリエイネックレス.jpg,nolink);|クリエイネックレス|20g|&attachref(装備/ネックレス/ライフネックレス.jpg,nolink);|ライフネックレス|1|異界・シャルール祭壇|
+|~|~|~|&attachref(./聖炎のエネルギー.jpg,nolink);|聖炎のエネルギー|3|異界・シャルール祭壇|
+|&attachref(装備/リング/ジャッジリング.jpg,nolink);|ジャッジリング|20g|&attachref(装備/リング/ライフリング.jpg,nolink);|ライフリング|1|異界・シャルール祭壇|
+|~|~|~|&attachref(./聖炎のエネルギー.jpg,nolink);|聖炎のエネルギー|3|異界・シャルール祭壇|
+|&attachref(装備/マント/ジャッジマント.jpg,nolink);|ジャッジマント|20g|&attachref(装備/マント/ライフマント.jpg,nolink);|ライフマント|1|異界・シャルール祭壇|
+|~|~|~|&attachref(./聖炎のエネルギー.jpg,nolink);|聖炎のエネルギー|3|異界・シャルール祭壇|
+|&attachref(装備/ネックレス/ジャッジネックレス.jpg,nolink);|ジャッジネックレス|20g|&attachref(装備/ネックレス/ライフネックレス.jpg,nolink);|ライフネックレス|1|異界・シャルール祭壇|
+|~|~|~|&attachref(./聖炎のエネルギー.jpg,nolink);|聖炎のエネルギー|3|異界・シャルール祭壇|
+|&attachref(装備/リング/クライムリング.jpg,nolink);|クライムリング|30g|&attachref(装備/リング/グリットリング.jpg,nolink);|グリットリング|1|アイスベルク城|
+|~|~|~|&attachref(./極寒のエネルギー.jpg,nolink);|極寒のエネルギー|3|アイスベルク城|
+|&attachref(装備/マント/クライムマント.jpg,nolink);|クライムマント|30g|&attachref(装備/マント/グリットマント.jpg,nolink);|グリットマント|1|アイスベルク城|
+|~|~|~|&attachref(./極寒のエネルギー.jpg,nolink);|極寒のエネルギー|3|アイスベルク城|
+|&attachref(装備/ネックレス/クライムネックレス.jpg,nolink);|クライムネックレス|30g|&attachref(装備/ネックレス/グリットネックレス.jpg,nolink);|グリットネックレス|1|アイスベルク城|
+|~|~|~|&attachref(./極寒のエネルギー.jpg,nolink);|極寒のエネルギー|3|アイスベルク城|
+|&attachref(装備/リング/アビスリング.jpg,nolink);|アビスリング|30g|&attachref(装備/リング/グリットリング.jpg,nolink);|グリットリング|1|アイスベルク城|
+|~|~|~|&attachref(./極寒のエネルギー.jpg,nolink);|極寒のエネルギー|3|アイスベルク城|
+|&attachref(装備/マント/アビスマント.jpg,nolink);|アビスマント|30g|&attachref(装備/マント/グリットマント.jpg,nolink);|グリットマント|1|アイスベルク城|
+|~|~|~|&attachref(./極寒のエネルギー.jpg,nolink);|極寒のエネルギー|3|アイスベルク城|
+|&attachref(装備/ネックレス/アビスネックレス.jpg,nolink);|アビスネックレス|30g|&attachref(装備/ネックレス/グリットネックレス.jpg,nolink);|グリットネックレス|1|アイスベルク城|
+|~|~|~|&attachref(./極寒のエネルギー.jpg,nolink);|極寒のエネルギー|3|アイスベルク城|
+|&attachref(装備/リング/アベンジリング.jpg,nolink);|アベンジリング|37g500s|&attachref(装備/リング/レイジリング.jpg,nolink);|レイジリング|1|マグス魔法学院|
+|~|~|~|&attachref(./怨恨のエネルギー.jpg,nolink);|怨恨のエネルギー|3|マグス魔法学院|
+|&attachref(装備/マント/アベンジマント.jpg,nolink);|アベンジマント|37g500s|&attachref(装備/マント/レイジマント.jpg,nolink);|レイジマント|1|マグス魔法学院|
+|~|~|~|&attachref(./怨恨のエネルギー.jpg,nolink);|怨恨のエネルギー|3|マグス魔法学院|
+|&attachref(装備/ネックレス/アベンジネックレス.jpg,nolink);|アベンジネックレス|37g500s|&attachref(装備/ネックレス/レイジネックレス.jpg,nolink);|レイジネックレス|1|マグス魔法学院|
+|~|~|~|&attachref(./怨恨のエネルギー.jpg,nolink);|怨恨のエネルギー|3|マグス魔法学院|
+|&attachref(装備/リング/スレイヤーリング.jpg,nolink);|スレイヤーリング|37g500s|&attachref(装備/リング/レイジリング.jpg,nolink);|レイジリング|1|マグス魔法学院|
+|~|~|~|&attachref(./怨恨のエネルギー.jpg,nolink);|怨恨のエネルギー|3|マグス魔法学院|
+|&attachref(装備/マント/スレイヤーマント.jpg,nolink);|スレイヤーマント|37g500s|&attachref(装備/マント/レイジマント.jpg,nolink);|レイジマント|1|マグス魔法学院|
+|~|~|~|&attachref(./怨恨のエネルギー.jpg,nolink);|怨恨のエネルギー|3|マグス魔法学院|
+|&attachref(装備/ネックレス/スレイヤーネックレス.jpg,nolink);|スレイヤーネックレス|37g500s|&attachref(装備/ネックレス/レイジネックレス.jpg,nolink);|レイジネックレス|1|マグス魔法学院|
+|~|~|~|&attachref(./怨恨のエネルギー.jpg,nolink);|怨恨のエネルギー|3|マグス魔法学院|
+|&attachref(装備/リング/ヴァルキュリアリング.jpg,nolink);|ヴァルキュリアリング|45g|&attachref(./魔彩結晶.jpg,nolink);|魔彩結晶|3|深淵の穴|
+|&attachref(装備/マント/ヴァルキュリアマント.jpg,nolink);|ヴァルキュリアマント|45g|&attachref(./魔彩結晶.jpg,nolink);|魔彩結晶|3|深淵の穴|
+|&attachref(装備/ネックレス/ヴァルキュリアネックレス.jpg,nolink);|ヴァルキュリアネックレス|45g|&attachref(./魔彩結晶.jpg,nolink);|魔彩結晶|3|深淵の穴|
+|&attachref(装備/リング/ドラゴンキラーリング.jpg,nolink);|ドラゴンキラーリング|45g|&attachref(./魔彩結晶.jpg,nolink);|魔彩結晶|3|深淵の穴|
+|&attachref(装備/マント/ドラゴンキラーマント.jpg,nolink);|ドラゴンキラーマント|45g|&attachref(./魔彩結晶.jpg,nolink);|魔彩結晶|3|深淵の穴|
+|&attachref(装備/ネックレス/ドラゴンキラーネックレス.jpg,nolink);|ドラゴンキラーネックレス|45g|&attachref(./魔彩結晶.jpg,nolink);|魔彩結晶|3|深淵の穴|
+|&attachref(,nolink);|スランジリング|471g500s|&attachref(./獄炎の結晶.jpg,nolink);|獄炎の結晶|3|輪廻の祭壇|
+|&attachref(,nolink);|スランジマント|471g500s|&attachref(./獄炎の結晶.jpg,nolink);|獄炎の結晶|3|輪廻の祭壇|
+|&attachref(,nolink);|スランジネックレス|471g500s|&attachref(./獄炎の結晶.jpg,nolink);|獄炎の結晶|3|輪廻の祭壇|
+|&attachref(,nolink);|アンメイデンリング|471g500s|&attachref(./獄炎の結晶.jpg,nolink);|獄炎の結晶|3|輪廻の祭壇|
+|&attachref(,nolink);|アンメイデンマント|471g500s|&attachref(./獄炎の結晶.jpg,nolink);|獄炎の結晶|3|輪廻の祭壇|
+|&attachref(,nolink);|アンメイデンネックレス|471g500s|&attachref(./獄炎の結晶.jpg,nolink);|獄炎の結晶|3|輪廻の祭壇|
+|&attachref(,nolink);|フラッシュリング|573g700s|&attachref(./古代の印記.jpg,nolink);|古代の印記|3|ソールネロ神殿|
+|&attachref(,nolink);|フラッシュマント|573g700s|&attachref(./古代の印記.jpg,nolink);|古代の印記|3|ソールネロ神殿|
+|&attachref(,nolink);|フラッシュネックレス|573g700s|&attachref(./古代の印記.jpg,nolink);|古代の印記|3|ソールネロ神殿|
+|&attachref(,nolink);|クリスタルリング|573g700s|&attachref(./古代の印記.jpg,nolink);|古代の印記|3|ソールネロ神殿|
+|&attachref(,nolink);|クリスタルマント|573g700s|&attachref(./古代の印記.jpg,nolink);|古代の印記|3|ソールネロ神殿|
+|&attachref(,nolink);|クリスタルネックレス|573g700s|&attachref(./古代の印記.jpg,nolink);|古代の印記|3|ソールネロ神殿|
+|&attachref(,nolink);|コーリンリング|770g900s|&attachref(./セツキリの琥珀.jpg,nolink);|セツキリの琥珀|3|テンキョウ神古道|
+|&attachref(,nolink);|コーリンマント|770g900s|&attachref(./セツキリの琥珀.jpg,nolink);|セツキリの琥珀|3|テンキョウ神古道|
+|&attachref(,nolink);|コーリンネックレス|770g900s|&attachref(./セツキリの琥珀.jpg,nolink);|セツキリの琥珀|3|テンキョウ神古道|
+|&attachref(,nolink);|スターリング|770g900s|&attachref(./セツキリの琥珀.jpg,nolink);|セツキリの琥珀|3|テンキョウ神古道|
+|&attachref(,nolink);|スターマント|770g900s|&attachref(./セツキリの琥珀.jpg,nolink);|セツキリの琥珀|3|テンキョウ神古道|
+|&attachref(,nolink);|スターネックレス|770g900s|&attachref(./セツキリの琥珀.jpg,nolink);|セツキリの琥珀|3|テンキョウ神古道|
+|&attachref(,nolink);|イヴィルリング|968g100s|&attachref(./高天の残響.jpg,nolink);|高天の残響|3|アマノハクオウ神宮|
+|&attachref(,nolink);|イヴィルマント|968g100s|&attachref(./高天の残響.jpg,nolink);|高天の残響|3|アマノハクオウ神宮|
+|&attachref(,nolink);|イヴィルネックレス|968g100s|&attachref(./高天の残響.jpg,nolink);|高天の残響|3|アマノハクオウ神宮|
+|&attachref(,nolink);|ロードリング|968g100s|&attachref(./高天の残響.jpg,nolink);|高天の残響|3|アマノハクオウ神宮|
+|&attachref(,nolink);|ロードマント|968g100s|&attachref(./高天の残響.jpg,nolink);|高天の残響|3|アマノハクオウ神宮|
+|&attachref(,nolink);|ロードネックレス|968g100s|&attachref(./高天の残響.jpg,nolink);|高天の残響|3|アマノハクオウ神宮|
+|&attachref(,nolink);|ミッドナイリング|1036g100s|&attachref(./黄昏の結晶.jpg,nolink);|黄昏の結晶|3|タソガレ城塞|
+|&attachref(,nolink);|ミッドナイマント|1036g100s|&attachref(./黄昏の結晶.jpg,nolink);|黄昏の結晶|3|タソガレ城塞|
+|&attachref(,nolink);|ミッドナイネックレス|1036g100s|&attachref(./黄昏の結晶.jpg,nolink);|黄昏の結晶|3|タソガレ城塞|
+|&attachref(,nolink);|グラビティリング|1036g100s|&attachref(./黄昏の結晶.jpg,nolink);|黄昏の結晶|3|タソガレ城塞|
+|&attachref(,nolink);|グラビティマント|1036g100s|&attachref(./黄昏の結晶.jpg,nolink);|黄昏の結晶|3|タソガレ城塞|
+|&attachref(,nolink);|グラビティネックレス|1036g100s|&attachref(./黄昏の結晶.jpg,nolink);|黄昏の結晶|3|タソガレ城塞|
+|&attachref(,nolink);|ルカインの獣王リング|80g|&attachref(./獣魂のエネルギー.jpg,nolink);|獣魂のエネルギー|6|ルカインの城|
+|&attachref(,nolink);|ルカインの蛮神マント|80g|&attachref(./獣魂のエネルギー.jpg,nolink);|獣魂のエネルギー|6|ルカインの城|
+|&attachref(,nolink);|ルカインの歯牙ネックレス|80g|&attachref(./獣魂のエネルギー.jpg,nolink);|獣魂のエネルギー|6|ルカインの城|
+|&attachref(,nolink);|ヴリトラリング|80g|&attachref(./獣魂のエネルギー.jpg,nolink);|獣魂のエネルギー|6|ルカインの城|
+|&attachref(,nolink);|ヴリトラマント|80g|&attachref(./獣魂のエネルギー.jpg,nolink);|獣魂のエネルギー|6|ルカインの城|
+|&attachref(,nolink);|ヴリトラネックレス|80g|&attachref(./獣魂のエネルギー.jpg,nolink);|獣魂のエネルギー|6|ルカインの城|
+|&attachref(装備/マント/フィッチマント.jpg,nolink);|フィッチマント|96g|&attachref(./異質なエネルギーツリー.jpg,nolink);|異質なエネルギーツリー|3|亜空間の庭|
+|&attachref(装備/ネックレス/フィッチネックレス.jpg,nolink);|フィッチネックレス|96g|&attachref(./異質なエネルギーツリー.jpg,nolink);|異質なエネルギーツリー|3|亜空間の庭|
+|&attachref(装備/リング/フィッチリング.jpg,nolink);|フィッチリング|96g|&attachref(./異質なエネルギーツリー.jpg,nolink);|異質なエネルギーツリー|3|亜空間の庭|
+|&attachref(装備/マント/コルビーマント.jpg,nolink);|コルビーマント|96g|&attachref(./異質なエネルギーツリー.jpg,nolink);|異質なエネルギーツリー|3|亜空間の庭|
+|&attachref(装備/ネックレス/コルビーネックレス.jpg,nolink);|コルビーネックレス|96g|&attachref(./異質なエネルギーツリー.jpg,nolink);|異質なエネルギーツリー|3|亜空間の庭|
+|&attachref(装備/リング/コルビーリング.jpg,nolink);|コルビーリング|96g|&attachref(./異質なエネルギーツリー.jpg,nolink);|異質なエネルギーツリー|3|亜空間の庭|
+|&attachref(装備/リング/グジルの力の指輪.jpg,nolink);|グジルの力の指輪|133g|&attachref(./吸邪石.jpg,nolink);|吸邪石|3|叡智の大聖堂|
+|&attachref(装備/マント/グジルの迷彩マント.jpg,nolink);|グジルの迷彩マント|133g|&attachref(./吸邪石.jpg,nolink);|吸邪石|3|叡智の大聖堂|
+|&attachref(装備/ネックレス/グジルの強運ネックレス.jpg,nolink);|グジルの強運ネックレス|133g|&attachref(./吸邪石.jpg,nolink);|吸邪石|3|叡智の大聖堂|
+|&attachref(装備/リング/グバイスの盗掘リング.jpg,nolink);|グバイスの盗掘リング|133g|&attachref(./吸邪石.jpg,nolink);|吸邪石|3|叡智の大聖堂|
+|&attachref(装備/マント/グバイスのステルスマント.jpg,nolink);|グバイスのステルスマント|133g|&attachref(./吸邪石.jpg,nolink);|吸邪石|3|叡智の大聖堂|
+|&attachref(装備/ネックレス/グバイスの超魔力ネックレス.jpg,nolink);|グバイスの超魔力ネックレス|133g|&attachref(./吸邪石.jpg,nolink);|吸邪石|3|叡智の大聖堂|
+|&attachref(,nolink);|ヴォルフネックの指輪|900g|&attachref(./ルーンブロウ光鉱石.jpg,nolink);|ルーンブロウ光鉱石|3|ルーンブロウ魔術坑道|
+|&attachref(,nolink);|ヴォルフネックの外套|900g|&attachref(./ルーンブロウ光鉱石.jpg,nolink);|ルーンブロウ光鉱石|3|ルーンブロウ魔術坑道|
+|&attachref(,nolink);|ヴォルフネックの首飾り|900g|&attachref(./ルーンブロウ光鉱石.jpg,nolink);|ルーンブロウ光鉱石|3|ルーンブロウ魔術坑道|
+|&attachref(,nolink);|ルーンブロウの指輪|900g|&attachref(./ルーンブロウ光鉱石.jpg,nolink);|ルーンブロウ光鉱石|3|ルーンブロウ魔術坑道|
+|&attachref(,nolink);|ルーンブロウの外套|900g|&attachref(./ルーンブロウ光鉱石.jpg,nolink);|ルーンブロウ光鉱石|3|ルーンブロウ魔術坑道|
+|&attachref(,nolink);|ルーンブロウの首飾り|900g|&attachref(./ルーンブロウ光鉱石.jpg,nolink);|ルーンブロウ光鉱石|3|ルーンブロウ魔術坑道|
+|&attachref(,nolink);|古代樹の指輪|1200g|&attachref(./古代樹の切れ端.jpg,nolink);|古代樹の切れ端|3|カムイの祠・暴威封印術式|
+|&attachref(,nolink);|古代樹のマント|1200g|&attachref(./古代樹の切れ端.jpg,nolink);|古代樹の切れ端|3|カムイの祠・暴威封印術式|
+|&attachref(,nolink);|古代樹のネックレス|1200g|&attachref(./古代樹の切れ端.jpg,nolink);|古代樹の切れ端|3|カムイの祠・暴威封印術式|
+|&attachref(,nolink);|ルータルの託された指輪|1200g|&attachref(./古代樹の切れ端.jpg,nolink);|古代樹の切れ端|3|カムイの祠・暴威封印術式|
+|&attachref(,nolink);|ルータルの愛用したマント|1200g|&attachref(./古代樹の切れ端.jpg,nolink);|古代樹の切れ端|3|カムイの祠・暴威封印術式|
+|&attachref(,nolink);|ルータルの恐れ|1200g|&attachref(./古代樹の切れ端.jpg,nolink);|古代樹の切れ端|3|カムイの祠・暴威封印術式|
+|&attachref(,nolink);|晴天のリング|1700g|&attachref(./石碑のかけら.jpg,nolink);|石碑のかけら|3|アヴァリスの墓標|
+|&attachref(,nolink);|晴天のマント|1700g|&attachref(./石碑のかけら.jpg,nolink);|石碑のかけら|3|アヴァリスの墓標|
+|&attachref(,nolink);|晴天のネックレス|1700g|&attachref(./石碑のかけら.jpg,nolink);|石碑のかけら|3|アヴァリスの墓標|
+|&attachref(,nolink);|雨天のリング|1700g|&attachref(./石碑のかけら.jpg,nolink);|石碑のかけら|3|アヴァリスの墓標|
+|&attachref(,nolink);|雨天のマント|1700g|&attachref(./石碑のかけら.jpg,nolink);|石碑のかけら|3|アヴァリスの墓標|
+|&attachref(,nolink);|雨天のネックレス|1700g|&attachref(./石碑のかけら.jpg,nolink);|石碑のかけら|3|アヴァリスの墓標|
+
+
+** 素材 (家具素材除く) [#j836810f]
+
+|CENTER:|LEFT:|CENTER:|LEFT:|CENTER:|RIGHT:|LEFT:|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|CENTER:~入手場所|h
+|&attachref(./コットン.jpg,nolink,);|コットン|&attachref(./糸巻き.jpg,nolink,);|糸巻き|1|32s|秘密基地NPCアルサッド|
+|~|~|&attachref(./レーヨンフラワー.jpg,nolink,);|レーヨンフラワー|2|~|秘密基地：栽培|
+|&attachref(./麻布.jpg,nolink);|麻布|&attachref(./紡錘.jpg,nolink,);|紡錘|1|48s|秘密基地NPCアルサッド|
+|~|~|&attachref(./アマフラワー.jpg,nolink,);|アマフラワー|2|~|秘密基地：栽培|
+|&attachref(./オリジナルシルク.jpg,nolink);|オリジナルシルク|&attachref(./シルク.jpg,nolink,);|シルク|1|64s|秘密基地NPCアルサッド|
+|~|~|&attachref(./ダイフラワー.jpg,nolink,);|ダイフラワー|2|~|秘密基地：栽培|
+|&attachref(./丈夫な絹布.jpg,nolink);|丈夫な絹布|&attachref(./絹布.jpg,nolink,);|絹布|1|64s|秘密基地NPCアルサッド|
+|~|~|&attachref(./弾力ビーンズ.jpg,nolink,);|弾力ビーンズ|2|~|秘密基地：栽培|
+|&attachref(./厚手の帆布.jpg,nolink);|厚手の帆布|&attachref(./帆布.jpg,nolink,);|帆布|1|64s|秘密基地NPCアルサッド|
+|~|~|&attachref(./アイアン草.jpg,nolink,);|アイアン草|2|~|秘密基地：栽培|
+|&attachref(./キメラの皮革.jpg,nolink);|キメラの皮革|&attachref(./皮革防腐剤.jpg,nolink,);|皮革防腐剤|1|80s|秘密基地NPCアルサッド|
+|~|~|&attachref(./幻獣の実.jpg,nolink,);|幻獣の実|2|~|秘密基地：栽培|
+|&attachref(./メタルな布.jpg,nolink);|メタルな布|&attachref(./細い金属ワイヤー.jpg,nolink,);|細い金属ワイヤー|1|80s|秘密基地NPCアルサッド|
+|~|~|&attachref(./ロット果実.jpg,nolink,);|ロット果実|2|~|秘密基地：栽培|
+|&attachref(./名匠の二重織り.jpg,nolink);|名匠の二重織り|&attachref(./平織りの布.jpg,nolink,);|平織りの布|1|80s|秘密基地NPCアルサッド|
+|~|~|&attachref(./ツキヨ草.jpg,nolink,);|ツキヨ草|2|~|秘密基地：栽培|
+|&attachref(,nolink);|山鎧甲|&attachref(,nolink,);|銀織物|1|120s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|金幻果|2|~|秘密基地：栽培|
+|&attachref(,nolink);|光鎧甲|&attachref(,nolink,);|レーヨン|1|120s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|魔化果|2|~|秘密基地：栽培|
+|&attachref(,nolink);|錘鎧甲|&attachref(,nolink,);|硬い金属ワイヤー|1|120s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|オレンジ草|2|~|秘密基地：栽培|
+|&attachref(,nolink);|ミスリル甲|&attachref(,nolink,);|不思議銀|1|160s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|金剛の実|2|~|秘密基地：栽培|
+|&attachref(,nolink);|雷鳴甲|&attachref(,nolink,);|天馬毛|1|160s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|天使の実|2|~|秘密基地：栽培|
+|&attachref(,nolink);|鋼炎甲|&attachref(,nolink,);|ハードワイヤー|1|160s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|イリュージョンハーブ|2|~|秘密基地：栽培|
+|&attachref(,nolink);|セイレンアーマー|&attachref(,nolink,);|月銀|1|200s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|龍皮の実|2|~|秘密基地：栽培|
+|&attachref(,nolink);|アイスフォージングアーマー|&attachref(,nolink,);|カシミヤ|1|200s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|フェアリーの実|2|~|秘密基地：栽培|
+|&attachref(,nolink);|タングステンアーマー|&attachref(,nolink,);|メタルクモの糸|1|200s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|ダンシングラン|2|~|秘密基地：栽培|
+|&attachref(,nolink);|ダークアーマー|&attachref(,nolink,);|人造スターコア|1|240s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|アカアズキ|2|~|秘密基地：栽培|
+|&attachref(,nolink);|フレイムアーマー|&attachref(,nolink,);|ミンクの毛|1|240s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|クロナス|2|~|秘密基地：栽培|
+|&attachref(,nolink);|ヘビータングステンアーマー|&attachref(,nolink,);|ガンダラウムワイヤー|1|240s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|ライオンフラワー|2|~|秘密基地：栽培|
+|&attachref(,nolink);|アルケミーアーマー|&attachref(,nolink,);|脈動の結晶|1|1g 400s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|ハツメ|2|~|秘密基地：栽培|
+|&attachref(,nolink);|フェードアーマー|&attachref(,nolink,);|高級ウール|1|1g 400s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|冬寒果|2|~|秘密基地：栽培|
+|&attachref(,nolink);|プラチナアーマー|&attachref(,nolink,);|貴金属ワイヤー|1|1g 400s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|古黄花|2|~|秘密基地：栽培|
+|&attachref(,nolink);|ソイルアーマー|&attachref(,nolink,);|スターリングシルバー|1|1g 600s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|ブラスカ|2|~|秘密基地：栽培|
+|&attachref(,nolink);|アクアアーマー|&attachref(,nolink,);|シルク|1|1g 600s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|パナックス|2|~|秘密基地：栽培|
+|&attachref(,nolink);|チタンアーマー|&attachref(,nolink,);|合金ワイヤー|1|1g 600s|秘密基地NPCアルサッド|
+|~|~|&attachref(,nolink,);|ポンペルモ|2|~|秘密基地：栽培|
+** 衣装アバター [#z67f714a]
+
+*** 帽子 [#a1e034ae]
+|CENTER:|LEFT:160|CENTER:|LEFT:220|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(アバター/装備/炎の民・頭.jpg,nolink);&br;&attachref(アバター/装備/炎先の徒・頭.jpg,nolink);&br;&attachref(アバター/装備/村の勇士・頭.jpg,nolink);|炎の民・頭&br;炎先の徒・頭&br;村の勇士・頭|&attachref(./コットン.jpg,nolink,);|コットン|2|544s|
+|~|~|&attachref(./スティールの欠片.jpg,nolink,);|スティールの欠片|6|~|
+|&attachref(アバター/装備/古の力・頭.jpg,nolink);&br;&attachref(アバター/装備/ビショップ・頭.jpg,nolink);&br;&attachref(アバター/装備/アマゾニア・頭.jpg,nolink);|古の力・頭&br;ビショップ・頭&br;アマゾニア・頭|&attachref(./麻布.jpg,nolink,);|麻布|2|816s|
+|~|~|&attachref(,nolink,);|スズの欠片|6|~|
+|&attachref(アバター/装備/ミラージュ・頭.jpg,nolink);&br;&attachref(アバター/装備/獣神の民・頭.jpg,nolink);|ミラージュ・頭&br;獣神の民・頭&br;|&attachref(./オリジナルシルク.jpg,nolink,);|オリジナルシルク|2|1g88s|
+|~|~|&attachref(,nolink,);|クリッター合金|2|~|
+|&attachref(アバター/装備/王室の騎士・頭.jpg,nolink);&br;&attachref(アバター/装備/メカナイト・頭.jpg,nolink);|王室の騎士・頭&br;メカナイト・頭|&attachref(./丈夫な絹布.jpg,nolink,);|丈夫な絹布|2|1g88s|
+|~|~|&attachref(,nolink,);|アルマニウム合金|2|~|
+|&attachref(アバター/装備/近衛兵長・頭.jpg,nolink);&br;&attachref(アバター/装備/ジャッジメント・頭.jpg,nolink);|近衛兵長・頭&br;ジャッジメント・頭|&attachref(./厚手の帆布.jpg,nolink,);|厚手の帆布|2|1g88s|
+|~|~|&attachref(,nolink,);|エビルストーン|2|~|
+|&attachref(アバター/装備/騎士団長・頭.jpg,nolink);|騎士団長・頭|&attachref(./メタルな布.jpg,nolink,);|メタルな布|2|1g360s|
+|~|~|&attachref(,nolink,);|ダマスカス鉱石|2|~|
+|&attachref(アバター/装備/スーパーレンジャー・頭.jpg,nolink);|スーパーレンジャー・頭|&attachref(./キメラの皮革.jpg,nolink,);|キメラの皮革|2|1g360s|
+|~|~|&attachref(,nolink,);|ブラスト金属|2|~|
+|&attachref(アバター/装備/遊牧民・頭.jpg,nolink);|遊牧民・頭|&attachref(./名匠の二重織り.jpg,nolink,);|名匠の二重織り|2|1g360s|
+|~|~|&attachref(,nolink,);|ミスリル鉱石|2|~|
+|&attachref(アバター/装備/和甲冑・頭.jpg,nolink);|和甲冑・頭|&attachref(./キメラの皮革.jpg,nolink,);|キメラの皮革|2|1g360s|
+|~|~|&attachref(,nolink,);|オリハゲン鉱石|2|~|
+|&attachref(アバター/装備/守護者・頭.jpg,nolink);|守護者・頭|&attachref(./名匠の二重織り.jpg,nolink,);|名匠の二重織り|2|1g360s|
+|~|~|&attachref(,nolink,);|スティール鉱石|2|~|
+|&attachref(アバター/装備/天界の徒・頭.jpg,nolink);|天界の徒・頭|&attachref(./メタルな布.jpg,nolink,);|メタルな布|2|1g360s|
+|~|~|&attachref(,nolink,);|アダマン金属|2|~|
+*** 服 [#ya762f88]
+
+|CENTER:|LEFT:160|CENTER:|LEFT:220|CENTER:30|RIGHT:50|c
+|~ |CENTER:~アイテム名|>|CENTER:~必要材料|~個数|CENTER:~費用|h
+|&attachref(アバター/装備/炎の民・衣装.jpg,nolink);&br;&attachref(アバター/装備/炎先の徒・衣装.jpg,nolink);&br;&attachref(アバター/装備/村の勇士・衣装.jpg,nolink);|炎の民・衣装&br;炎先の徒・衣装&br;村の勇士・衣装|&attachref(./コットン.jpg,nolink,);|コットン|4|944s|
+|~|~|&attachref(./スティールの欠片.jpg,nolink,);|スティールの欠片|12|~|
+|&attachref(アバター/装備/古の力・衣装.jpg,nolink);&br;&attachref(アバター/装備/ビショップ・衣装.jpg,nolink);&br;&attachref(アバター/装備/アマゾニア・衣装.jpg,nolink);|古の力・衣装&br;ビショップ・衣装&br;アマゾニア・衣装|&attachref(./麻布.jpg,nolink,);|麻布|4|1g416s|
+|~|~|&attachref(,nolink,);|スズの欠片|12|~|
+|&attachref(アバター/装備/ミラージュ・衣装.jpg,nolink);&br;&attachref(アバター/装備/獣神の民・衣装.jpg,nolink);|ミラージュ・衣装&br;獣神の民・衣装&br;|&attachref(./オリジナルシルク.jpg,nolink,);|オリジナルシルク|4|1g888s|
+|~|~|&attachref(,nolink,);|クリッター合金|4|~|
+|&attachref(アバター/装備/王室の騎士・衣装.jpg,nolink);&br;&attachref(アバター/装備/メカナイト・衣装.jpg,nolink);|王室の騎士・衣装&br;メカナイト・衣装|&attachref(./丈夫な絹布.jpg,nolink,);|丈夫な絹布|4|1g888s|
+|~|~|&attachref(,nolink,);|アルマニウム合金|4|~|
+|&attachref(アバター/装備/近衛兵長・衣装.jpg,nolink);&br;&attachref(アバター/装備/ジャッジメント・衣装.jpg,nolink);|近衛兵長・衣装&br;ジャッジメント・衣装|&attachref(./厚手の帆布.jpg,nolink,);|厚手の帆布|4|1g888s|
+|~|~|&attachref(,nolink,);|エビルストーン|4|~|
+|&attachref(アバター/装備/騎士団長・衣装.jpg,nolink);|騎士団長・衣装|&attachref(./メタルな布.jpg,nolink,);|メタルな布|4|2g320s|
+|~|~|&attachref(,nolink,);|ダマスカス鉱石|4|~|
+|&attachref(アバター/装備/スーパーレンジャー・衣装.jpg,nolink);|スーパーレンジャー・衣装|&attachref(./キメラの皮革.jpg,nolink,);|キメラの皮革|4|2g320s|
+|~|~|&attachref(,nolink,);|ブラスト金属|4|~|
+|&attachref(アバター/装備/遊牧民・衣装.jpg,nolink);|遊牧民・衣装|&attachref(./名匠の二重織り.jpg,nolink,);|名匠の二重織り|4|2g320s|
+|~|~|&attachref(,nolink,);|ミスリル鉱石|4|~|
+|&attachref(アバター/装備/和甲冑・衣装.jpg,nolink);|和甲冑・衣装|&attachref(./キメラの皮革.jpg,nolink,);|キメラの皮革|4|2g320s|
+|~|~|&attachref(,nolink,);|オリハゲン鉱石|4|~|
+|&attachref(アバター/装備/守護者・衣装.jpg,nolink);|守護者・衣装|&attachref(./名匠の二重織り.jpg,nolink,);|名匠の二重織り|4|2g320s|
+|~|~|&attachref(,nolink,);|スティール鉱石|4|~|
+|&attachref(アバター/装備/天界の徒・衣装.jpg,nolink);|天界の徒・衣装|&attachref(./メタルな布.jpg,nolink,);|メタルな布|4|2g320s|
+|~|~|&attachref(,nolink,);|アダマン金属|4|~|
+** エンチャントカード [#a307343b]
+本項ではエンチャントカードの作成方法及び入手方法について述べる。効果に関しては[[消費アイテム/エンチャントカード>消費アイテム/エンチャントカード]]に記載している。
+-必要材料である織物（表の上段に記載しているもの）は裁縫台で２種の「必要材料の材料」から作成する。
+-必要材料である鉱物（表の下段に記載しているもの）は必要材料の材料を右クリックして取り出す。
+
+***初級カード [#mc9bc8de]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の初級武器カード&br;未鑑定の初級グローブカード&br;未鑑定の初級ブーツカード&br;未鑑定の初級ベルトカード&br;|コットン|2|糸巻き|1|錬金台横のNPCアルサッドが販売|32s|
+|~|~|~|レーヨンフラワー|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|アンバーストーン|5|アンバーストーンの原石|1|[[ランク1～8鉱脈>生産/採集#y007f5e9]]から採集|~|
+***中級カード [#ea609d75]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の中級武器カード&br;未鑑定の中級ヘッドカード&br;未鑑定の中級ボディカード|麻布|2|紡錘|1|錬金台横のNPCアルサッドが販売|48s|
+|~|~|~|アマフラワー|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|ラルド鉱石|5|ラルド鉱石の原石|1|[[ランク16～24鉱脈>生産/採集#z93dc809]]から採集|~|
+|未鑑定の中級グローブカード&br;未鑑定の中級ベルトカード&br;未鑑定の中級ブーツカード|麻布|2|紡錘|1|錬金台横のNPCアルサッドが販売|48s|
+|~|~|~|アマフラワー|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|マラカストーン|5|マラカストーンの原石|1|[[ランク16～24鉱脈>生産/採集#z93dc809]]から採集|~|
+***高級カード [#k4e3811d]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の高級武器カード&br;未鑑定の高級ヘッドカード&br;未鑑定の高級ボディカード|厚手の帆布|2|帆布|1|錬金台横のNPCアルサッドが販売|64s|
+|~|~|~|アイアン草|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|オブシウス鉱石|5|オブシウス鉱石の原石|1|[[ランク24～32鉱脈>生産/採集#w13f77e0]]から採集|~|
+|未鑑定の高級グローブカード&br;未鑑定の高級ベルトカード&br;未鑑定の高級ブーツカード|丈夫な絹布|2|絹布|1|錬金台横のNPCアルサッドが販売|64s|
+|~|~|~|弾力ビーンズ|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|レインジスト鉱石|5|レインジスト鉱石の原石|1|[[ランク24～32鉱脈>生産/採集#w13f77e0]]から採集|~|
+|未鑑定の高級頭装備アバターカード&br;未鑑定の高級体装備アバターカード|オリジナルシルク|2|シルク|1|錬金台横のNPCアルサッドが販売|64s|
+|~|~|~|ダイフラワー|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|トパゾス鉱石|5|トパゾス鉱石の原石|1|[[ランク24～32鉱脈>生産/採集#w13f77e0]]から採集|~|
+***特級カード [#nd47dec3]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の特級武器カード&br;未鑑定の特級ヘッドカード&br;未鑑定の特級ボディカード|メタルな布|2|細い金属ワイヤー|1|錬金台横のNPCアルサッドが販売|80s|
+|~|~|~|ロット果実|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|サーライトストーン|5|サーライトストーンの原石|1|[[ランク32～40鉱脈>生産/採集#bd4e2243]]から採集|~|
+|未鑑定の特級グローブカード&br;未鑑定の特級ベルトカード&br;未鑑定の特級ブーツカード|名匠の二重織り|2|平織りの布|1|錬金台横のNPCアルサッドが販売|80s|
+|~|~|~|ツキヨ草|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|ルベウストーン|5|ルベウストーンの原石|1|[[ランク32～40鉱脈>生産/採集#bd4e2243]]から採集|~|
+|未鑑定の特級頭装備アバターカード&br;未鑑定の特級体装備アバターカード|キメラの皮革|2|皮革防腐剤|1|錬金台横のNPCアルサッドが販売|80s|
+|~|~|~|幻獣の実|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|スート鉱石|5|スート鉱石の原石|1|[[ランク32～40鉱脈>生産/採集#bd4e2243]]から採集|~|
+***最高級カード [#a95a499b]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の最高級武器カード&br;未鑑定の最高級ヘッドカード&br;未鑑定の最高級ボディカード|山鎧甲|2|銀織物|1|錬金台横のNPCアルサッドが販売|200s|
+|~|~|~|金幻果|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|マリンエメラルド|5|エメラルドの原石|1|[[ランク50～60鉱脈>生産/採集#z844e5c4]]から採集|~|
+|未鑑定の最高級グローブカード&br;未鑑定の最高級ベルトカード&br;未鑑定の最高級ブーツカード|光鎧甲|2|レーヨン|1|錬金台横のNPCアルサッドが販売|200s|
+|~|~|~|魔化果|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|明夜光石|5|夜光石の原石|1|[[ランク50～60鉱脈>生産/採集#z844e5c4]]から採集|~|
+|未鑑定の最高級頭装備アバターカード&br;未鑑定の最高級体装備アバターカード|錘鎧甲|2|硬い金属ワイヤ|1|錬金台横のNPCアルサッドが販売|200s|
+|~|~|~|オレンジ草|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|きらめく蛍石|5|蛍石|1|[[ランク50～60鉱脈>生産/採集#z844e5c4]]から採集|~|
+***頂級カード [#m87ca3e2]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の頂級武器カード&br;未鑑定の頂級ヘッドカード&br;未鑑定の頂級ボディカード|ミスリル甲|2|不思議銀|1|錬金台横のNPCアルサッドが販売|600s|
+|~|~|~|金剛の実|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|ターコイズ|5|ターコイズ|1|[[ランク60～70鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の頂級グローブカード&br;未鑑定の頂級ベルトカード&br;未鑑定の頂級ブーツカード|雷鳴甲|2|天馬毛|1|錬金台横のNPCアルサッドが販売|600s|
+|~|~|~|天使の実|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|黒真珠|5|黒真珠|1|[[ランク60～70鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の頂級頭装備アバターカード&br;未鑑定の頂級体装備アバターカード|鋼炎甲|2|ハードワイヤー|1|錬金台横のNPCアルサッドが販売|600s|
+|~|~|~|イリュージョンハーブ|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|ブルーマーブル|5|ブルーマーブル|1|[[ランク60～70鉱脈>生産/採集#j762b011]]から採集|~|
+***超級カード [#r6f2dace]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の超級武器カード&br;未鑑定の超級ヘッドカード&br;未鑑定の超級ボディカード|セイレンアーマー|2|月銀|1|錬金台横のNPCアルサッドが販売|1g|
+|~|~|~|龍皮の実|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|タイガーアイ|5|タイガーアイ|1|[[ランク70～80鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の超級グローブカード&br;未鑑定の超級ベルトカード&br;未鑑定の超級ブーツカード|アイスフォージングアーマー|2|カシミヤ|1|錬金台横のNPCアルサッドが販売|1g|
+|~|~|~|フェアリーの実|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|スピネルの結晶|5|スピネルの結晶|1|[[ランク70～80鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の超級頭装備アバターカード&br;未鑑定の超級体装備アバターカード|タングステンアーマー|2|メタルクモの糸|1|錬金台横のNPCアルサッドが販売|1g|
+|~|~|~|ダンシングラン|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|カマサイト|5|カマサイト|1|[[ランク70～80鉱脈>生産/採集#j762b011]]から採集|~|
+***伝説級カード [#bb45cd56]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の伝説級武器カード&br;未鑑定の伝説級ヘッドカード&br;未鑑定の伝説級ボディカード|ダークアーマー|2|人造スターコア|1|錬金台横のNPCアルサッドが販売|1g400s|
+|~|~|~|アカアズキ|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|アベンチュリン|5|アベンチュリン|1|[[ランク80～90鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の伝説級グローブカード&br;未鑑定の伝説級ベルトカード&br;未鑑定の伝説級ブーツカード|フレイムアーマー|2|ミンクの毛|1|錬金台横のNPCアルサッドが販売|1g400s|
+|~|~|~|クロナス|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|木変石|5|木変石|1|[[ランク80～90鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の伝説級頭装備アバターカード&br;未鑑定の伝説級体装備アバターカード|ヘビータングステンアーマー|2|ガンダラウムワイヤー|1|錬金台横のNPCアルサッドが販売|1g400s|
+|~|~|~|ライオンフラワー|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|寿山石|5|寿山石|1|[[ランク80～90鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の伝説級マントカード&br;未鑑定の伝説級アクセサリーカード&br;未鑑定の伝説級リングカード&br;未鑑定の伝説級勲章カード|フレイムアーマー|2|ミンクの毛|1|錬金台横のNPCアルサッドが販売|7g000s|
+|~|~|~|クロナス|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|木変石|5|木変石|1|[[ランク80～90鉱脈>生産/採集#j762b011]]から採集|~|
+***変異級カード [#k4d16029]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の変異級武器カード&br;未鑑定の変異級ヘッドカード&br;未鑑定の変異級ボディカード|アルケミーアーマー|2|脈動の結晶|1|錬金台横のNPCアルサッドが販売|9g000s|
+|~|~|~|ハツメ|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|ローザストーン|5|ローザストーン|1|[[ランク90～100鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の変異級グローブカード&br;未鑑定の変異級ベルトカード&br;未鑑定の変異級ブーツカード|フェードアーマー|2|高級ウール|1|錬金台横のNPCアルサッドが販売|9g000s|
+|~|~|~|冬寒果|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|翠閃石|5|翠閃石|1|[[ランク90～100鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の変異級頭装備アバターカード&br;未鑑定の変異級体装備アバターカード|プラチナアーマー|2|貴金属ワイヤー|1|錬金台横のNPCアルサッドが販売|9g000s|
+|~|~|~|古黄花|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|重晶石|5|重晶石|1|[[ランク90～100鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の変異級マントカード&br;未鑑定の変異級アクセサリーカード&br;未鑑定の変異級リングカード&br;未鑑定の変異級勲章カード|フェードアーマー|2|高級ウール|1|錬金台横のNPCアルサッドが販売|9g000s|
+|~|~|~|冬寒果|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|翠閃石|5|翠閃石|1|[[ランク90～100鉱脈>生産/採集#j762b011]]から採集|~|
+***狂暴級カード [#f03055f4]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の狂暴級武器カード&br;未鑑定の狂暴級ヘッドカード&br;未鑑定の狂暴級ボディカード|ソイルアーマー|2|スターリングシルバー|1|錬金台横のNPCアルサッドが販売|11g000s|
+|~|~|~|ブラスカ|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|レッドカッパ|5|レッドカッパ|1|[[ランク100～110鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の狂暴級グローブカード&br;未鑑定の狂暴級ベルトカード&br;未鑑定の狂暴級ブーツカード|アクアアーマー|2|シルク|1|錬金台横のNPCアルサッドが販売|11g000s|
+|~|~|~|パナックス|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|セレスタイト|5|セレスタイト|1|[[ランク100～110鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の狂暴級頭装備アバターカード&br;未鑑定の狂暴級体装備アバターカード|チタンアーマー|2|合金ワイヤー|1|錬金台横のNPCアルサッドが販売|11g000s|
+|~|~|~|ポンペルモ|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|グラファイト|5|グラファイト|1|[[ランク100～110鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の狂暴級マントカード&br;未鑑定の狂暴級アクセサリーカード&br;未鑑定の狂暴級リングカード&br;未鑑定の狂暴級勲章カード|アクアアーマー|2|シルク|1|錬金台横のNPCアルサッドが販売|11g000s|
+|~|~|~|パナックス|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|セレスタイト|5|セレスタイト|1|[[ランク100～110鉱脈>生産/採集#j762b011]]から採集|~|
+***奇怪級カード [#j1bbc2ad]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の奇怪武器カード&br;未鑑定の奇怪ヘッドカード&br;未鑑定の奇怪ボディカード|レームブラウン|2|防火布|1|錬金台横のNPCアルサッドが販売|13g000s|
+|~|~|~|ドシェル空豆|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|蒼天鉱石|5|蒼天鉱石|1|[[ランク110～120鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の奇怪グローブカード&br;未鑑定の奇怪ベルトカード&br;未鑑定の奇怪ブーツカード|チェーンホワイト|2|柔軟なシルク|1|錬金台横のNPCアルサッドが販売|13g000s|
+|~|~|~|フェンネル香草|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|銀灰の石|5|銀灰の石|1|[[ランク110～120鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の奇怪頭装備アバターカード&br;未鑑定の奇怪体装備アバターカード|サクラ鉄鋼|2|ハードシェルレザー|1|錬金台横のNPCアルサッドが販売|13g000s|
+|~|~|~|ココ豆|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|天蓋石|5|天蓋石|1|[[ランク110～120鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の奇怪マントカード&br;未鑑定の奇怪アクセサリーカード&br;未鑑定の奇怪リングカード&br;未鑑定の奇怪勲章カード|チェーンホワイト|2|柔軟なシルク|1|錬金台横のNPCアルサッドが販売|13g000s|
+|~|~|~|フェンネル香草|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|銀灰の石|5|銀灰の石|1|[[ランク110～120鉱脈>生産/採集#j762b011]]から採集|~|
+***幻惑級カード [#t8b563f7]
+|LEFT:220|LEFT:100|CENTER:30|LEFT:100|CENTER:30|LEFT:200|RIGHT:100|c
+|CENTER:~アイテム名|CENTER:~必要材料|~個数|CENTER:~必要材料の材料|~個数|CENTER:~入手方法|CENTER:~合成費用|h
+|未鑑定の幻惑武器カード&br;未鑑定の幻惑ヘッドカード&br;未鑑定の幻惑ボディカード|ウッドファブリック|2|合成皮革|1|錬金台横のNPCアルサッドが販売|15g000s|
+|~|~|~|ワントンビーン|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|ヘブンリーストーン|5|ヘブンリーストーン|1|[[ランク120～130鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の幻惑グローブカード&br;未鑑定の幻惑ベルトカード&br;未鑑定の幻惑ブーツカード|アースシールドアーマー|2|シルキーレーヨン|1|錬金台横のNPCアルサッドが販売|15g000s|
+|~|~|~|カルダモン|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|レッドストーン|5|レッドストーン|1|[[ランク120～130鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の幻惑頭装備アバターカード&br;未鑑定の幻惑体装備アバターカード|ビクトリーチタン|2|ニュートンレザー|1|錬金台横のNPCアルサッドが販売|15g000s|
+|~|~|~|ピール|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|ソウルストーン|5|ソウルストーン|1|[[ランク120～130鉱脈>生産/採集#j762b011]]から採集|~|
+|未鑑定の幻惑マントカード&br;未鑑定の幻惑アクセサリーカード&br;未鑑定の幻惑リングカード&br;未鑑定の幻惑勲章カード|ビクトリーチタン|2|ニュートンレザー|1|錬金台横のNPCアルサッドが販売|15g000s|
+|~|~|~|ピール|2|温室で[[栽培>生産/栽培#nb614313]]|~|
+|~|ソウルストーン|5|ソウルストーン|1|[[ランク120～130鉱脈>生産/採集#j762b011]]から採集|~|
+
+** 特殊 [#g541a1ff]
+
+* コメント [#r8fcd86c]
+#pcomment(,10,reply)
+</code>

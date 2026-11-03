@@ -1,0 +1,376 @@
+<code>#include(header/production,notitle)
+----
+#contents
+
+* 家具 [#fbb175e5]
+** パーティ [#ceebbeff]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./パーティ花瓶.jpg,nolink);|パーティ花瓶|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：パーティ花瓶|1|購入：[[商人ベルフォート>システム/秘密基地#y3e2dae5]]|
+|~|~|~|&attachref(./部品：パーティ花瓶.jpg,nolink);|部品：パーティ花瓶|9|裁縫|
+|~|~|~|&attachref(./堅い魚の殻.jpg,nolink);|堅い魚の殻|10|[[魚群 ランク1～8>生産/釣り#e85d67b6]]&br;ガンフィッシュ|
+|~|~|~|&attachref(./ハードシェルストーン.jpg,nolink);|ハードシェルストーン|10|[[鉱脈 ランク1～8>生産/採集#y007f5e9]]&br;ポタリー鉱石|
+|&attachref(./クリプタバスケット.jpg,nolink);|クリプタバスケット|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：クリプタバスケット|1|購入：[[商人ベルフォート>システム/秘密基地#y3e2dae5]]|
+|~|~|~|&attachref(./部品：クリプタバスケット.jpg,nolink);|部品：クリプタバスケット|9|裁縫|
+|~|~|~|&attachref(./不思議な模様の魚皮.jpg,nolink);|不思議な模様の魚皮|10|[[魚群 ランク8～16>生産/釣り#oa99719d]]&br;ホーリーフィッシュ|
+|~|~|~|&attachref(./放射クリスタル.jpg,nolink);|放射クリスタル|10|[[鉱脈 ランク8～16>生産/採集#w8648c95]]&br;魔力結晶|
+|&attachref(./パーティプレゼント.jpg,nolink);|パーティプレゼント|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：パーティプレゼント|1|購入：[[商人ベルフォート>システム/秘密基地#y3e2dae5]]|
+|~|~|~|&attachref(./部品：パーティプレゼント.jpg,nolink);|部品：パーティプレゼント|9|裁縫|
+|~|~|~|&attachref(./毒紅の原木.jpg,nolink);|毒紅の原木|10|[[植物 ランク32～40>生産/採集#udb7b661]]&br;パッションの原木|
+|~|~|~|&attachref(./ナチュラルクリスタル.jpg,nolink);|ナチュラルクリスタル|10|[[鉱脈 ランク32～40>生産/採集#bd4e2243]]&br;フロート鉱石|
+|&attachref(./クリプタレース絨毯.jpg,nolink);|クリプタレース絨毯|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：クリプタレース絨毯|1|購入：[[商人ベルフォート>システム/秘密基地#y3e2dae5]]|
+|~|~|~|&attachref(./部品：クリプタレース絨毯.jpg,nolink);|部品：クリプタレース絨毯|9|裁縫|
+|~|~|~|&attachref(./細長い魚の骨.jpg,nolink);|細長い魚の骨|10|[[魚群 ランク40～50>生産/釣り#zbd2b590]]&br;マーシュフィッシュ|
+|~|~|~|&attachref(./コアコア草.jpg,nolink);|コアコア草|10|[[植物 ランク40～50>生産/採集#a7a340d6]]&br;毛虫草|
+|&attachref(./パーティワイン.jpg,nolink);|パーティワイン|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：パーティワイン|1|購入：[[<奇跡の家具商人>スー>システム/ギルド#a18692ea]]|
+|~|~|~|&attachref(./部品：パーティワイン.jpg,nolink);|部品：パーティワイン|9|裁縫|
+|~|~|~|&attachref(./粗いエビの殻.jpg,nolink);|粗いエビの殻|10|[[魚群 ランク24～32>生産/釣り#pc11b296]]&br;リーフロブスター|
+|~|~|~|&attachref(./リバースメタル.jpg,nolink);|リバースメタル|10|[[鉱脈 ランク24～32>生産/採集#w13f77e0]]&br;メモトラ鉱石|
+** メルヘンムード [#p86e25a9]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./メルヘンティーセット.jpg,nolink);|メルヘンティーセット|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：メルヘンティーセット|1|購入：[[<奇跡の家具商人>スー>システム/ギルド#a18692ea]]|
+|~|~|~|&attachref(./部品：メルヘンティーセット.jpg,nolink);|部品：メルヘンティーセット|9|裁縫|
+|~|~|~|&attachref(./変化する鱗.jpg,nolink);|変化する鱗|10|[[魚群 ランク16～24>生産/釣り#laf0142a]]&br;オアシスフィッシュ|
+|~|~|~|&attachref(./アブソーブストーン.jpg,nolink);|アブソーブストーン|10|[[鉱脈 ランク16～24>生産/採集#z93dc809]]&br;スチーム鉱石|
+|&attachref(./メルヘンストロベリーケーキ.jpg,nolink);|メルヘンストロベリーケーキ|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：メルヘンストロベリーケーキ|1|購入：[[<奇跡の家具商人>スー>システム/ギルド#a18692ea]]|
+|~|~|~|&attachref(./部品：メルヘンストロベリーケーキ.jpg,nolink);|部品：メルヘンストロベリーケーキ|9|裁縫|
+|~|~|~|&attachref(./タンクフルーツ.jpg,nolink);|タンクフルーツ|10|[[植物 ランク16～24>生産/採集#wda9b2d1]]&br;プロフェシーの果実|
+|~|~|~|&attachref(./アブソーブストーン.jpg,nolink);|アブソーブストーン|10|[[鉱脈 ランク16～24>生産/採集#z93dc809]]&br;スチーム鉱石|
+|&attachref(./メルヘンワッフル絨毯.jpg,nolink);|メルヘンワッフル絨毯|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：メルヘンワッフル絨毯|1|購入：[[<奇跡の家具商人>スー>システム/ギルド#a18692ea]]|
+|~|~|~|&attachref(./部品：メルヘンワッフル絨毯.jpg,nolink);|部品：メルヘンワッフル絨毯|9|裁縫|
+|~|~|~|&attachref(./コアコア草.jpg,nolink);|コアコア草|10|[[植物 ランク40～50>生産/採集#a7a340d6]]&br;毛虫草|
+|~|~|~|&attachref(./ウォームストーン.jpg,nolink);|ウォームストーン|10|[[鉱脈 ランク40～50>生産/採集#oa39f2d4]]&br;ホスポ鉱石|
+|&attachref(./メルヘンチョコアーチベル.jpg,nolink);|メルヘンチョコアーチベル|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：メルヘンチョコアーチベル|1|購入：[[<奇跡の家具商人>スー>システム/ギルド#a18692ea]]|
+|~|~|~|&attachref(./部品：メルヘンチョコアーチベル.jpg,nolink);|部品：メルヘンチョコアーチベル|9|裁縫|
+|~|~|~|&attachref(./虫よけフラワー.jpg,nolink);|虫よけフラワー|10|[[植物 ランク24～32>生産/採集#fa1b8da4]]&br;チャームフラワー|
+|~|~|~|&attachref(./リバースメタル.jpg,nolink);|リバースメタル|10|[[鉱脈 ランク24～32>生産/採集#w13f77e0]]&br;メモトラ鉱石|
+|&attachref(./メルヘン窓枠.jpg,nolink);|メルヘン窓枠|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：メルヘン窓枠|1|ムームーの集落&br;星界百科|
+|~|~|~|&attachref(./部品：メルヘン窓枠.jpg,nolink);|部品：メルヘン窓枠|9|裁縫|
+|~|~|~|&attachref(./粗いエビの殻.jpg,nolink);|粗いエビの殻|10|[[魚群 ランク24～32>生産/釣り#pc11b296]]&br;リーフロブスター|
+|~|~|~|&attachref(./リバースメタル.jpg,nolink);|リバースメタル|10|[[鉱脈 ランク24～32>生産/採集#w13f77e0]]&br;メモトラ鉱石|
+|&attachref(./メルヘン柱.jpg,nolink);|メルヘン柱|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：メルヘン柱|1|ムームーの集落&br;星界百科|
+|~|~|~|&attachref(./部品：メルヘン柱.jpg,nolink);|部品：メルヘン柱|9|裁縫|
+|~|~|~|&attachref(./毒紅の原木.jpg,nolink);|毒紅の原木|10|[[植物 ランク32～40>生産/採集#udb7b661]]&br;パッションの原木|
+|~|~|~|&attachref(./ナチュラルクリスタル.jpg,nolink);|ナチュラルクリスタル|10|[[鉱脈 ランク32～40>生産/採集#bd4e2243]]&br;フロート鉱石|
+|&attachref(./メルヘン壁紙.jpg,nolink);|メルヘン壁紙|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：メルヘン壁紙|1|ムームーの集落&br;星界百科|
+|~|~|~|&attachref(./部品：メルヘン壁紙.jpg,nolink);|部品：メルヘン壁紙|9|裁縫|
+|~|~|~|&attachref(./ギザギザな牙.jpg,nolink);|ギザギザな牙|10|[[魚群 ランク40～50>生産/釣り#zbd2b590]]&br;シャトルフィッシュ|
+|~|~|~|&attachref(./ウォームストーン.jpg,nolink);|ウォームストーン|10|[[鉱脈 ランク40～50>生産/採集#oa39f2d4]]&br;ホスポ鉱石|
+|&attachref(./メルヘン天井板.jpg,nolink);|メルヘン天井板|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：メルヘン天井板|1|ムームーの集落&br;星界百科|
+|~|~|~|&attachref(./部品：メルヘン天井板.jpg,nolink);|部品：メルヘン天井板|9|裁縫|
+|~|~|~|&attachref(./マナの原木.jpg,nolink);|マナの原木|10|[[植物 ランク8～16>生産/採集#x8b49897]]&br;スリーパーの原木|
+|~|~|~|&attachref(./放射クリスタル.jpg,nolink);|放射クリスタル|10|[[鉱脈 ランク8～16>生産/採集#w8648c95]]&br;魔力結晶|
+|&attachref(./メルヘン床板.jpg,nolink);|メルヘン床板|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：メルヘン床板|1|ムームーの集落&br;星界百科|
+|~|~|~|&attachref(./部品：メルヘン床板.jpg,nolink);|部品：メルヘン床板|9|裁縫|
+|~|~|~|&attachref(./タンクフルーツ.jpg,nolink);|タンクフルーツ|10|[[植物 ランク16～24>生産/採集#wda9b2d1]]&br;プロフェシーの果実|
+|~|~|~|&attachref(./アブソーブストーン.jpg,nolink);|アブソーブストーン|10|[[鉱脈 ランク16～24>生産/採集#z93dc809]]&br;スチーム鉱石|
+
+** オーシャンムード [#a94c32fb]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./オーシャンチェアー.jpg,nolink);|オーシャンチェアー||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャンチェアー|1||
+|~|~|~|&attachref(./部品：オーシャンチェアー.jpg,nolink);|部品：オーシャンチェアー|9|裁縫|
+|~|~|~|&attachref(./黒化した魚鱗.jpg,nolink);|黒化した魚鱗|10|[[魚群 ランク1～8>生産/釣り#e85d67b6]]&br;ダークネスフィッシュ|
+|~|~|~|&attachref(./トビウオ草.jpg,nolink);|トビウオ草|10|[[植物 ランク1～8>生産/採集#i66604e9]]&br;発光草|
+|&attachref(./オーシャンソファー.jpg,nolink);|オーシャンソファー||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャンソファー|1||
+|~|~|~|&attachref(./部品：オーシャンソファー.jpg,nolink);|部品：オーシャンソファー|9|裁縫|
+|~|~|~|&attachref(./コシのある髭.jpg,nolink);|コシのある髭|10|[[魚群 ランク8～16>生産/釣り#oa99719d]]&br;スプリングキャットフィッシュ|
+|~|~|~|&attachref(./マナの原木.jpg,nolink);|マナの原木|10|[[植物 ランク8～16>生産/採集#x8b49897]]&br;スリーパーの原木|
+|&attachref(./オーシャンテーブル.jpg,nolink);|オーシャンテーブル||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャンテーブル|1||
+|~|~|~|&attachref(./部品：オーシャンテーブル.jpg,nolink);|部品：オーシャンテーブル|9|裁縫|
+|~|~|~|&attachref(./透明のエビの殻.jpg,nolink);|透明のエビの殻|10|[[魚群 ランク16～24>生産/釣り#laf0142a]]&br;アシナガエビ|
+|~|~|~|&attachref(./タンクフルーツ.jpg,nolink);|タンクフルーツ|10|[[植物 ランク16～24>生産/採集#wda9b2d1]]&br;プロフェシーの果実|
+|&attachref(./オーシャンダブルベッド.jpg,nolink);|オーシャンダブルベッド||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャンダブルベッド|1||
+|~|~|~|&attachref(./部品：オーシャンダブルベッド.jpg,nolink);|部品：オーシャンダブルベッド|9|裁縫|
+|~|~|~|&attachref(./鋭利な歯.jpg,nolink);|鋭利な歯|10|[[魚群 ランク32～40>生産/釣り#z613697c]]&br;トゥシュフィッシュ|
+|~|~|~|&attachref(./毒紅の原木.jpg,nolink);|毒紅の原木|10|[[植物 ランク32～40>生産/採集#udb7b661]]&br;パッションの原木|
+|&attachref(./キャプペン人形.jpg,nolink);|キャプペン人形||&attachref(./レシピ_橙.jpg,nolink);|レシピ：キャプペン人形|1||
+|~|~|~|&attachref(./部品：キャプペン人形.jpg,nolink);|部品：キャプペン人形|9|裁縫|
+|~|~|~|&attachref(./毛に覆われたクラブの殻.jpg,nolink);|毛に覆われたクラブの殻|10|[[魚群 ランク32～40>生産/釣り#z613697c]]&br;セイルーンクラブ|
+|~|~|~|&attachref(./ナチュラルクリスタル.jpg,nolink);|ナチュラルクリスタル|10|[[鉱脈 ランク32～40>生産/採集#bd4e2243]]&br;フロート鉱石|
+|&attachref(./キャプペンの壁掛け時計.jpg,nolink);|キャプペンの壁掛け時計||&attachref(./レシピ_橙.jpg,nolink);|レシピ：キャプペンの壁掛け時計|1||
+|~|~|~|&attachref(./部品：キャプペンの壁掛け時計.jpg,nolink);|部品：キャプペンの壁掛け時計|9|裁縫|
+|~|~|~|&attachref(./堅いクラブの爪.jpg,nolink);|堅いクラブの爪|10|[[魚群 ランク24～32>生産/釣り#pc11b296]]&br;グランキョクラブ|
+|~|~|~|&attachref(./虫よけフラワー.jpg,nolink);|虫よけフラワー|10|[[植物 ランク24～32>生産/採集#fa1b8da4]]&br;チャームフラワー|
+|&attachref(./オーシャンハウス模型.jpg,nolink);|オーシャンハウス模型||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャンハウス模型|1||
+|~|~|~|&attachref(./部品：オーシャンハウス模型.jpg,nolink);|部品：オーシャンハウス模型|9|裁縫|
+|~|~|~|&attachref(./トビウオ草.jpg,nolink);|トビウオ草|10|[[植物 ランク1～8>生産/採集#i66604e9]]&br;発光草|
+|~|~|~|&attachref(./ハードシェルストーン.jpg,nolink);|ハードシェルストーン|10|[[鉱脈 ランク1～8>生産/採集#y007f5e9]]&br;ポタリー鉱石|
+|&attachref(./オーシャンクラゲランプ.jpg,nolink);|オーシャンクラゲランプ||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャンクラゲランプ|1||
+|~|~|~|&attachref(./部品：オーシャンクラゲランプ.jpg,nolink);|部品：オーシャンクラゲランプ|9|裁縫|
+|~|~|~|&attachref(./マナの原木.jpg,nolink);|マナの原木|10|[[植物 ランク8～16>生産/採集#x8b49897]]&br;スリーパーの原木|
+|~|~|~|&attachref(./放射クリスタル.jpg,nolink);|放射クリスタル|10|[[鉱脈 ランク8～16>生産/採集#w8648c95]]&br;魔力結晶|
+|&attachref(./オーシャンクジラ絨毯.jpg,nolink);|オーシャンクジラ絨毯||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャンクジラ絨毯|1||
+|~|~|~|&attachref(./部品：オーシャンクジラ絨毯.jpg,nolink);|部品：オーシャンクジラ絨毯|9|裁縫|
+|~|~|~|&attachref(./ギザギザな牙.jpg,nolink);|ギザギザな牙|10|[[魚群 ランク40～50>生産/釣り#zbd2b590]]&br;シャトルフィッシュ|
+|~|~|~|&attachref(./ウォームストーン.jpg,nolink);|ウォームストーン|10|[[鉱脈 ランク40～50>生産/採集#oa39f2d4]]&br;ホスポ鉱石|
+|&attachref(./オーシャン窓枠.jpg,nolink);|オーシャン窓枠||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャン窓枠|1||
+|~|~|~|&attachref(./部品：オーシャン窓枠.jpg,nolink);|部品：オーシャン窓枠|9|裁縫|
+|~|~|~|&attachref(./細長い魚の骨.jpg,nolink);|細長い魚の骨|10|[[魚群 ランク40～50>生産/釣り#zbd2b590]]&br;マーシュフィッシュ|
+|~|~|~|&attachref(./コアコア草.jpg,nolink);|コアコア草|10|[[植物 ランク40～50>生産/採集#a7a340d6]]&br;毛虫草|
+|&attachref(./オーシャン柱.jpg,nolink);|オーシャン柱||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャン柱|1||
+|~|~|~|&attachref(./部品：オーシャン柱.jpg,nolink);|部品：オーシャン柱|9|裁縫|
+|~|~|~|&attachref(./コシのある髭.jpg,nolink);|コシのある髭|10|[[魚群 ランク8～16>生産/釣り#oa99719d]]&br;スプリングキャットフィッシュ|
+|~|~|~|&attachref(./マナの原木.jpg,nolink);|マナの原木|10|[[植物 ランク8～16>生産/採集#x8b49897]]&br;スリーパーの原木|
+|&attachref(./オーシャン壁紙.jpg,nolink);|オーシャン壁紙|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャン壁紙|1||
+|~|~|~|&attachref(./部品：オーシャン壁紙.jpg,nolink);|部品：オーシャン壁紙|9|裁縫|
+|~|~|~|&attachref(./透明のエビの殻.jpg,nolink);|透明のエビの殻|10|[[魚群 ランク16～24>生産/釣り#laf0142a]]&br;アシナガエビ|
+|~|~|~|&attachref(./タンクフルーツ.jpg,nolink);|タンクフルーツ|10|[[植物 ランク16～24>生産/採集#wda9b2d1]]&br;プロフェシーの果実|
+|&attachref(./オーシャン天井板.jpg,nolink);|オーシャン天井板||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャン天井板|1||
+|~|~|~|&attachref(./部品：オーシャン天井板.jpg,nolink);|部品：オーシャン天井板|9|裁縫|
+|~|~|~|&attachref(./堅いクラブの爪.jpg,nolink);|堅いクラブの爪|10|[[魚群 ランク24～32>生産/釣り#pc11b296]]&br;グランキョクラブ|
+|~|~|~|&attachref(./虫よけフラワー.jpg,nolink);|虫よけフラワー|10|[[植物 ランク24～32>生産/採集#fa1b8da4]]&br;チャームフラワー|
+|&attachref(./オーシャン床板.jpg,nolink);|オーシャン床板||&attachref(./レシピ_橙.jpg,nolink);|レシピ：オーシャン床板|1||
+|~|~|~|&attachref(./部品：オーシャン床板.jpg,nolink);|部品：オーシャン床板|9|裁縫|
+|~|~|~|&attachref(./毛に覆われたクラブの殻.jpg,nolink);|毛に覆われたクラブの殻|10|[[魚群 ランク32～40>生産/釣り#z613697c]]&br;セイルーンクラブ|
+|~|~|~|&attachref(./ナチュラルクリスタル.jpg,nolink);|ナチュラルクリスタル|10|[[鉱脈 ランク32～40>生産/採集#bd4e2243]]&br;フロート鉱石|
+** 夢見 [#g13a63a5]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(,nolink);|夢見のクジラ浴槽|40g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：夢見のクジラ浴槽|1||
+|~|~|~|&attachref(,nolink);|部品：夢見のクジラ浴槽|9|裁縫|
+|~|~|~|&attachref(./堅いクラブの爪.jpg,nolink);|堅いクラブの爪|10|[[魚群 ランク24～32>生産/釣り#pc11b296]]&br;グランキョクラブ|
+|~|~|~|&attachref(./虫よけフラワー.jpg,nolink);|虫よけフラワー|10|[[植物 ランク24～32>生産/採集#fa1b8da4]]&br;チャームフラワー|
+|&attachref(,nolink);|夢見のカエルベンチ|30g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：夢見のカエルベンチ|1||
+|~|~|~|&attachref(,nolink);|部品：夢見のカエルベンチ|9|裁縫|
+|~|~|~|&attachref(./毒紅の原木.jpg,nolink);|毒紅の原木|10|[[植物 ランク32～40>生産/採集#udb7b661]]&br;パッションの原木|
+|~|~|~|&attachref(./ナチュラルクリスタル.jpg,nolink);|ナチュラルクリスタル|10|[[鉱脈 ランク32～40>生産/採集#bd4e2243]]&br;フロート鉱石|
+
+** 和風ムード [#jaa54fef]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(,nolink);|牡丹紅和傘|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：牡丹紅和傘|1||
+|~|~|~|&attachref(,nolink);|部品：牡丹紅和傘|9|裁縫|
+|~|~|~|&attachref(./細長い魚の骨.jpg,nolink);|細長い魚の骨|10|[[魚群 ランク40～50>生産/釣り#zbd2b590]]&br;マーシュフィッシュ|
+|~|~|~|&attachref(./コアコア草.jpg,nolink);|コアコア草|10|[[植物 ランク40～50>生産/採集#a7a340d6]]&br;毛虫草|
+|&attachref(,nolink);|水彩金魚掛け軸|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：水彩金魚掛け軸|1||
+|~|~|~|&attachref(,nolink);|部品：水彩金魚掛け軸|9|裁縫|
+|~|~|~|&attachref(./粗いエビの殻.jpg,nolink);|粗いエビの殻|10|[[魚群 ランク24～32>生産/釣り#pc11b296]]&br;リーフロブスター|
+|~|~|~|&attachref(./リバースメタル.jpg,nolink);|リバースメタル|10|[[鉱脈 ランク24～32>生産/採集#w13f77e0]]&br;メモトラ鉱石|
+|&attachref(,nolink);|和風床板|40g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：和風床板|1||
+|~|~|~|&attachref(,nolink);|部品：和風床板|9|裁縫|
+|~|~|~|&attachref(,nolink);|アボガド|10|[[植物 ランク60～70>生産/採集#wd0db5f1]]&br;アボカド|
+|~|~|~|&attachref(,nolink);|ギザギザな牙|10|[[魚群 ランク40～50>生産/釣り#zbd2b590]]&br;シャトルフィッシュ|
+|&attachref(,nolink);|和風柱|40g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：和風柱|1||
+|~|~|~|&attachref(,nolink);|部品：和風柱|9|裁縫|
+|~|~|~|&attachref(,nolink);|サメの脊髄|10|[[魚群 ランク60～70>生産/釣り#z44ffe8f]]&br;サメ|
+|~|~|~|&attachref(./虫よけフラワー.jpg,nolink);|虫よけフラワー|10|[[植物 ランク24～32>生産/採集#fa1b8da4]]&br;チャームフラワー|
+|&attachref(,nolink);|和風天井板|40g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：和風天井板|1||
+|~|~|~|&attachref(,nolink);|部品：和風天井板|9|裁縫|
+|~|~|~|&attachref(,nolink);|風化した浮石のかけら|10|[[鉱脈 ランク50～60>生産/採集#z844e5c4]]&br;輝浮石のかけら|
+|~|~|~|&attachref(,nolink);|水滴魚の粘液|10|[[魚群 ランク50～60>生産/釣り#e93e9f8d]]&br;水滴魚|
+|&attachref(,nolink);|月桜雪洞|30g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：月桜雪洞|1||
+|~|~|~|&attachref(./部品：月桜雪洞.jpg,nolink);|部品：月桜雪洞|9|裁縫|
+|~|~|~|&attachref(./透明のエビの殻.jpg,nolink);|透明のエビの殻|10|[[魚群 ランク16～24>生産/釣り#laf0142a]]&br;アシナガエビ|
+|~|~|~|&attachref(./タンクフルーツ.jpg,nolink);|タンクフルーツ|10|[[植物 ランク16～24>生産/採集#wda9b2d1]]&br;プロフェシーの果実|
+|&attachref(,nolink);|晴嵐刀掛け|15g|&attachref(./レシピ_橙.jpg,nolink);|レシピ：晴嵐刀掛け|1||
+|~|~|~|&attachref(./部品：晴嵐刀掛け.jpg,nolink);|部品：晴嵐刀掛け|9|裁縫|
+|~|~|~|&attachref(./コシのある髭.jpg,nolink);|コシのある髭|10|[[魚群 ランク8～16>生産/釣り#oa99719d]]&br;スプリングキャットフィッシュ|
+|~|~|~|&attachref(./マナの原木.jpg,nolink);|マナの原木|10|[[植物 ランク8～16>生産/採集#x8b49897]]&br;スリーパーの原木|
+
+* 釣り道具 [#fishing]
+** 緑品質 [#t1cfd133]
+　数が多いため、素材が同じものはまとめています。
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./遠洋の海釣り竿.jpg,nolink);|遠洋の海釣り竿&br;リール海釣り竿|1g|&attachref(./レシピ：遠洋の海釣り竿.jpg,nolink);|レシピ：遠洋の海釣り竿&br;レシピ：リール海釣り竿|1||
+|~|~|~|&attachref(./海の雫：自然.jpg,nolink);|海の雫：自然|10|ランク1～8 魚群|
+|&attachref(./エビ釣り渓流竿.jpg,nolink);|エビ釣り渓流竿&br;渓流竿|1g|&attachref(./レシピ：エビ釣り渓流竿.jpg,nolink);|レシピ：エビ釣り渓流竿&br;レシピ：渓流竿|1||
+|~|~|~|&attachref(./海の雫：静寂.jpg,nolink);|海の雫：静寂|20|ランク8～16 魚群|
+
+** 青品質 [#o34c1800]
+　数が多いため、素材が同じものはまとめています。
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./初心者竿.jpg,nolink);|激流の初心者竿&br;水圧の初心者竿&br;流線の初心者竿|1g|&attachref(./レシピ：初心者竿.jpg,nolink);|レシピ：激流の初心者竿&br;レシピ：水圧の初心者竿&br;レシピ：流線の初心者竿|1||
+|~|~|~|&attachref(./海の雫：自然.jpg,nolink);|海の雫：自然|10|ランク1～8 魚群|
+|&attachref(./釣り人竿.jpg,nolink);|激流の釣り人竿&br;水圧の釣り人竿&br;流線の釣り人竿|1g|&attachref(./レシピ：釣り人竿.jpg,nolink);|レシピ：激流の釣り人竿&br;レシピ：水圧の釣り人竿&br;レシピ：流線の釣り人竿|1||
+|~|~|~|&attachref(./海の雫：静寂.jpg,nolink);|海の雫：静寂|20|ランク8～16 魚群|
+
+** 橙品質 [#n6adca58]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./スティールロッド.jpg,nolink);|スティールロッド|1g|&attachref(./素材_橙.jpg,nolink);|レシピ：スティールロッド|1|[[魚群 ランク1～8>生産/釣り#e85d67b6]]&br;ダークネスフィッシュ&br;ガンフィッシュ|
+|~|~|~|&attachref(./黒化した魚鱗.jpg,nolink);|黒化した魚鱗|30|[[魚群 ランク1～8>生産/釣り#e85d67b6]]&br;ダークネスフィッシュ|
+|~|~|~|&attachref(./堅い魚の殻.jpg,nolink);|堅い魚の殻|30|[[魚群 ランク1～8>生産/釣り#e85d67b6]]&br;ガンフィッシュ|
+|&attachref(,nolink);|インバイトロッド|1g|&attachref(./素材_橙.jpg,nolink);|レシピ：インバイトロッド|1|[[魚群 ランク8～16>生産/釣り#oa99719d]]&br;スプリングキャットフィッシュ&br;ホーリーフィッシュ|
+|~|~|~|&attachref(./コシのある髭.jpg,nolink);|コシのある髭|10|[[魚群 ランク8～16>生産/釣り#oa99719d]]&br;スプリングキャットフィッシュ|
+|~|~|~|&attachref(./不思議な模様の魚皮.jpg,nolink);|不思議な模様の魚皮|10|[[魚群 ランク8～16>生産/釣り#oa99719d]]&br;ホーリーフィッシュ|
+
+** 黄品質 [#m755fba2]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./イッカクロッド.jpg,nolink);|イッカクロッド|1g|&attachref(./素材_橙.jpg,nolink);|レシピ：イッカクロッド|1|[[魚群 ランク1～8>生産/釣り#e85d67b6]]&br;ナイトフィッシュ&br;[[魚群 ランク8～16>生産/釣り#oa99719d]]&br;エルフキャットフィッシュ|
+|~|~|~|&attachref(./高級な魚鱗.jpg,nolink);|高級な魚鱗|1|[[魚群 ランク1～8>生産/釣り#e85d67b6]]&br;ナイトフィッシュ|
+|~|~|~|&attachref(./なめしのロープ.jpg,nolink);|なめしのロープ|1|[[魚群 ランク8～16>生産/釣り#oa99719d]]&br;エルフキャットフィッシュ|
+* 採集道具 [#collect]
+
+** 緑品質 [#ue55d5f6]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(,nolink);|パンプキン収穫セット&br;黄金ウィート収穫セット|1g|&attachref(./釣りレシピ緑枠.jpg,nolink);|レシピ：パンプキン収穫セット&br;レシピ：黄金ウィート収穫セット|1|秘密基地&br;マリカより購入　10s|
+|~|~|~|&attachref(,nolink);|大地の芽：自然|10|植物/鉱物　ランク1～8&br;|
+|&attachref(,nolink);|小さな鳥の卵収穫セット&br;神樹の根採集セット|1g|&attachref(,nolink);|レシピ：小さな鳥の卵セット&br;レシピ：神樹の根採集セット|1|秘密基地&br;マリカより購入　10s|
+|~|~|~|&attachref(,nolink);|大地の芽：静寂|10|植物/鉱物　ランク1～8&br;|
+|&attachref(,nolink);|奇妙なつぼみ採集セット&br;熟れたベリーの実収穫セット|1g|&attachref(,nolink);|レシピ：奇妙なつぼみ採集セット&br;レシピ：熟れたベリーの実収穫セット|1|秘密基地&br;マリカより購入　10s|
+|~|~|~|&attachref(,nolink);|大地の芽：温暖|50|植物/鉱物　ランク1～8&br;|
+
+** 青品質 [#x4019966]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./採集　初心者　青枠.jpg,nolink);|緑の初心者セット|1g|&attachref(./レシピ　青枠.jpg,nolink);|レシピ：緑の初心者セット|1|秘密基地&br;マリカより購入　10s|
+|~|~|~|&attachref(./芽　緑　白枠.jpg,nolink);|大地の芽：自然|10|植物/鉱物　ランク1～8&br;|
+
+** 橙品質 [#a3c3302c]
+|CENTER:|LEFT:150|RIGHT:40|CENTER:|LEFT:200|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(,nolink);|リーパーセット|1g|&attachref(,nolink);|レシピ：リーパーセット|1|[[植物 ランク8～16>生産/採集#x8b49897]]&br;スリーパーの原木&br;[[鉱脈 ランク8～16>生産/採集#w8648c95]]&br;魔力結晶|
+|~|~|~|&attachref(./マナの原木.jpg,nolink);|マナの原木|30|[[植物 ランク8～16>生産/採集#x8b49897]]&br;スリーパーの原木|
+|~|~|~|&attachref(./放射クリスタル.jpg,nolink);|放射クリスタル|30|[[鉱脈 ランク8～16>生産/採集#w8648c95]]&br;魔力結晶|
+|&attachref(,nolink);|トラベラーセット|1g|&attachref(,nolink);|レシピ：トラベラーセット|1|[[植物 ランク16～24>生産/採集#wda9b2d1]]&br;プロフェシーの果実&br;[[鉱脈 ランク16～24>生産/採集#z93dc809]]&br;スチーム鉱石|
+|~|~|~|&attachref(./タンクフルーツ.jpg,nolink);|タンクフルーツ|10|[[植物 ランク16～24>生産/採集#wda9b2d1]]&br;プロフェシーの果実|
+|~|~|~|&attachref(./アブソーブストーン.jpg,nolink);|アブソーブストーン|10|[[鉱脈 ランク16～24>生産/採集#z93dc809]]&br;スチーム鉱石|
+
+** 黄品質 [#c9e71735]
+
+*武器 [#t705a8ac]
+世界ボス討伐報酬から得られる勾玉とオレンジランクの武器を合成することで
+各職業に特化したオプションが付与される武器を入手できる。
+血の勾玉＋吸血の力
+闇の勾玉＋闇魂の力
+閃光の勾玉＋閃光の力
+水晶の勾玉＋水晶の力
+光耀の勾玉＋光耀の力
+煌星の勾玉＋煌星の力
+罪悪の勾玉＋罪悪の力
+統制の勾玉＋統制の力
+
+*星石 [#ada0e418]
+**古星石(六角形) [#t6ca4a19]
+　数が多いため、素材が同じものはまとめています。
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./Lv70未鑑定の古石.jpg,nolink);|&color(Orange){Lv70未鑑定の古赤石};&br;&color(Orange){Lv70未鑑定の古青石};&br;&color(Orange){Lv70未鑑定の古橙石};&br;&color(Orange){Lv70未鑑定の古緑石};|100g|&attachref(./素材_橙.jpg,nolink);|&color(Orange){レシピ:Lv70未鑑定の古赤石};&br;&color(Orange){レシピ:Lv70未鑑定の古青石};&br;&color(Orange){レシピ:Lv70未鑑定の古橙石};&br;&color(Orange){レシピ:Lv70未鑑定の古緑石};|1|購入：[[天空の商人グウォンケン>フィールド/セイルーン王城#w66d07c1]]|
+|~|~|~|&attachref(./古の星核.jpg,nolink);|&color(Orange){古の星核};|5|道化師の遊技場|
+|&attachref(./Lv75未鑑定の古石.jpg,nolink);|&color(Olive){Lv75未鑑定の古赤石};&br;&color(Olive){Lv75未鑑定の古青石};&br;&color(Olive){Lv75未鑑定の古橙石};&br;&color(Olive){Lv75未鑑定の古緑石};|250g|&attachref(./素材_橙.jpg,nolink);|&color(Orange){レシピ:Lv75未鑑定の古赤石};&br;&color(Orange){レシピ:Lv75未鑑定の古青石};&br;&color(Orange){レシピ:Lv75未鑑定の古橙石};&br;&color(Orange){レシピ:Lv75未鑑定の古緑石};|1|購入：[[天空の商人グウォンケン>フィールド/セイルーン王城#w66d07c1]]|
+|~|~|~|&attachref(./原初の星核.jpg,nolink);|&color(Olive){原初の星核};|5|道化師の娯楽場|
+|&attachref(./未鑑定の●星石_紫.jpg,nolink);|&color(Purple){Lv60未鑑定の●赤星石};&br;&color(Purple){Lv60未鑑定の●青星石};&br;&color(Purple){Lv60未鑑定の●橙星石};|10g|&attachref(./素材_紫.jpg,nolink);|&color(Purple){レシピ:Lv60未鑑定の●赤星石};&br;&color(Purple){レシピ:Lv60未鑑定の●青星石};&br;&color(Purple){レシピ:Lv60未鑑定の●橙星石};|1|購入：栄光ショップ|
+|~|~|~|&attachref(./栄光のジュエル.jpg,nolink);|栄光のジュエル|5||
+|&attachref(./Lv70未鑑定の古石.jpg,nolink);|&color(Orange){Lv80未鑑定の古赤石};&br;&color(Orange){Lv80未鑑定の古青石};&br;&color(Orange){Lv80未鑑定の古橙石};&br;&color(Orange){Lv80未鑑定の古緑石};|100g|&attachref(./素材_橙.jpg,nolink);|&color(Orange){レシピ:Lv80未鑑定の古赤石};&br;&color(Orange){レシピ:Lv80未鑑定の古青石};&br;&color(Orange){レシピ:Lv80未鑑定の古橙石};&br;&color(Orange){レシピ:Lv80未鑑定の古緑石};|1|購入：[[天空の商人グウォンケン>フィールド/セイルーン王城#w66d07c1]]|
+|~|~|~|&attachref(,nolink);|&color(Orange){根源の星核};|5|道化師の対局場|
+|&attachref(./Lv75未鑑定の古石.jpg,nolink,Lv85未鑑定の古石);|&color(Olive){Lv85未鑑定の古赤石};&br;&color(Olive){Lv85未鑑定の古青石};&br;&color(Olive){Lv85未鑑定の古橙石};&br;&color(Olive){Lv85未鑑定の古緑石};|250g|&attachref(./素材_橙.jpg,nolink);|&color(Orange){レシピ:Lv85未鑑定の古赤石};&br;&color(Orange){レシピ:Lv85未鑑定の古青石};&br;&color(Orange){レシピ:Lv85未鑑定の古橙石};&br;&color(Orange){レシピ:Lv85未鑑定の古緑石};|1|購入：[[天空の商人グウォンケン>フィールド/セイルーン王城#w66d07c1]]|
+|~|~|~|&attachref(,nolink);|&color(Olive){熱源の星核};|5|道化師の対局場|
+**星石進化 [#l040ac8b]
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./★3進化結晶星石.jpg,nolink);|&color(Orange){★3進化結晶星石};|100g|&attachref(./★3進化結晶星石の欠片.jpg,nolink);|&color(Blue){★3進化結晶星石の欠片};|5||
+|&attachref(./★4進化結晶星石.jpg,nolink);|&color(Orange){★4進化結晶星石};|500g|&attachref(./★4進化結晶星石の欠片.jpg,nolink);|&color(Blue){★4進化結晶星石の欠片};|5||
+
+
+*星霊 [#z3b43638]
+**星霊の書 [#efbb0867]
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./星霊の書_紫.jpg,nolink);|あずさ・星霊の書|50g|&attachref(./素材_黄.jpg,nolink);|あずさ・星霊書の破片|300|地下星霊殿堂|
+|&attachref(./星霊の書_青.jpg,nolink);|トト・星霊の書|50g|&attachref(./素材_黄.jpg,nolink);|トト・星霊書の破片|300|地下星霊殿堂|
+|&attachref(./星霊の書_緑.jpg,nolink);|ビビ・星霊の書|50g|&attachref(./素材_黄.jpg,nolink);|ビビ・星霊書の破片|300|地下星霊殿堂|
+|&attachref(./星霊の書_橙.jpg,nolink);|ナタリア・星霊の書|50g|&attachref(./素材_黄.jpg,nolink);|ナタリア・星霊書の破片|300|地下星霊殿堂|
+|&attachref(./星霊の書_黒.jpg,nolink);|ルーク・星霊の書|50g|&attachref(./素材_黄.jpg,nolink);|ルーク・星霊書の破片|300|地下星霊殿堂|
+|&attachref(./星霊の書_紫.jpg,nolink);|ガイア・星霊の書|50g|&attachref(./素材_黄.jpg,nolink);|ガイア・星霊書の破片|300|地下星霊殿堂|
+|&attachref(./星霊の書_緑.jpg,nolink);|メロディー・星霊の書|50g|&attachref(./素材_黄.jpg,nolink);|メロディー・星霊書の破片|300|地下星霊殿堂|
+|&attachref(./星霊の書_赤.jpg,nolink);|ベル・星霊の書|50g|&attachref(./素材_黄.jpg,nolink);|ベル・星霊書の破片|300|地下星霊殿堂|
+|&attachref(./星霊の書_赤.jpg,nolink);|フェイ・星霊の書|50g|&attachref(./素材_黄.jpg,nolink);|フェイ・星霊書の破片|300|地下星霊殿堂|
+
+
+**星霊進化 [#wf096189]
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|100|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|CENTER:~備考|h
+|&attachref(./進化の鍵　枠橙.jpg,nolink);|&color(Orange){星霊進化の鍵};&br;&color(red){一定確率で合成失敗する};|1500g|&attachref(./巻物　枠橙.jpg,nolink);|&color(Orange){星霊★4進化の古文書};|1|星霊と絆ポイント交換||
+|~|~|~|&attachref(,nolink);|&color(Orange){星霊進化の錠前};|1|&color(Orange){星霊進化★4の聖鍵BOX};||
+|~|~|~|&attachref(,nolink);|&color(Orange){星霊進化の聖鍵};|1|~||
+|~|~|~|&attachref(,nolink);|&color(Orange){天体の渦・完全体};|100|&color(Orange){星霊進化★4/5/6の聖鍵BOX};||
+|&attachref(./聖霊進化　枠金.jpg,nolink);|&color(Olive){星霊★5進化の鍵};&br;&color(red){一定確率で合成失敗する};|2500g|&attachref(./巻物　枠橙.jpg,nolink);|&color(Orange){星霊★5進化の古文書};|1|星霊と絆ポイント交換||
+|~|~|~|&attachref(,nolink);|&color(Orange){星霊★5進化の錠前};|1|&color(Orange){星霊進化★5の聖鍵BOX};||
+|~|~|~|&attachref(,nolink);|&color(Orange){星霊★5進化の聖鍵};|1|~||
+|~|~|~|&attachref(,nolink);|&color(Orange){天体の渦・完全体};|100|&color(Orange){星霊進化★4/5/6の聖鍵BOX};||
+|~|&color(Olive){星霊★6進化の鍵};&br;&color(red){一定確率で合成失敗する};|3500g|&attachref(./巻物　枠橙.jpg,nolink);|&color(Orange){星霊★6進化の古文書};|1|星霊と絆ポイント交換||
+|~|~|~|&attachref(,nolink);|&color(Olive){星霊★6進化の錠前};|1|&color(Orange){星霊進化★6の聖鍵BOX};||
+|~|~|~|&attachref(,nolink);|&color(Olive){星霊★6進化の聖鍵};|1|~||
+|~|~|~|&attachref(,nolink);|&color(Orange){天体の渦・完全体};|100|&color(Orange){星霊進化★4/5/6の聖鍵BOX};||
+|&attachref(,nolink);|&color(Orange){天体の渦・精錬};|500g|&attachref(,nolink);|天体の渦・不完全|10|&color(Orange){星霊進化★4/5/6の聖鍵BOX};|使用すると&color(Orange){天体の渦・完全体};が1~100手に入る|
+**星霊守護石[#y01af3be]
+　数が多いため、星霊ごとに畳んでいます。
+　レシピは秘密基地に配置した星霊本人から絆ポイント20で購入できる。
+#Region(「フィーナ」　フィーナの攻撃守護石、フィーナの攻撃速度値守護石)
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./攻撃守護石.jpg,nolink);|フィーナの攻撃守護石|100g|&attachref(./素材_橙.jpg,nolink);|レシピ:フィーナの攻撃守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_青.jpg,nolink);|フィーナ・星霊の書|1|絆ギフトBOXなど|
+|&attachref(./攻撃速度値守護石.jpg,nolink);|フィーナの攻撃速度値守護石|100g|&attachref(./素材_橙.jpg,nolink);|レシピ:フィーナの攻撃速度値守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_青.jpg,nolink);|フィーナ・星霊の書|1|絆ギフトBOXなど|
+#EndRegion
+#Region(「サムエル」　サムエルの防御守護石、サムエルのHP守護石)
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./防御守護石.jpg,nolink);|サムエルの防御守護石|100g|&attachref(./素材_橙.jpg,nolink);|レシピ:サムエルの防御守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_緑.jpg,nolink);|サムエル・星霊の書|1|絆ギフトBOXなど|
+|&attachref(./HP守護石.jpg,nolink);|サムエルのHP守護石|100g|&attachref(./素材_橙.jpg,nolink);|レシピ:サムエルのHP守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_緑.jpg,nolink);|サムエル・星霊の書|1|絆ギフトBOXなど|
+#EndRegion
+#Region(「クロック」　クロックの会心守護石、クロックの回避守護石)
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./会心守護石.jpg,nolink);|クロックの会心守護石|100g|&attachref(./素材_橙.jpg,nolink);|レシピ:クロックの会心守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_赤.jpg,nolink);|クロック・星霊の書|1|絆ギフトBOXなど|
+|&attachref(./回避守護石.jpg,nolink);|クロックの回避守護石|100g|&attachref(./素材_橙.jpg,nolink);|レシピ:クロックの回避守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_赤.jpg,nolink);|クロック・星霊の書|1|絆ギフトBOXなど|
+#EndRegion
+#Region(「クレア」　クレアの攻撃守護石、クレアの攻撃速度値守護石)
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./攻撃守護石.jpg,nolink);|クレアの攻撃守護石|50g|&attachref(./素材_橙.jpg,nolink);|レシピ:クレアの攻撃守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_橙.jpg,nolink);|クレア・星霊の書|1|絆ギフトBOXなど|
+|&attachref(./攻撃速度値守護石.jpg,nolink);|クレアの攻撃速度値守護石|50g|&attachref(./素材_橙.jpg,nolink);|レシピ:クレアの攻撃速度値守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_橙.jpg,nolink);|クレア・星霊の書|1|絆ギフトBOXなど|
+#EndRegion
+#Region(「ガイア」　ガイアの防御守護石、ガイアのHP守護石)
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./防御守護石.jpg,nolink);|ガイアの防御守護石|100g|&attachref(./素材_橙.jpg,nolink);|レシピ:ガイアの防御守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_紫.jpg,nolink);|ガイア・星霊の書|1|絆ギフトBOXなど|
+|&attachref(./HP守護石.jpg,nolink);|ガイアのHP守護石|100g|&attachref(./素材_橙.jpg,nolink);|レシピ:ガイアのHP守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_紫.jpg,nolink);|ガイア・星霊の書|1|絆ギフトBOXなど|
+#EndRegion
+#Region(「アリス」　アリスの回避守護石、アリスの会心守護石)
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./回避守護石.jpg,nolink);|アリスの回避守護石|50g|&attachref(./素材_橙.jpg,nolink);|レシピ:アリスの回避守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_白.jpg,nolink);|アリス・星霊の書|1|絆ギフトBOXなど|
+|&attachref(./会心守護石.jpg,nolink);|アリスの会心守護石|50g|&attachref(./素材_橙.jpg,nolink);|レシピ:アリスの会心守護石|1|星霊から絆ポイントで購入|
+|~|~|~|&attachref(./星霊の書_白.jpg,nolink);|アリス・星霊の書|1|絆ギフトBOXなど|
+#EndRegion
+
+
+
+** その他 [#k4d320d6]
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(,nolink);|&color(Orange){マスタージュエル};|1g|&attachref(,nolink);|&color(Orange){マスタージュエルの欠片};|100|星霊商店販売のマスタージュエルの欠片BOXから一定確率で入手&br;各星霊デイリークエスト報酬&br;&color(Red){合成後のアイテムは課金品と同等のアイテムであるためか、合成の成功率は低めに設定されている(5~10%?)};|
+* 特殊 [#s9cee38d]
+** アバター [#wf7fccd8]
+|CENTER:|LEFT:170|RIGHT:40|CENTER:|LEFT:240|CENTER:|LEFT:150|c
+|~ |CENTER:~名称|CENTER:~費用|>|CENTER:~必要素材|~個数|CENTER:~素材入手先|h
+|&attachref(./セーラー服(女性用)★.jpg,nolink);|セーラー服(女性用)★|140g|&attachref(./素材_橙.jpg,nolink);|セーラー服(女性用)★の欠片|400|地下闘技場|
+|&attachref(./セーラー服(男性用)★.jpg,nolink);|セーラー服(男性用)★|140g|&attachref(./素材_橙.jpg,nolink);|セーラー服(男性用)★の欠片|400|地下闘技場|
+|&attachref(./セーラー帽★.jpg,nolink);|セーラー帽★|60g|&attachref(./素材_橙.jpg,nolink);|セーラー帽★の欠片|535|地下闘技場|
+|&attachref(./ブラックランドセル★.jpg,nolink);|ブラックランドセル★|140g|&attachref(./素材_橙.jpg,nolink);|ブラックランドセル★の欠片|130|地下闘技場|
+|&attachref(./ハートぺろぺろキャンディー★.jpg,nolink);|ハートぺろぺろキャンディー★|60g|&attachref(./素材_橙.jpg,nolink);|ハートぺろぺろキャンディー★の欠片|140|地下闘技場|
+|&attachref(./トールハンマー★.jpg,nolink);|トールハンマー★|130g|&attachref(./素材_橙.jpg,nolink);|トールハンマー★の欠片|380|地下闘技場|
+|&attachref(./ハニーライトペガサス★.jpg,nolink);|ハニーライトペガサス★|96g|&attachref(./素材_橙.jpg,nolink);|ハニーライトペガサス★の欠片|600|地下闘技場|
+
+
+
+* コメント [#z955351c]
+#pcomment(,5,reply)
+</code>
