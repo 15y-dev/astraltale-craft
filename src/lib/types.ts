@@ -40,6 +40,24 @@ export interface Source {
   note?: string;
 }
 
+/** アストラルテイルDBに載っている場所(NPC・モンスター・鉱脈などと、その居場所) */
+export interface OriginPlace {
+  npc: string;
+  zone: string;
+  /** 座標の表記(例: 「X: 669, Y: 374」)。複数ある場合は代表の1か所 */
+  pos?: string;
+}
+
+/** wiki の表にない入手元を、アストラルテイルDBで補ったもの */
+export interface Origin {
+  /** アストラルテイルDBのアイテムID(リンク用) */
+  site: number;
+  /** 売り手(NPC販売) */
+  buy: OriginPlace[];
+  /** 「入手元のアイテム」(ドロップ・鉱脈・魚群など) */
+  drop: OriginPlace[];
+}
+
 export interface RawData {
   crafts: Craft[];
   items: Item[];

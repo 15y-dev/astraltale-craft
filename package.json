@@ -6,6 +6,7 @@
   "scripts": {
     "fetch": "node scripts/fetch.mjs",
     "icons": "node scripts/download-icons.mjs",
+    "astraldb": "node scripts/fetch-astraldb.mjs",
     "build:data": "node scripts/build-data.mjs",
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

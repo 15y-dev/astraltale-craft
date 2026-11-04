@@ -5,24 +5,28 @@ import { ItemPage } from './pages/ItemPage.tsx';
 import { UnusedPage } from './pages/UnusedPage.tsx';
 import { buildDb, type Db } from './lib/db.ts';
 import { homeHref, useRoute, type Route } from './lib/route.ts';
-import type { RawData } from './lib/types.ts';
+import type { Origin, RawData } from './lib/types.ts';
 
-/** アイコンの対応表。なくても(未ダウンロードでも)アイコンなしで動く */
-async function loadIcons(): Promise<Record<string, string>> {
+/** あれば読むデータ(アイコンの対応表、アストラルテイルDBの補完)。なくても、読めなくても、空のまま動く */
+async function loadOptional<T>(file: string): Promise<Record<string, T>> {
   try {
-    const res = await fetch(`${import.meta.env.BASE_URL}data/icons.json`);
+    const res = await fetch(`${import.meta.env.BASE_URL}data/${file}`);
     if (!res.ok) return {};
     const json: unknown = await res.json();
-    return json && typeof json === 'object' ? (json as Record<string, string>) : {};
+    return json && typeof json === 'object' ? (json as Record<string, T>) : {};
   } catch {
     return {};
   }
 }
 
 async function loadDb(): Promise<Db> {
-  const [res, icons] = await Promise.all([fetch(`${import.meta.env.BASE_URL}data/data.json`), loadIcons()]);
+  const [res, icons, origins] = await Promise.all([
+    fetch(`${import.meta.env.BASE_URL}data/data.json`),
+    loadOptional<string>('icons.json'),
+    loadOptional<Origin>('origins.json'),
+  ]);
   if (!res.ok) throw new Error(`データを読み込めませんでした (HTTP ${res.status})`);
-  return buildDb((await res.json()) as RawData, icons);
+  return buildDb((await res.json()) as RawData, icons, origins);
 }
 
 const keyOf = (route: Route) => (route.page === 'item' || route.page === 'craft' ? `${route.page}/${route.id}` : route.page);

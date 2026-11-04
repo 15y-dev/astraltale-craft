@@ -1,5 +1,6 @@
 import { craftName, itemName, type Db } from '../lib/db.ts';
 import { craftHref, itemHref } from '../lib/route.ts';
+import type { OriginPlace } from '../lib/types.ts';
 
 export const iconSrc = (file: string) => `${import.meta.env.BASE_URL}icons/${file}`;
 
@@ -76,6 +77,49 @@ export function Materials({ db, recipe }: { db: Db; recipe: { kind: string; in: 
         </li>
       ))}
     </ul>
+  );
+}
+
+function PlaceTable({ caption, places }: { caption: string; places: OriginPlace[] }) {
+  return (
+    <table>
+      <caption>{caption}</caption>
+      <thead>
+        <tr>
+          <th>NPC・場所の名前</th>
+          <th>エリア</th>
+          <th>座標</th>
+        </tr>
+      </thead>
+      <tbody>
+        {places.map((p, i) => (
+          <tr key={i}>
+            <td>{p.npc}</td>
+            <td>{p.zone}</td>
+            <td className="sub">{p.pos ?? ''}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+/** wiki の表にない入手元(アストラルテイルDBで補ったもの)。補完がなければ何も出さない */
+export function OriginTables({ db, id }: { db: Db; id: string }) {
+  const o = db.origins.get(id);
+  if (!o) return null;
+  return (
+    <div className="origin">
+      {o.buy.length > 0 && <PlaceTable caption="売っている場所" places={o.buy} />}
+      {o.drop.length > 0 && <PlaceTable caption="入手できる場所(ドロップ・採取など)" places={o.drop} />}
+      <p className="note">
+        出典:{' '}
+        <a href={`https://www.astraltaledb.com/jp/item/${o.site}`} target="_blank" rel="noreferrer">
+          アストラルテイルDB
+        </a>
+        (wikiの表にない入手元を補っています)
+      </p>
+    </div>
   );
 }
 

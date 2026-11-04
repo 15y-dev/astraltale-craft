@@ -5,5 +5,7 @@ data/tmp-*
 tmp-*
 .vitest
 /icons
+data/astraldb-cache.json
+
 tmp
 

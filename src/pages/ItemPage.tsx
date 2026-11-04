@@ -1,4 +1,4 @@
-import { CraftTag, CraftTags, ItemIcon, ItemLink, Materials, NotFound } from '../components/Links.tsx';
+import { CraftTag, CraftTags, ItemIcon, ItemLink, Materials, NotFound, OriginTables } from '../components/Links.tsx';
 import { Flow } from '../components/Flow.tsx';
 import { TotalsPanel } from '../components/TotalsPanel.tsx';
 import { craftName, usesOf, type Db } from '../lib/db.ts';
@@ -24,6 +24,7 @@ export function ItemPage({ db, id }: { db: Db; id: string }) {
 
   const uses = usesOf(db, id);
   const sources = db.sourcesOf.get(id) ?? [];
+  const origin = db.origins.get(id);
   const recipes = db.madeBy.get(id) ?? [];
 
   return (
@@ -80,12 +81,15 @@ export function ItemPage({ db, id }: { db: Db; id: string }) {
         )}
       </details>
 
-      <details className="block" open={sources.length > 0 && sources.length <= 6}>
+      <details className="block" open={(sources.length > 0 && sources.length <= 6) || (sources.length === 0 && Boolean(origin))}>
         <summary>
-          入手元 <small>({sources.length}件)</small>
+          入手元 <small>({sources.length + (origin ? origin.buy.length + origin.drop.length : 0)}件)</small>
         </summary>
+        {origin && <OriginTables db={db} id={id} />}
         {sources.length === 0 ? (
-          <p className="empty">釣り・採集・栽培の表には載っていません(モンスタードロップや購入などの可能性があります)。</p>
+          origin ? null : (
+            <p className="empty">釣り・採集・栽培の表には載っていません(モンスタードロップや購入などの可能性があります)。</p>
+          )
         ) : (
           <table>
             <thead>

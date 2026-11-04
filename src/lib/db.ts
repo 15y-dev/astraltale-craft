@@ -1,4 +1,4 @@
-import type { Craft, Item, RawData, Recipe, Source } from './types.ts';
+import type { Craft, Item, Origin, RawData, Recipe, Source } from './types.ts';
 
 export interface Use {
   recipe: Recipe;
@@ -27,6 +27,8 @@ export interface Db {
   searchKey: Map<string, string>;
   /** アイテム → アイコンのファイル名(public/icons/ の中)。画像がないアイテムは含まれない */
   icons: Map<string, string>;
+  /** アイテム → アストラルテイルDBで補った入手元(売り手・ドロップなど)。なければ含まれない */
+  origins: Map<string, Origin>;
 }
 
 /** 検索用: 全角半角・大文字小文字・ひらがなカタカナの違いを無視する */
@@ -50,7 +52,7 @@ function mark(m: Map<string, Set<string>>, id: string, craft: string) {
   else m.set(id, new Set([craft]));
 }
 
-export function buildDb(raw: RawData, icons: Record<string, string> = {}): Db {
+export function buildDb(raw: RawData, icons: Record<string, string> = {}, origins: Record<string, Origin> = {}): Db {
   const usedIn = new Map<string, Use[]>();
   const madeBy = new Map<string, Recipe[]>();
   const sourcesOf = new Map<string, Source[]>();
@@ -95,6 +97,7 @@ export function buildDb(raw: RawData, icons: Record<string, string> = {}): Db {
     usedCount,
     searchKey: new Map(raw.items.map((i) => [i.id, fold(i.name)])),
     icons: new Map(Object.entries(icons)),
+    origins: new Map(Object.entries(origins)),
   };
 }
 
@@ -112,6 +115,8 @@ export function originOf(db: Db, id: string): string {
   if (src?.length) return `${joinCraftNames(db, src.map((s) => s.craft))}で入手`;
   const via = db.sourcesVia.get(id)?.[0];
   if (via) return `${craftName(db, via.craft)} ${via.place}`.trim();
+  const o = db.origins.get(id);
+  if (o) return [o.buy.length > 0 ? 'NPC販売' : '', o.drop.length > 0 ? 'ドロップ・採取' : ''].filter(Boolean).join('・');
   return '';
 }
 

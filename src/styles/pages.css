@@ -69,6 +69,11 @@ th {
   color: var(--sub);
 }
 
+/* アストラルテイルDBで補った入手元の表 */
+.origin table + table {
+  margin-top: 0.8rem;
+}
+
 .recipe + .recipe {
   margin-top: 1rem;
   padding-top: 0.8rem;
